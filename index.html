@@ -1,120 +1,74 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abeer’s Shop</title>
+  <title>Abeer’s Store</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900 font-sans">
-
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Abeer’s Shop</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#about" class="hover:text-pink-600">About</a></li>
-        <li><a href="#shop" class="hover:text-pink-600">Shop</a></li>
-        <li><a href="#contact" class="hover:text-pink-600">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="font-sans text-gray-800">
 
   <!-- Hero Section -->
-  <section class="h-screen flex flex-col justify-center items-center text-center bg-pink-50">
-    <h2 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Abeer’s Shop</h2>
-    <p class="text-lg md:text-xl mb-8 max-w-2xl">Discover our beautiful products and order directly on Instagram or Facebook.</p>
-    <div>
-      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank"
-         class="px-6 py-3 bg-pink-600 text-white rounded-xl hover:bg-pink-700 mr-3">
-        Shop on Instagram
-      </a>
-      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank"
-         class="px-6 py-3 bg-blue-700 text-white rounded-xl hover:bg-blue-800">
-        Shop on Facebook
-      </a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-6">About Us</h3>
-    <p class="text-lg leading-relaxed">
-      At Abeer’s Shop, we provide high-quality, trendy, and affordable products. 
-      Browse our collection and place your order directly through Instagram or Facebook. 
-    </p>
+  <section class="h-screen bg-pink-100 flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in">Welcome to Abeer’s Store</h1>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl fade-in">Trendy, unique, and beautiful products — made with love and delivered to your doorstep.</p>
+    <a href="#shop" class="px-6 py-3 bg-pink-600 text-white text-lg rounded-xl shadow-lg hover:bg-pink-700 transition fade-in">Shop Now</a>
   </section>
 
   <!-- Shop Section -->
-  <section id="shop" class="py-32 max-w-6xl mx-auto px-6 bg-gray-50 text-center">
-    <h3 class="text-3xl font-bold mb-12">Our Products</h3>
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <div class="p-6 bg-white rounded-2xl shadow">
-        <img src="images/product1.jpg" alt="Product 1" class="mx-auto mb-4 w-40 h-40 object-cover rounded-lg">
-        <h4 class="font-semibold mb-2">Product 1</h4>
-        <p class="mb-4">Available now on Instagram & Facebook.</p>
-        <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank"
-           class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">
-          Order on Instagram
-        </a>
-        <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank"
-           class="ml-2 px-4 py-2 bg-blue-700 text-white rounded-xl hover:bg-blue-800">
-          Order on Facebook
-        </a>
+  <section id="shop" class="py-32 bg-white max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 fade-in">Our Products</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x300" alt="Product 1" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Product 1</h3>
+          <p class="text-gray-600 mb-4">A short description of the product goes here.</p>
+          <a href="https://www.instagram.com/abeeraamir00/" target="_blank" class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">Order on Instagram</a>
+        </div>
       </div>
 
-      <div class="p-6 bg-white rounded-2xl shadow">
-        <img src="images/product2.jpg" alt="Product 2" class="mx-auto mb-4 w-40 h-40 object-cover rounded-lg">
-        <h4 class="font-semibold mb-2">Product 2</h4>
-        <p class="mb-4">Available now on Instagram & Facebook.</p>
-        <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank"
-           class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">
-          Order on Instagram
-        </a>
-        <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank"
-           class="ml-2 px-4 py-2 bg-blue-700 text-white rounded-xl hover:bg-blue-800">
-          Order on Facebook
-        </a>
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x300" alt="Product 2" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Product 2</h3>
+          <p class="text-gray-600 mb-4">A short description of the product goes here.</p>
+          <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">Order on Facebook</a>
+        </div>
       </div>
 
-      <div class="p-6 bg-white rounded-2xl shadow">
-        <img src="images/product3.jpg" alt="Product 3" class="mx-auto mb-4 w-40 h-40 object-cover rounded-lg">
-        <h4 class="font-semibold mb-2">Product 3</h4>
-        <p class="mb-4">Available now on Instagram & Facebook.</p>
-        <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank"
-           class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">
-          Order on Instagram
-        </a>
-        <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank"
-           class="ml-2 px-4 py-2 bg-blue-700 text-white rounded-xl hover:bg-blue-800">
-          Order on Facebook
-        </a>
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://via.placeholder.com/400x300" alt="Product 3" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Product 3</h3>
+          <p class="text-gray-600 mb-4">A short description of the product goes here.</p>
+          <a href="https://www.instagram.com/abeeraamir00/" target="_blank" class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">Order on Instagram</a>
+        </div>
       </div>
-
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-32 max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
-    <p class="text-lg leading-relaxed">
-      For questions or custom orders, reach out to us on 
-      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank" class="text-pink-600 font-semibold">Instagram</a> 
-      or 
-      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="text-blue-700 font-semibold">Facebook</a>.
-    </p>
+  <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold text-center mb-12 fade-in">Contact Us</h3>
+
+    <!-- Embedded Google Form -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
+            width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-10 text-center">
-    <p class="mb-4">© 2025 Abeer’s Shop. All rights reserved.</p>
-    <div class="space-y-2 text-sm">
-      <p>JazzCash: 03006190087 — IBAN: PK37JCMA1104923006190087</p>
-      <p>EasyPaisa: 03006190087 — IBAN: PK48TMFB0000000089646970</p>
-      <p>Payoneer ID: 94872128</p>
-      <p>Raast IBAN: (add here)</p>
-    </div>
+  <footer class="bg-pink-600 text-white py-6 text-center">
+    <p class="mb-2">© 2025 Abeer’s Store. All rights reserved.</p>
+    <p>Follow us:
+      <a href="https://www.instagram.com/abeeraamir00/" target="_blank" class="underline">Instagram</a> |
+      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="underline">Facebook</a>
+    </p>
+    <p class="mt-4 text-sm">
+      Payments: Easypaisa, JazzCash, Payoneer, Raast IBAN available on request
+    </p>
   </footer>
 
 </body>
