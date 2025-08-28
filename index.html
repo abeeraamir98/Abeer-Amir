@@ -35,26 +35,6 @@
     <p class="text-lg max-w-2xl mx-auto mb-8 fade-in">Harness AI-generated insights and automation to take your venture to the next level.</p>
     <img src="images/ai-hero.png" alt="AI Illustration" class="mx-auto mb-6 w-80 h-60 object-cover fade-in">
     <a href="#start" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow hover:bg-gray-100 fade-in">Get Started</a>
-
-    <!-- Top Contact Form -->
-    <div class="mt-16 max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow fade-in">
-      <h3 class="text-2xl font-bold mb-6 text-center">Get in Touch</h3>
-      <form id="top-contact-form" class="space-y-4">
-        <div>
-          <label for="top-name" class="block mb-1 font-semibold">Name</label>
-          <input type="text" id="top-name" name="from_name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-        </div>
-        <div>
-          <label for="top-email" class="block mb-1 font-semibold">Email</label>
-          <input type="email" id="top-email" name="from_email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-        </div>
-        <div>
-          <label for="top-message" class="block mb-1 font-semibold">Message</label>
-          <textarea id="top-message" name="message" rows="4" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
-        </div>
-        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600">Send Message</button>
-      </form>
-    </div>
   </section>
 
   <!-- Features Section -->
@@ -174,59 +154,22 @@
     <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600 fade-in">Get Started</a>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section with Embedded Google Form -->
   <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-12 fade-in">Contact Us</h3>
-    
-    <form id="contact-form" class="space-y-6 fade-in">
-      <div>
-        <label for="name" class="block mb-2 font-semibold">Name</label>
-        <input type="text" id="name" name="from_name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-      </div>
-      <div>
-        <label for="email" class="block mb-2 font-semibold">Email</label>
-        <input type="email" id="email" name="from_email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-      </div>
-      <div>
-        <label for="message" class="block mb-2 font-semibold">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
-      </div>
-      <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600">Send Message</button>
-    </form>
+
+    <!-- Embedded Google Form -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform?embedded=true"
+            width="100%" height="1873" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </section>
 
-  <!-- Footer with Payment Details -->
+  <!-- Footer -->
   <footer class="py-8 text-center text-gray-600">
-    <p>© 2025 Venture. All rights reserved.</p>
-    <div class="mt-4 space-y-2">
-      <p><strong>JazzCash:</strong> 03006190087 | IBAN: PK37JCMA1104923006190087</p>
-      <p><strong>EasyPaisa:</strong> 03006190087 | IBAN: PK48TMFB0000000089646970</p>
-      <p><strong>Raast (Bank Transfer):</strong> PKXXBANKXXXXXXXXXXXXXXX</p>
-      <p><strong>Payoneer Customer ID:</strong> 94872128</p>
-    </div>
+    © 2025 Venture. All rights reserved.
   </footer>
 
-  <!-- JavaScript for EmailJS & Animations -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- JavaScript for Animations -->
   <script>
-    emailjs.init('XVjB-8Na1ZnfCdiOe'); // Correct public key
-
-    // Top Form
-    document.getElementById('top-contact-form').addEventListener('submit', function(event){
-      event.preventDefault();
-      emailjs.sendForm('service_zjvtaw9','template_z4ut2fj', this)
-        .then(() => { alert('Message sent successfully!'); this.reset(); })
-        .catch((error) => { alert('Failed to send message: ' + JSON.stringify(error)); });
-    });
-
-    // Bottom Form
-    document.getElementById('contact-form').addEventListener('submit', function(event){
-      event.preventDefault();
-      emailjs.sendForm('service_zjvtaw9','template_z4ut2fj', this)
-        .then(() => { alert('Message sent successfully!'); this.reset(); })
-        .catch((error) => { alert('Failed to send message: ' + JSON.stringify(error)); });
-    });
-
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer){
