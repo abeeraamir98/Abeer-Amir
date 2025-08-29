@@ -3,126 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Venture - Official Website of Abeera Amir. Explore updates, contact, and connect through social media.">
-  <title>Venture | Abeera Amir</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+  <title>Venture</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
-      color: #333;
+    html { scroll-behavior: smooth; }
+    header { position: sticky; top: 0; z-index: 50; background: white; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Gradient buttons */
+    .btn-gradient {
+      background: linear-gradient(90deg, #4ade80, #3b82f6);
+      color: white;
+      transition: all 0.3s;
     }
-
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1.2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .container h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #444;
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 700px;
-      border-radius: 10px;
-    }
-
-    .social {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .social a {
-      color: #222;
-      font-size: 1.5rem;
-      margin: 0 10px;
-      transition: color 0.3s;
-    }
-
-    .social a:hover {
-      color: #007bff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #222;
-      color: #fff;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-  <header>
-    <h1>Venture</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-      <a href="#social">Social</a>
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-6 max-w-6xl mx-auto shadow-lg">
+    <h1 class="text-2xl font-bold text-indigo-600">Venture</h1>
+    <nav class="space-x-6">
+      <a href="#features" class="hover:text-green-500 font-medium">Features</a>
+      <a href="#about" class="hover:text-green-500 font-medium">About</a>
+      <a href="#testimonials" class="hover:text-green-500 font-medium">Testimonials</a>
+      <a href="#pricing" class="hover:text-green-500 font-medium">Pricing</a>
+      <a href="#blog" class="hover:text-green-500 font-medium">Blog</a>
+      <a href="#shop" class="hover:text-green-500 font-medium">Shop</a>
+      <a href="#contact" class="hover:text-green-500 font-medium">Contact</a>
     </nav>
+    <a href="#start" class="px-4 py-2 btn-gradient rounded-xl shadow">Get Started</a>
   </header>
 
-  <div class="container" id="contact">
-    <h2>Contact Me</h2>
-    <!-- Google Form -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true">
-      Loading…
-    </iframe>
-  </div>
+  <!-- Hero Section -->
+  <section class="text-center py-32 bg-gradient-to-r from-indigo-500 via-green-400 to-pink-500 text-white">
+    <h2 class="text-5xl font-bold mb-6 fade-in">Build Smarter with AI</h2>
+    <p class="text-lg max-w-2xl mx-auto mb-8 fade-in">Harness AI-generated insights and automation to take your venture to the next level.</p>
+    <img src="images/ai-hero.png" alt="AI Illustration" class="mx-auto mb-6 w-80 h-60 object-cover fade-in rounded-lg shadow-lg">
+    <a href="#start" class="px-6 py-3 btn-gradient font-semibold rounded-xl shadow fade-in">Get Started</a>
+  </section>
 
-  <div class="social" id="social">
-    <h2>Connect With Me</h2>
-    <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
+  <!-- Features Section -->
+  <section id="features" class="py-32 max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12 fade-in text-indigo-700">Features</h3>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="p-6 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-2xl shadow hover:scale-105 transform transition fade-in text-center">
+        <svg class="w-12 h-12 text-indigo-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        <h4 class="font-semibold text-xl mb-2 text-indigo-700">AI-Generated Content</h4>
+        <p>Create high-quality content instantly with AI-powered tools.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-r from-green-100 via-lime-100 to-yellow-100 rounded-2xl shadow hover:scale-105 transform transition fade-in text-center">
+        <svg class="w-12 h-12 text-green-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <h4 class="font-semibold text-xl mb-2 text-green-700">Automation</h4>
+        <p>Automate repetitive tasks and workflows to save time.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-r from-blue-100 via-cyan-100 to-teal-100 rounded-2xl shadow hover:scale-105 transform transition fade-in text-center">
+        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6m2 0H7"/></svg>
+        <h4 class="font-semibold text-xl mb-2 text-blue-700">Insights</h4>
+        <p>Get actionable insights using AI-driven analytics for better decisions.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 Abeera Amir | Venture</p>
+  <!-- About Section -->
+  <section id="about" class="py-32 bg-indigo-50 text-center">
+    <h3 class="text-3xl font-bold mb-6 fade-in text-indigo-700">About Venture</h3>
+    <p class="max-w-2xl mx-auto mb-6 fade-in">Venture helps startups and individuals leverage AI to optimize workflow, create smarter solutions, and gain actionable insights efficiently.</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-32 max-w-6xl mx-auto px-6 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-12 fade-in text-indigo-700">Testimonials</h3>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="p-6 border rounded-xl shadow fade-in"><p>"Venture transformed the way we create content. AI tools are amazing!"</p><p class="mt-2 font-semibold">— Sarah K.</p></div>
+      <div class="p-6 border rounded-xl shadow fade-in"><p>"Automation saved our team countless hours. Highly recommend!"</p><p class="mt-2 font-semibold">— James L.</p></div>
+      <div class="p-6 border rounded-xl shadow fade-in"><p>"Insights from Venture helped us make smarter business decisions."</p><p class="mt-2 font-semibold">— Priya R.</p></div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-32 max-w-6xl mx-auto px-6 bg-indigo-50 text-center">
+    <h3 class="text-3xl font-bold mb-12 fade-in text-indigo-700">Pricing Plans</h3>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="p-6 bg-white rounded-2xl shadow fade-in">
+        <h4 class="text-xl font-semibold mb-2">Basic</h4>
+        <p class="text-2xl font-bold mb-4">$9/mo</p>
+        <ul class="mb-4 text-left"><li>AI Content Generation</li><li>Basic Analytics</li><li>Email Support</li></ul>
+        <button class="px-6 py-2 btn-gradient rounded-xl">Select</button>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow fade-in">
+        <h4 class="text-xl font-semibold mb-2">Pro</h4>
+        <p class="text-2xl font-bold mb-4">$29/mo</p>
+        <ul class="mb-4 text-left"><li>Everything in Basic</li><li>Advanced Automation</li><li>Priority Support</li></ul>
+        <button class="px-6 py-2 btn-gradient rounded-xl">Select</button>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow fade-in">
+        <h4 class="text-xl font-semibold mb-2">Enterprise</h4>
+        <p class="text-2xl font-bold mb-4">Custom</p>
+        <ul class="mb-4 text-left"><li>Everything in Pro</li><li>Dedicated AI Consulting</li><li>Custom Solutions</li></ul>
+        <button class="px-6 py-2 btn-gradient rounded-xl">Contact</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-32 max-w-6xl mx-auto px-6 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-12 fade-in text-indigo-700">Latest Updates</h3>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="p-6 border rounded-xl shadow fade-in">
+        <h4 class="font-semibold mb-2">AI Tips for Startups</h4>
+        <p class="mb-2">Learn how to integrate AI efficiently in small businesses.</p>
+        <button class="px-4 py-2 btn-gradient rounded-xl">Read More</button>
+      </div>
+      <div class="p-6 border rounded-xl shadow fade-in">
+        <h4 class="font-semibold mb-2">Automation Trends 2025</h4>
+        <p class="mb-2">Stay ahead with the latest automation strategies.</p>
+        <button class="px-4 py-2 btn-gradient rounded-xl">Read More</button>
+      </div>
+      <div class="p-6 border rounded-xl shadow fade-in">
+        <h4 class="font-semibold mb-2">Maximizing Insights</h4>
+        <p class="mb-2">Use AI insights to make smarter business decisions.</p>
+        <button class="px-4 py-2 btn-gradient rounded-xl">Read More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="py-32 max-w-6xl mx-auto px-6 bg-indigo-50 text-center">
+    <h3 class="text-3xl font-bold mb-12 fade-in text-indigo-700">Our Products</h3>
+    <div class="flex justify-center gap-6 flex-wrap">
+      <a href="https://www.instagram.com/abeeraamir00/" target="_blank">
+        <img src="images/product1.png" alt="Product 1" class="w-48 h-48 object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+      <a href="https://www.instagram.com/abeeraamir00/" target="_blank">
+        <img src="images/product2.png" alt="Product 2" class="w-48 h-48 object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank">
+        <img src="images/product3.png" alt="Product 3" class="w-48 h-48 object-cover rounded-xl shadow hover:scale-105 transition">
+      </a>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="start" class="py-32 bg-gradient-to-r from-indigo-500 via-green-400 to-pink-500 text-white text-center">
+    <h3 class="text-3xl font-bold mb-4 fade-in">Ready to revolutionize your venture?</h3>
+    <p class="mb-6 fade-in">Start leveraging AI today with just a few clicks.</p>
+    <a href="#contact" class="px-6 py-3 btn-gradient rounded-xl fade-in">Get Started</a>
+  </section>
+
+  <!-- Contact Section with Email Form -->
+  <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12 fade-in text-indigo-700">Contact Us</h3>
+
+    <!-- Embedded Google Form -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
+            width="100%" height="1049" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-600 bg-indigo-100">
+    <p>Follow us on 
+      <a href="https://www.instagram.com/abeeraamir00/" target="_blank" class="text-pink-500 font-semibold">Instagram</a> | 
+      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="text-blue-600 font-semibold">Facebook</a>
+    </p>
+    <p class="mt-2">© 2025 Venture. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript for Animations -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 
 </body>
 </html>
