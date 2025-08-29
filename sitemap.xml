@@ -2,14 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://abeeraamir98.github.io/venture/</loc>
+    <lastmod>2025-08-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://abeeraamir98.github.io/venture/#shop</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://abeeraamir98.github.io/venture/#contact</loc>
+    <loc>https://abeeraamir98.github.io/venture/contact</loc>
+    <lastmod>2025-08-28</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
