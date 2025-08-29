@@ -13,6 +13,7 @@
       background: #f4f7fa;
       color: #333;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     header {
       background: linear-gradient(90deg, #111, #333);
@@ -22,6 +23,9 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header img {
       height: 55px;
@@ -37,6 +41,9 @@
       display: flex;
       justify-content: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 70px;
+      z-index: 999;
     }
     nav a {
       color: #fff;
@@ -51,17 +58,21 @@
     }
     .hero {
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #3b5998, #E1306C);
+      padding: 100px 20px;
+      background: linear-gradient(135deg, rgba(59,89,152,0.9), rgba(225,48,108,0.9)),
+                  url('https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png') center/contain no-repeat;
+      background-attachment: fixed;
       color: #fff;
     }
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 15px;
+      animation: fadeIn 1.5s ease;
     }
     .hero p {
       font-size: 1.2rem;
       opacity: 0.9;
+      animation: slideUp 1.5s ease;
     }
     .content {
       padding: 50px 20px;
@@ -95,6 +106,13 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .gallery img.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
     }
     .gallery img:hover {
       transform: scale(1.05);
@@ -159,6 +177,26 @@
     .floating-instagram { background: #E1306C; }
     .floating-facebook { background: #3b5998; }
     .floating-email { background: #0072C6; }
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #E1306C;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: none;
+      transition: transform 0.3s;
+    }
+    #backToTop:hover { transform: translateY(-3px); }
+    /* Animations */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes slideUp { from {transform:translateY(40px); opacity:0;} to {transform:translateY(0); opacity:1;} }
   </style>
 </head>
 <body>
@@ -211,15 +249,38 @@
 
   <!-- Floating Buttons -->
   <div class="floating-buttons">
-    <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" class="floating-instagram" target="_blank">
-      Instagram 📸
-    </a>
-    <a href="https://www.facebook.com/share/1BMDWSw1pu/" class="floating-facebook" target="_blank">
-      Facebook 📘
-    </a>
-    <a href="mailto:aatiraamir56@gmail.com" class="floating-email">
-      Email ✉️
-    </a>
+    <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" class="floating-instagram" target="_blank">Instagram 📸</a>
+    <a href="https://www.facebook.com/share/1BMDWSw1pu/" class="floating-facebook" target="_blank">Facebook 📘</a>
+    <a href="mailto:aatiraamir56@gmail.com" class="floating-email">Email ✉️</a>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop">↑</button>
+
+  <script>
+    // Back to top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Gallery animation
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+    galleryImages.forEach(img => observer.observe(img));
+  </script>
 </body>
 </html>
