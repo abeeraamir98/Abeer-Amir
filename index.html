@@ -4,129 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venture</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    html { scroll-behavior: smooth; }
-    header { position: sticky; top: 0; z-index: 50; background: white; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Reset some defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    header img {
+      max-height: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    /* Main content */
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-  <!-- Navbar -->
-  <header class="flex justify-between items-center p-6 max-w-6xl mx-auto shadow">
-    <h1 class="text-2xl font-bold text-blue-600">Venture</h1>
-    <nav class="space-x-6">
-      <a href="#features" class="hover:text-green-600">Features</a>
-      <a href="#about" class="hover:text-green-600">About</a>
-      <a href="#shop" class="hover:text-green-600">Products</a>
-      <a href="#contact" class="hover:text-green-600">Contact</a>
+  <!-- Header with logo and navigation -->
+  <header>
+    <a href="https://abeeraamir98.github.io/venture/">
+      <img src="https://github.com/abeeraamir98/venture/blob/main/venture.png?raw=true" alt="Venture Logo">
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-green-600">Get Started</a>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-32 bg-gradient-to-r from-blue-600 via-green-400 to-blue-500 text-white">
-    <h2 class="text-5xl font-bold mb-6 fade-in">Build Smarter with AI</h2>
-    <p class="text-lg max-w-2xl mx-auto mb-8 fade-in">Harness AI-generated insights and automation to take your venture to the next level.</p>
-    <img src="images/ai-hero.png" alt="AI Illustration" class="mx-auto mb-6 w-80 h-60 object-cover fade-in">
-    <a href="#contact" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow hover:bg-gray-100 fade-in">Get Started</a>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="py-32 max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 fade-in">Features</h3>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="p-6 bg-white rounded-2xl shadow hover:scale-105 transform transition fade-in">
-        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-        <h4 class="font-semibold text-xl mb-2 text-blue-600">AI-Generated Content</h4>
-        <p>Create high-quality content instantly with AI-powered tools.</p>
-      </div>
-      <div class="p-6 bg-white rounded-2xl shadow hover:scale-105 transform transition fade-in">
-        <svg class="w-12 h-12 text-green-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-        <h4 class="font-semibold text-xl mb-2 text-green-600">Automation</h4>
-        <p>Automate repetitive tasks and workflows to save time.</p>
-      </div>
-      <div class="p-6 bg-white rounded-2xl shadow hover:scale-105 transform transition fade-in">
-        <svg class="w-12 h-12 text-blue-600 mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6m2 0H7"/></svg>
-        <h4 class="font-semibold text-xl mb-2 text-blue-600">Insights</h4>
-        <p>Get actionable insights using AI-driven analytics for better decisions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 bg-gray-100 text-center">
-    <h3 class="text-3xl font-bold mb-6 fade-in">About Venture</h3>
-    <p class="max-w-2xl mx-auto mb-6 fade-in">Venture helps startups and individuals leverage AI to optimize workflow, create smarter solutions, and gain actionable insights efficiently.</p>
-  </section>
-
-  <!-- Shop Section -->
-  <section id="shop" class="py-32 max-w-6xl mx-auto px-6 bg-gray-50 text-center">
-    <h3 class="text-3xl font-bold mb-12 fade-in">Our Products</h3>
-    <div class="grid md:grid-cols-2 gap-10">
-
-      <!-- Instagram Product -->
-      <div class="p-6 bg-white rounded-2xl shadow fade-in">
-        <blockquote class="instagram-media" data-instgrm-captioned 
-          data-instgrm-permalink="https://www.instagram.com/reel/DM8OhrronQj/?utm_source=ig_embed&utm_campaign=loading" 
-          data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; margin: 1px; max-width:100%; min-width:326px; padding:0; width:100%;">
-        </blockquote>
-        <a href="https://www.instagram.com/abeeraamir00/" target="_blank" 
-          class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-green-600">
-          Order via Instagram
-        </a>
-      </div>
-
-      <!-- Facebook Product -->
-      <div class="p-6 bg-white rounded-2xl shadow fade-in">
-        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1660065114825622%2F&show_text=true&width=267&t=0" 
-          width="100%" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
-          allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
-        <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" 
-          class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-green-600">
-          Order via Facebook
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact Section with Subscription Form -->
-  <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-12 fade-in">Stay in Touch</h3>
-    <p class="text-center mb-6 fade-in">Subscribe for updates and promotions.</p>
-
-    <!-- Embedded Google Form for Email & Name -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
-            width="100%" height="1049" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
+  <!-- Main content -->
+  <main>
+    <h1>Welcome to Venture</h1>
+    <p>Your journey to innovation starts here. We provide top-notch services to help your ideas take flight. Explore our site to learn more!</p>
+    <p>Click the navigation links above to discover our offerings.</p>
+  </main>
 
   <!-- Footer -->
-  <footer class="py-8 text-center text-gray-600">
-    <div class="mb-4">
-      <a href="https://www.instagram.com/abeeraamir00/" target="_blank" class="mx-2 hover:text-pink-600">Instagram</a> |
-      <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="mx-2 hover:text-blue-600">Facebook</a>
-    </div>
-    © 2025 Venture. All rights reserved.
+  <footer>
+    &copy; 2025 Venture. All rights reserved.
   </footer>
-
-  <!-- JavaScript for Animations -->
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
-  </script>
-
-  <!-- Instagram Embed Script -->
-  <script async src="//www.instagram.com/embed.js"></script>
 
 </body>
 </html>
+
