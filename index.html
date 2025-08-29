@@ -3,43 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abeer’s Store</title>
+
+  <!-- Title & Meta -->
+  <title>Abeer’s Store | Handmade Products & Online Orders</title>
+  <meta name="description" content="Shop handmade, unique, and affordable products at Abeer’s Store. Place your orders directly through Instagram or Facebook." />
+  <meta name="keywords" content="Abeer’s Store, handmade products, online shopping, Instagram shop, Facebook shop, buy online Pakistan, fashion, lifestyle" />
+  <meta name="author" content="Abeer Aamir" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abeer’s Store | Handmade Products & Online Orders" />
+  <meta property="og:description" content="Explore handmade collections at Abeer’s Store. Order via Instagram or Facebook easily." />
+  <meta property="og:image" content="https://abeeraamir98.github.io/My-website/images/product1.jpg" />
+  <meta property="og:url" content="https://abeeraamir98.github.io/My-website/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abeer’s Store | Handmade Products & Online Orders" />
+  <meta name="twitter:description" content="Handmade & unique products available now at Abeer’s Store. Order through Instagram or Facebook." />
+  <meta name="twitter:image" content="https://abeeraamir98.github.io/My-website/images/product1.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans text-gray-800">
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="h-screen bg-pink-100 flex flex-col items-center justify-center text-center px-6">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in">Welcome to Abeer’s Store</h1>
-    <p class="text-lg md:text-xl mb-8 max-w-2xl fade-in">Explore our newest collections and place your order directly on Instagram or Facebook.</p>
-    <a href="#shop" class="px-6 py-3 bg-pink-600 text-white text-lg rounded-xl shadow-lg hover:bg-pink-700 transition fade-in">Shop Now</a>
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Welcome to Abeer’s Store</h1>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl">Explore our newest collections and place your order directly on Instagram or Facebook.</p>
+    <a href="#shop" class="px-6 py-3 bg-pink-600 text-white text-lg rounded-xl shadow-lg hover:bg-pink-700 transition">Shop Now</a>
 
-    <!-- Social Links -->
-    <div class="mt-6 flex gap-6 justify-center fade-in">
+    <div class="mt-6 flex gap-6 justify-center">
       <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank" class="text-pink-700 font-semibold hover:underline">Instagram</a>
       <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="text-blue-700 font-semibold hover:underline">Facebook</a>
     </div>
   </section>
 
-  <!-- Shop Section -->
+  <!-- Shop -->
   <section id="shop" class="py-32 bg-white max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 fade-in">Our Products</h2>
+    <h2 class="text-4xl font-bold text-center mb-12">Our Products</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition fade-in">
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
         <img src="images/product1.jpg" alt="Product 1" class="w-full h-60 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">Product 1</h3>
           <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank" class="px-4 py-2 bg-pink-600 text-white rounded-xl hover:bg-pink-700">Order on Instagram</a>
         </div>
       </div>
-      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition fade-in">
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
         <img src="images/product2.jpg" alt="Product 2" class="w-full h-60 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">Product 2</h3>
           <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="px-4 py-2 bg-blue-700 text-white rounded-xl hover:bg-blue-800">Order on Facebook</a>
         </div>
       </div>
-      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition fade-in">
+      <div class="bg-pink-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
         <img src="images/product3.jpg" alt="Product 3" class="w-full h-60 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-bold mb-2">Product 3</h3>
@@ -49,8 +71,8 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6 text-center fade-in">
+  <!-- Contact -->
+  <section id="contact" class="py-32 bg-white max-w-4xl mx-auto px-6 text-center">
     <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
     <p class="mb-6">
       Reach us on  
@@ -58,24 +80,18 @@
       or  
       <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="text-blue-700 font-semibold hover:underline">Facebook</a>.
     </p>
-    <!-- Embedded Google Form -->
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
-            width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
+            width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-pink-600 text-white py-6 text-center fade-in">
+  <footer class="bg-pink-600 text-white py-6 text-center">
     <p class="mb-2">© 2025 Abeer’s Store. All rights reserved.</p>
     <p>Follow us:
       <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" target="_blank" class="underline">Instagram</a> |
       <a href="https://www.facebook.com/share/1BMDWSw1pu/" target="_blank" class="underline">Facebook</a>
     </p>
-    <p class="mt-4 text-sm">
-      Payments: Easypaisa, JazzCash, Payoneer, Raast IBAN available on request
-    </p>
+    <p class="mt-4 text-sm">Payments: Easypaisa, JazzCash, Payoneer, Raast IBAN available on request</p>
   </footer>
-
 </body>
 </html>
