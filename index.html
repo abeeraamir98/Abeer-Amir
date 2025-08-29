@@ -6,89 +6,130 @@
   <title>Abeer Aamir - Venture</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background: #f9f9f9;
+      background: #f4f7fa;
       color: #333;
       scroll-behavior: smooth;
     }
     header {
-      background: #222;
+      background: linear-gradient(90deg, #111, #333);
       color: #fff;
-      padding: 15px;
+      padding: 15px 25px;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
     }
     header img {
-      height: 50px;
-      margin-right: 10px;
+      height: 55px;
+      margin-right: 12px;
+    }
+    header span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
     nav {
-      background: #444;
+      background: #222;
       display: flex;
       justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     nav a {
       color: #fff;
-      padding: 15px 20px;
+      padding: 15px 25px;
       text-decoration: none;
-      display: block;
+      transition: background 0.3s, color 0.3s;
+      font-weight: 500;
     }
     nav a:hover {
-      background: #666;
+      background: #444;
+      color: #ffd700;
     }
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background: url('hero-image.jpg') no-repeat center center/cover;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #3b5998, #E1306C);
       color: #fff;
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     .content {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 50px 20px;
+      max-width: 1000px;
       margin: auto;
+    }
+    .content h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      color: #222;
+      position: relative;
+    }
+    .content h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #E1306C;
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 20px;
     }
     .gallery img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .gallery img:hover {
       transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     .social-buttons {
       text-align: center;
-      margin: 20px 0;
+      margin: 30px 0;
     }
     .social-buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
-      border-radius: 5px;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
       color: #fff;
       text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .social-buttons .instagram { background: #E1306C; }
     .social-buttons .facebook { background: #3b5998; }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+    .social-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+    footer {
+      background: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0; }
     /* Floating buttons */
     .floating-buttons {
       position: fixed;
@@ -96,21 +137,25 @@
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      z-index: 1000;
     }
     .floating-buttons a {
       background: #444;
       color: #fff;
-      padding: 10px 15px;
+      padding: 12px 18px;
       border-radius: 30px;
       text-decoration: none;
       font-size: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
     }
-    .floating-buttons a:hover { background: #666; }
+    .floating-buttons a:hover { 
+      transform: translateY(-2px); 
+    }
     .floating-instagram { background: #E1306C; }
     .floating-facebook { background: #3b5998; }
     .floating-email { background: #0072C6; }
@@ -144,11 +189,15 @@
 
   <section class="content" id="contact">
     <h2>Contact & Place Order</h2>
-    <p>Send me your order or questions via Google Form, or contact directly via Instagram, Facebook, or Email:</p>
+    <p style="text-align:center; max-width:750px; margin:auto;">
+      Send me your order or questions via Google Form, or contact directly via Instagram, Facebook, or Email:
+    </p>
 
     <!-- Embedded Google Form -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" 
-            width="640" height="1049" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div style="margin-top:25px; text-align:center;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" 
+              width="640" height="1049" frameborder="0" marginheight="0" marginwidth="0" style="max-width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">Loading…</iframe>
+    </div>
 
     <div class="social-buttons">
       <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" class="instagram" target="_blank">Order via Instagram</a>
