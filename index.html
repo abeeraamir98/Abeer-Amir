@@ -3,200 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abeer Aamir - Venture</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Abeer Aamir - Venture | Graphic Design, Video Editing & Creative Portfolio</title>
+  <meta name="description" content="Explore Abeer Aamir’s professional portfolio showcasing trendy shirts, hoodies, and sportswear collections. Innovative, stylish, and high-quality.">
+  <meta name="keywords" content="Abeer Aamir, Venture, trendy shirts, hoodies, sportswear, graphic design, video editing, creative projects, digital portfolio">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Abeer Aamir - Venture">
+  <meta property="og:description" content="Discover Abeer Aamir’s stylish collections and creative work. Trendy shirts, hoodies, and sportswear for everyone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abeeraamir98.github.io/venture/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abeer Aamir - Venture">
+  <meta name="twitter:description" content="Trendy shirts, hoodies, and sportswear collections by Abeer Aamir. Explore the portfolio today.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png" type="image/png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W6ZWQKFQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3W6ZWQKFQV');
+  </script>
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f7fa;
-      color: #333;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(90deg, #111, #333);
-      color: #fff;
-      padding: 15px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header img {
-      height: 55px;
-      margin-right: 12px;
-    }
-    header span {
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    nav {
-      background: #222;
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      position: sticky;
-      top: 70px;
-      z-index: 999;
-    }
-    nav a {
-      color: #fff;
-      padding: 15px 25px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-      font-weight: 500;
-    }
-    nav a:hover {
-      background: #444;
-      color: #ffd700;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, rgba(59,89,152,0.9), rgba(225,48,108,0.9)),
-                  url('https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png') center/contain no-repeat;
-      background-attachment: fixed;
-      color: #fff;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      animation: fadeIn 1.5s ease;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      animation: slideUp 1.5s ease;
-    }
-    .content {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .content h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 2rem;
-      color: #222;
-      position: relative;
-    }
-    .content h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #E1306C;
-      margin: 10px auto 0;
-      border-radius: 2px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    .gallery img.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease-out;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-    .social-buttons {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .social-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 24px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height:1.6; background:#f4f7fa; color:#333; scroll-behavior:smooth; overflow-x:hidden;}
+    header {background: linear-gradient(90deg, #111, #333); color:#fff; padding:15px 25px; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 6px rgba(0,0,0,0.3); position:sticky; top:0; z-index:1000;}
+    header img {height:55px; margin-right:12px;}
+    header span {font-size:1.4rem; font-weight:bold; letter-spacing:1px;}
+    nav {background:#222; display:flex; justify-content:center; box-shadow:0 2px 5px rgba(0,0,0,0.2); position:sticky; top:70px; z-index:999;}
+    nav a {color:#fff; padding:15px 25px; text-decoration:none; transition: background 0.3s, color 0.3s; font-weight:500;}
+    nav a:hover {background:#444; color:#ffd700;}
+    .hero {text-align:center; padding:100px 20px; background: linear-gradient(135deg, rgba(59,89,152,0.9), rgba(225,48,108,0.9)), url('https://raw.githubusercontent.com/abeeraamir98/venture/main/venturelogo.png') center/contain no-repeat; background-attachment:fixed; color:#fff;}
+    .hero h1 {font-size:2.8rem; margin-bottom:15px; animation:fadeIn 1.5s ease;}
+    .hero p {font-size:1.2rem; opacity:0.9; animation:slideUp 1.5s ease;}
+    .content {padding:50px 20px; max-width:1000px; margin:auto;}
+    .content h2 {text-align:center; margin-bottom:25px; font-size:2rem; color:#222; position:relative;}
+    .content h2::after {content:""; display:block; width:80px; height:3px; background:#E1306C; margin:10px auto 0; border-radius:2px;}
+    .gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
+    .gallery img {width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s, box-shadow 0.3s; opacity:0; transform:translateY(30px);}
+    .gallery img.visible {opacity:1; transform:translateY(0); transition:all 0.6s ease-out;}
+    .gallery img:hover {transform:scale(1.05); box-shadow:0 8px 16px rgba(0,0,0,0.2);}
+    .social-buttons {text-align:center; margin:30px 0;}
+    .social-buttons a {display:inline-block; margin:10px; padding:14px 24px; border-radius:30px; font-size:1rem; font-weight:bold; color:#fff; text-decoration:none; transition:transform 0.3s, box-shadow 0.3s;}
     .social-buttons .instagram { background: #E1306C; }
     .social-buttons .facebook { background: #3b5998; }
-    .social-buttons a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    footer {
-      background: #111;
-      color: #bbb;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      font-size: 0.9rem;
-    }
-    footer p { margin: 0; }
-    /* Floating buttons */
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1000;
-    }
-    .floating-buttons a {
-      background: #444;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s, transform 0.3s;
-    }
-    .floating-buttons a:hover { 
-      transform: translateY(-2px); 
-    }
+    .social-buttons a:hover {transform:translateY(-3px); box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    footer {background:#111; color:#bbb; text-align:center; padding:20px; margin-top:50px; font-size:0.9rem;}
+    footer p { margin:0; }
+    .floating-buttons {position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:12px; z-index:1000;}
+    .floating-buttons a {background:#444; color:#fff; padding:12px 18px; border-radius:30px; text-decoration:none; font-size:14px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.2); transition:background 0.3s, transform 0.3s;}
+    .floating-buttons a:hover {transform:translateY(-2px);}
     .floating-instagram { background: #E1306C; }
     .floating-facebook { background: #3b5998; }
     .floating-email { background: #0072C6; }
-    /* Back to top */
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #E1306C;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 50%;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      display: none;
-      transition: transform 0.3s;
-    }
-    #backToTop:hover { transform: translateY(-3px); }
-    /* Animations */
-    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-    @keyframes slideUp { from {transform:translateY(40px); opacity:0;} to {transform:translateY(0); opacity:1;} }
+    #backToTop {position:fixed; bottom:20px; left:20px; background:#E1306C; color:#fff; padding:12px 18px; border-radius:50%; font-size:18px; border:none; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); display:none; transition:transform 0.3s;}
+    #backToTop:hover {transform:translateY(-3px);}
+    @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+    @keyframes slideUp {from{transform:translateY(40px); opacity:0;} to{transform:translateY(0); opacity:1;}}
   </style>
 </head>
 <body>
@@ -231,7 +103,6 @@
       Send me your order or questions via Google Form, or contact directly via Instagram, Facebook, or Email:
     </p>
 
-    <!-- Embedded Google Form -->
     <div style="margin-top:25px; text-align:center;">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" 
               width="640" height="1049" frameborder="0" marginheight="0" marginwidth="0" style="max-width:100%; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">Loading…</iframe>
@@ -247,25 +118,20 @@
     <p>&copy; 2025 Abeer Aamir. All rights reserved.</p>
   </footer>
 
-  <!-- Floating Buttons -->
   <div class="floating-buttons">
     <a href="https://www.instagram.com/abeeraamir00/?__pwa=1#" class="floating-instagram" target="_blank">Instagram 📸</a>
     <a href="https://www.facebook.com/share/1BMDWSw1pu/" class="floating-facebook" target="_blank">Facebook 📘</a>
     <a href="mailto:aatiraamir56@gmail.com" class="floating-email">Email ✉️</a>
   </div>
 
-  <!-- Back to Top Button -->
   <button id="backToTop">↑</button>
 
   <script>
     // Back to top
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
+      if (window.scrollY > 400) backToTop.style.display = "block";
+      else backToTop.style.display = "none";
     });
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -275,9 +141,7 @@
     const galleryImages = document.querySelectorAll(".gallery img");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     }, { threshold: 0.2 });
     galleryImages.forEach(img => observer.observe(img));
