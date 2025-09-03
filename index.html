@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Venture | Trendy Apparel</title>
 
+  <!-- SEO -->
+  <meta name="description" content="Venture - Trendy shirts, hoodies, and sportswear curated for style and comfort." />
+  <meta name="keywords" content="Venture, apparel, hoodies, shirts, sportswear, fashion" />
+  <meta name="author" content="Abeer Aamir" />
+
+  <!-- OpenGraph for social sharing -->
+  <meta property="og:title" content="Venture | Trendy Apparel" />
+  <meta property="og:description" content="Shop trendy shirts, hoodies and sportswear — curated for comfort and style." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abeeraamir98.github.io/venture/" />
+  <meta property="og:image" content="images/hoodieset.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/hoodie.jpg" type="image/jpg" />
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Google Analytics 4 -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W6ZWQKFQV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,11 +37,9 @@
       --gold: #d4af37;
       --black: #000;
       --white: #fff;
-      --gray: #666;
+      --muted: #555;
       --radius: 12px;
-      --maxw: 1200px;
     }
-
     body {
       margin: 0;
       font-family: "Montserrat", sans-serif;
@@ -34,16 +47,8 @@
       color: var(--black);
       scroll-behavior: smooth;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; border-radius: 8px; }
 
     /* Header */
     header {
@@ -57,224 +62,97 @@
       top: 0;
       z-index: 1000;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-    nav a {
-      margin-left: 20px;
-      font-weight: 600;
-      color: var(--white);
-    }
-    nav a:hover {
-      color: var(--gold);
-    }
+    .logo { font-weight: 700; color: var(--gold); font-size: 1.2rem; }
+    nav a { margin-left: 20px; color: #fff; font-weight: 600; }
+    nav a:hover { color: var(--gold); }
 
     /* Hero */
     .hero {
-      height: 60vh;
-      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/hoodieset.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('images/hoodieset.jpg') center/cover no-repeat fixed;
+      min-height: 60vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      color: #fff;
       text-align: center;
-      color: var(--white);
-      padding: 0 20px;
     }
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-    .hero .cta {
+    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.1rem; margin-bottom: 20px; }
+    .cta {
       background: var(--gold);
-      color: var(--black);
-      padding: 14px 28px;
+      padding: 12px 24px;
       border-radius: 999px;
       font-weight: 700;
-    }
-    .hero .cta:hover {
-      background: var(--white);
       color: var(--black);
+      transition: 0.3s;
     }
+    .cta:hover { background: #b8961e; }
 
-    /* Section base */
-    .section {
-      padding: 70px 20px;
-    }
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
+    /* Sections */
+    .section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 25px; }
 
     /* Products */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
     .card {
-      border: 1px solid #ddd;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.25s;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-    }
-    .card .image {
-      height: 240px;
-      overflow: hidden;
-    }
-    .card .image img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    .card .meta {
-      padding: 16px;
-    }
-    .card h3 {
-      margin: 6px 0 10px;
-    }
-    .card p {
-      margin-bottom: 12px;
-      color: var(--gray);
-    }
-    .btn-order {
-      display: inline-block;
-      background: var(--black);
-      color: var(--gold);
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-    .btn-order:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    /* About */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      align-items: center;
-    }
-    .about .about-image {
-      flex: 1;
-      min-width: 250px;
-      max-width: 420px;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .about .about-text {
-      flex: 2;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .gallery .gal-item {
-      border-radius: var(--radius);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .gallery .gal-item:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Contact */
-    .form-panel {
       background: #fff;
       border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform .3s;
     }
-    .panel-title {
-      padding: 14px 18px;
-      background: #f9f9f9;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-    .panel-body {
-      display: none;
-      padding: 0 18px 18px;
-    }
-    .panel-body iframe {
-      width: 100%;
-      border: none;
-      height: 800px;
-      border-radius: 8px;
-    }
-    .chev {
-      transition: transform 0.3s;
-    }
-
-    /* Floating buttons */
-    .float-contact {
-      position: fixed;
-      right: 18px;
-      bottom: 100px;
-      background: var(--gold);
-      color: var(--black);
-      padding: 12px 14px;
+    .card:hover { transform: translateY(-5px); }
+    .card img { height: 220px; object-fit: cover; }
+    .card .meta { padding: 15px; }
+    .card h3 { margin: 0 0 10px; }
+    .btn-order {
+      display: inline-block;
+      padding: 10px 18px;
       border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      cursor: pointer;
-    }
-    .to-top {
-      position: fixed;
-      left: 18px;
-      bottom: 22px;
       background: var(--black);
       color: var(--gold);
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
     }
+    .btn-order:hover { background: var(--gold); color: var(--black); }
+
+    /* About */
+    .about { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+    .about img { flex: 1; max-width: 400px; }
+    .about-text { flex: 2; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 15px; }
+    .gal-item { cursor: pointer; position: relative; }
+    .gal-item img { border-radius: var(--radius); transition: transform .3s; }
+    .gal-item:hover img { transform: scale(1.05); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 2000;
+    }
+    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; }
+    .lightbox.show { visibility: visible; opacity: 1; }
+
+    /* Contact */
+    iframe { width: 100%; border: none; border-radius: 8px; height: 800px; }
 
     /* Footer */
-    footer {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .social {
-      margin-top: 10px;
-    }
-    .social a {
-      color: var(--gold);
-      margin: 0 10px;
-      font-weight: 700;
-    }
-
-    /* Responsive */
-    @media(max-width:768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .about { flex-direction: column; }
-    }
+    footer { background: #000; color: #ddd; text-align: center; padding: 20px; }
+    .social a { margin: 0 10px; color: var(--gold); font-weight: 700; }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
     <div class="logo">Venture</div>
     <nav>
@@ -286,7 +164,7 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <div>
       <h1>Hi, I'm Abeer Aamir!</h1>
@@ -295,90 +173,70 @@
     </div>
   </section>
 
-  <!-- PRODUCTS -->
+  <!-- Products -->
   <section class="section" id="products">
-    <div class="wrap">
-      <h2 style="text-align:center; margin-bottom:28px;">Our Products</h2>
-      <div class="products">
-        <article class="card">
-          <div class="image"><img src="images/hoodieset.jpg" alt="Hoodie Set"></div>
-          <div class="meta">
-            <h3>Hoodie Set</h3>
-            <p>Matching hoodie set — comfortable, durable, modern cut.</p>
-            <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform" target="_blank">Order Now</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="image"><img src="images/hoodie.jpg" alt="Hoodie"></div>
-          <div class="meta">
-            <h3>Hoodie</h3>
-            <p>Classic hoodie with modern fit and reinforced seams.</p>
-            <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="image"><img src="images/shirt1.jpg" alt="Shirt"></div>
-          <div class="meta">
-            <h3>Shirt</h3>
-            <p>Slim-fit t-shirt with premium stitching and soft touch.</p>
-            <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform" target="_blank">Order Now</a>
-          </div>
-        </article>
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="card">
+        <img src="images/hoodieset.jpg" loading="lazy" alt="Hoodie Set">
+        <div class="meta">
+          <h3>Hoodie Set</h3>
+          <p>Matching hoodie set — comfortable and durable.</p>
+          <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform" target="_blank">Order Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/hoodie.jpg" loading="lazy" alt="Hoodie">
+        <div class="meta">
+          <h3>Hoodie</h3>
+          <p>Classic hoodie with modern fit and reinforced seams.</p>
+          <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/shirt1.jpg" loading="lazy" alt="Shirt">
+        <div class="meta">
+          <h3>Shirt</h3>
+          <p>Slim-fit t-shirt with premium stitching.</p>
+          <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform" target="_blank">Order Now</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section class="section" id="about">
-    <div class="wrap about">
-      <div class="about-image"><img src="images/hoodie.jpg" alt="About Venture"></div>
+    <div class="about">
+      <img src="images/hoodie.jpg" loading="lazy" alt="About Venture">
       <div class="about-text">
         <h2>About Venture</h2>
-        <p>Venture is a brand focused on delivering trendy, comfortable, and affordable apparel. We combine contemporary style with quality craftsmanship so every piece feels reliable and looks modern.</p>
+        <p>Venture delivers trendy, comfortable, and affordable apparel. We combine contemporary style with quality craftsmanship so every piece feels reliable and modern.</p>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- Gallery -->
   <section class="section" id="gallery">
-    <div class="wrap">
-      <h2 style="text-align:center;margin-bottom:24px;">Gallery</h2>
-      <div class="gallery">
-        <div class="gal-item"><img src="images/hoodie1.jpg" alt="Gallery image 1"></div>
-        <div class="gal-item"><img src="images/hoodie2.jpg" alt="Gallery image 2"></div>
-        <div class="gal-item"><img src="images/shirt1.jpg" alt="Gallery image 3"></div>
-      </div>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="gal-item"><img src="images/hoodie1.jpg" loading="lazy" alt="Gallery 1"></div>
+      <div class="gal-item"><img src="images/hoodie2.jpg" loading="lazy" alt="Gallery 2"></div>
+      <div class="gal-item"><img src="images/shirt1.jpg" loading="lazy" alt="Gallery 3"></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Expanded view">
+  </div>
+
+  <!-- Contact -->
   <section class="section" id="contact">
-    <div class="wrap">
-      <h2 style="text-align:center;margin-bottom:28px;">Contact Us</h2>
-      <div class="form-panel">
-        <div class="panel-title" onclick="togglePanel(this)">
-          <h4>Order Form 1</h4><span class="chev">&#9656;</span>
-        </div>
-        <div class="panel-body">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"></iframe>
-        </div>
-      </div>
-      <div class="form-panel">
-        <div class="panel-title" onclick="togglePanel(this)">
-          <h4>Order Form 2</h4><span class="chev">&#9656;</span>
-        </div>
-        <div class="panel-body">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform?embedded=true"></iframe>
-        </div>
-      </div>
-    </div>
+    <h2>Contact Us</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_example_form/viewform?embedded=true"></iframe>
   </section>
 
-  <!-- FLOATING BUTTONS -->
-  <div class="float-contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact</div>
-  <div class="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'});">Top</div>
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     &copy; 2025 Venture. All rights reserved.
     <div class="social">
@@ -389,17 +247,16 @@
   </footer>
 
   <script>
-    function togglePanel(el){
-      const body = el.nextElementSibling;
-      const chev = el.querySelector('.chev');
-      if(body.style.display === "block"){
-        body.style.display = "none";
-        chev.style.transform = "rotate(0deg)";
-      } else {
-        body.style.display = "block";
-        chev.style.transform = "rotate(90deg)";
-      }
-    }
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gal-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
   </script>
 </body>
 </html>
