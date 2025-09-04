@@ -30,6 +30,7 @@
       font-family: "Montserrat", sans-serif;
       background: var(--white);
       color: var(--black);
+      scroll-behavior: smooth;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -47,7 +48,7 @@
       top: 0;
       z-index: 1000;
     }
-    nav a { margin-left: 15px; color: var(--white); font-weight: 600; }
+    nav a { margin-left: 15px; color: var(--white); font-weight: 600; transition: color 0.3s; }
     nav a:hover { color: var(--gold); }
 
     /* Sections as pages */
@@ -76,7 +77,9 @@
       border-radius: 999px;
       font-weight: bold;
       display: inline-block;
+      transition: transform 0.2s, background 0.3s;
     }
+    .cta:hover { transform: scale(1.05); background: #c49c32; }
 
     /* Products */
     .products {
@@ -92,9 +95,15 @@
       background: var(--white);
       text-align: center;
       padding-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+    .card img { transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+    .card:hover img { transform: scale(1.05); }
+
     .card h3 { margin: 10px 0 5px; }
     .card p { padding: 0 10px; color: #444; font-size: 0.95rem; }
+
     .btn-order {
       display: inline-block;
       margin-top: 10px;
@@ -103,8 +112,9 @@
       background: var(--black);
       color: var(--gold);
       font-weight: bold;
+      transition: transform 0.2s, background 0.3s, color 0.3s;
     }
-    .btn-order:hover { background: var(--gold); color: var(--black); }
+    .btn-order:hover { background: var(--gold); color: var(--black); transform: scale(1.05); }
 
     /* Forms */
     .forms iframe {
