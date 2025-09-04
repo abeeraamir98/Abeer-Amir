@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Venture | Trendy Apparel</title>
-
-<!-- Meta for SEO -->
 <meta name="description" content="Trendy shirts, hoodies and sportswear curated for style and comfort. Shop now and enjoy premium quality apparel.">
 <meta property="og:title" content="Venture | Trendy Apparel">
 <meta property="og:description" content="Trendy shirts, hoodies and sportswear curated for style and comfort. Shop now and enjoy premium quality apparel.">
 <meta property="og:image" content="images/hoodieset.jpg">
 <meta property="og:url" content="https://yourwebsite.com">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W6ZWQKFQV"></script>
@@ -23,9 +20,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-3W6ZWQKFQV');
 
-// Track Order Now clicks
-function trackOrderClick(productName) {
-  gtag('event', 'order_click', { 'product': productName });
+// Track clicks on all "Order Now" buttons
+function trackOrderClick(product) {
+  gtag('event', 'order_click', { 'product': product });
 }
 </script>
 
@@ -59,6 +56,7 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 nav a { margin-left: 15px; color: var(--white); font-weight: 600; transition: color 0.3s; }
 nav a:hover { color: var(--gold); }
 
@@ -71,8 +69,10 @@ section {
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 section.active { display: block; opacity: 1; transform: translateY(0); }
 
+/* Hero Section */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
               url('images/hoodieset.jpg') center/cover no-repeat;
@@ -93,6 +93,7 @@ section.active { display: block; opacity: 1; transform: translateY(0); }
 }
 .cta:hover { transform: scale(1.05); background: #c49c32; }
 
+/* Products Section */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -127,11 +128,12 @@ section.active { display: block; opacity: 1; transform: translateY(0); }
 }
 .btn-order:hover { background: var(--gold); color: var(--black); transform: scale(1.05); }
 
+/* Forms */
 .forms iframe {
   width: 100%;
-  height: 600px;
   border: none;
   border-radius: var(--radius);
+  display: block;
 }
 
 /* Testimonials */
@@ -139,7 +141,7 @@ section.active { display: block; opacity: 1; transform: translateY(0); }
 .testimonials h2 { margin-bottom:30px; }
 .testimonials .testimonial { margin-bottom:20px; font-style:italic; color:#555; }
 
-/* Gallery carousel */
+/* Gallery */
 .gallery { display:flex; overflow-x:auto; gap:15px; padding-bottom:10px; scroll-behavior: smooth; }
 .gallery img { flex:0 0 auto; width:300px; border-radius: var(--radius); transition: transform 0.3s; cursor:pointer; }
 .gallery img:hover { transform: scale(1.05); }
@@ -156,7 +158,7 @@ section.active { display: block; opacity: 1; transform: translateY(0); }
   font-weight: bold;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   z-index: 999;
-  cursor:pointer;
+  cursor: pointer;
   transition: transform 0.2s, background 0.3s;
 }
 #floatOrder:hover { transform: scale(1.05); background: #c49c32; }
@@ -180,28 +182,9 @@ section.active { display: block; opacity: 1; transform: translateY(0); }
   border-radius:12px;
   box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
-#lightboxClose {
-  position:absolute;
-  top:20px;
-  right:30px;
-  color:#fff;
-  font-size:40px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:color 0.2s;
-}
+#lightboxClose { position:absolute; top:20px; right:30px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer; transition:color .2s; }
 #lightboxClose:hover { color: var(--gold); }
-#lightboxPrev, #lightboxNext {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  color:#fff;
-  font-size:50px;
-  font-weight:bold;
-  padding:10px;
-  cursor:pointer;
-  user-select:none;
-}
+#lightboxPrev, #lightboxNext { position:absolute; top:50%; transform:translateY(-50%); color:#fff; font-size:50px; font-weight:bold; padding:10px; cursor:pointer; user-select:none; }
 #lightboxPrev { left:30px; }
 #lightboxNext { right:30px; }
 #lightboxPrev:hover, #lightboxNext:hover { color: var(--gold); }
@@ -265,16 +248,6 @@ footer {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="active">
-  <div class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">“Absolutely love the hoodie set! Super comfortable and stylish.” – Sarah K.</div>
-    <div class="testimonial">“Shirts fit perfectly and the quality is amazing.” – Ahmed R.</div>
-    <div class="testimonial">“Fast delivery and excellent customer service!” – Fatima L.</div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about">
   <h2 style="text-align:center;">About Venture</h2>
@@ -305,77 +278,57 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <h2 style="text-align:center;">Contact Us</h2>
-  <div class="forms">
-    <iframe src="https://docs.google.com/forms/d/e/YOUR_CONTACT_FORM_ID/viewform?embedded=true" width="640" height="1873" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <div class="forms" style="max-width:700px; margin:auto;">
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" 
+      style="width:100%; height:915px; border:none; border-radius:12px;" 
+      loading="lazy">
+      Loading…
+    </iframe>
   </div>
   <div style="text-align:center; margin-top:20px;">
-    <a class="btn-order" target="_blank" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid%20for%20my%20order.%20Transaction%20ID:%20_____%20Product:%20_____">Send Payment on WhatsApp</a>
+    <a class="btn-order" target="_blank" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid%20for%20my%20order.%20Transaction%20ID:%20_____%20Product:%20_____">
+      Send Payment on WhatsApp
+    </a>
   </div>
 </section>
 
-<!-- FLOATING ORDER BUTTON -->
+<!-- Floating Order Button -->
 <div id="floatOrder" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform','_blank'); trackOrderClick('Floating CTA')">Order Now</div>
 
-<footer>
-  &copy; 2025 Venture. All rights reserved.
-</footer>
+<footer>&copy; 2025 Venture. All rights reserved.</footer>
 
 <script>
-// Page switching
-function showPage(id) {
-  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+// Page navigation
+function showPage(id){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
-document.querySelectorAll("nav a, .cta").forEach(link => {
-  link.addEventListener("click", e => {
-    if (link.getAttribute("href").startsWith("#")) {
+document.querySelectorAll("nav a,.cta").forEach(l=>{
+  l.addEventListener("click", e=>{
+    if(l.getAttribute("href").startsWith("#")){
       e.preventDefault();
-      const pageId = link.getAttribute("href").substring(1);
-      showPage(pageId);
-      history.pushState(null, "", "#" + pageId);
+      const id=l.getAttribute("href").substring(1);
+      showPage(id);
+      history.pushState(null,"","#"+id);
     }
   });
 });
-window.addEventListener("load", () => {
-  const hash = window.location.hash.substring(1);
-  if (hash) showPage(hash);
+window.addEventListener("load", ()=>{
+  const h=window.location.hash.substring(1);
+  if(h) showPage(h);
 });
 
 // Lightbox with swipe support
-let galleryImages = document.querySelectorAll('.gallery img');
-let currentIndex = 0;
-let startX = 0;
-
-function openLightbox(img) {
-  currentIndex = Array.from(galleryImages).indexOf(img);
-  document.getElementById('lightboxImage').src = img.src;
-  document.getElementById('lightboxOverlay').style.display = 'flex';
-}
-
-function closeLightbox(e) {
-  if(e) e.stopPropagation();
-  document.getElementById('lightboxOverlay').style.display = 'none';
-}
-
-function prevImage(e) {
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
-}
-function nextImage(e) {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % galleryImages.length;
-  document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
-}
-
-// Swipe
-const lightbox = document.getElementById('lightboxOverlay');
-lightbox.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, false);
-lightbox.addEventListener('touchend', function(e){
-  let endX = e.changedTouches[0].clientX;
-  let diff = endX - startX;
-  if(Math.abs(diff) > 50) diff > 0 ? prevImage(e) : nextImage(e);
-}, false);
+let galleryImages=document.querySelectorAll('.gallery img'), currentIndex=0, startX=0;
+function openLightbox(img){currentIndex=Array.from(galleryImages).indexOf(img);document.getElementById('lightboxImage').src=img.src;document.getElementById('lightboxOverlay').style.display='flex'}
+function closeLightbox(e){if(e)e.stopPropagation();document.getElementById('lightboxOverlay').style.display='none'}
+function prevImage(e){e.stopPropagation();currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;document.getElementById('lightboxImage').src=galleryImages[currentIndex].src}
+function nextImage(e){e.stopPropagation();currentIndex=(currentIndex+1)%galleryImages.length;document.getElementById('lightboxImage').src=galleryImages[currentIndex].src}
+const lightbox=document.getElementById('lightboxOverlay');
+lightbox.addEventListener('touchstart', e=>{startX=e.touches[0].clientX}, false);
+lightbox.addEventListener('touchend', e=>{let endX=e.changedTouches[0].clientX,diff=endX-startX;if(Math.abs(diff)>50) diff>0?prevImage(e):nextImage(e)}, false);
 </script>
+
 </body>
 </html>
