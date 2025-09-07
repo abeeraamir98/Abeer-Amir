@@ -1,604 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Venture | Trendy Apparel</title>
-<meta name="description" content="Trendy shirts, hoodies and sportswear — curated for style, comfort and durability." />
-<meta property="og:title" content="Venture | Trendy Apparel" />
-<meta property="og:description" content="Shop hoodies, shirts and curated sportswear. Order now via simple form." />
-<meta property="og:image" content="images/hoodieset-1200.jpg" />
-<meta property="og:url" content="https://yourwebsite.com" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venture | Trendy Apparel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+    header { background:#222; color:#fff; padding:20px; text-align:center; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; font-weight:bold; }
+    .hero { text-align:center; padding:60px 20px; background:#eee; }
+    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:40px; }
+    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s ease; }
+    .card:hover { transform:translateY(-5px); }
+    .card img { width:100%; border-radius:10px; }
+    .btn { display:inline-block; margin-top:10px; padding:10px 20px; background:#222; color:#fff; border-radius:5px; text-decoration:none; transition:0.3s; }
+    .btn:hover { background:#444; }
+    footer { background:#222; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    .social-links a { color:#fff; margin:0 10px; font-size:22px; transition:0.3s; }
+    .social-links a:hover { transform:scale(1.2); }
+    .social-links a[href*="wa.me"]:hover { color:#25D366; }
+    .social-links a[href*="instagram.com"]:hover { color:#E4405F; }
+    .social-links a[href*="facebook.com"]:hover { color:#1877F2; }
 
-<!-- Structured data (example) -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "name":"Venture | Trendy Apparel"
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W6ZWQKFQV"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-3W6ZWQKFQV');
-
-function trackOrderClick(productName, action='order_click'){
-  try{ gtag('event', action, { 'product': productName }); }catch(e){console.warn('GA error',e)}
-}
-</script>
-
-<style>
-:root{--gold:#d4af37;--black:#0b0b0b;--white:#fff;--muted:#666;--radius:12px;--maxw:1200px}
-*{box-sizing:border-box}
-body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%;height:auto}
-
-/* Header */
-header{position:sticky;top:0;background:var(--black);color:var(--white);z-index:1000;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:700}
-nav{display:flex;gap:14px;align-items:center}
-nav a{color:var(--white);font-weight:600;transition:color .18s}
-nav a:hover{color:var(--gold)}
-.container{max-width:var(--maxw);margin:0 auto;padding:28px 18px}
-
-/* Hero */
-.hero{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('images/hoodieset-1200.jpg') center/cover no-repeat;color:var(--white);text-align:center;padding:96px 18px;border-radius:8px;margin:18px}
-.hero h1{font-size:2.25rem;margin:0 0 8px}
-.hero p{margin:0 0 18px;color:#f0f0f0}
-.cta{background:var(--gold);color:var(--black);padding:12px 20px;border-radius:999px;font-weight:700;display:inline-block;transition:transform .16s}
-.cta:hover{transform:scale(1.04)}
-
-/* Grid / Products */
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:8px}
-.product-card{background:var(--white);border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,12,12,0.06);overflow:hidden;border:1px solid #eee;display:flex;flex-direction:column}
-.product-media{width:100%;height:0;padding-bottom:75%;position:relative;overflow:hidden}
-.product-media picture, .product-media img{position:absolute;top:0;left:0;width:100%;height:100%}
-.product-media img{object-fit:cover;transition:transform .35s}
-.product-card:hover .product-media img{transform:scale(1.04)}
-.product-body{padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
-.product-title{font-weight:700}
-.product-desc{color:var(--muted);font-size:.95rem;margin:0}
-.product-actions{display:flex;gap:8px;align-items:center;justify-content:space-between}
-
-/* Buttons */
-.btn{border-radius:999px;padding:9px 14px;font-weight:700;cursor:pointer;border:0;display:inline-block}
-.btn-primary{background:var(--black);color:var(--gold)}
-.btn-primary:hover{background:var(--gold);color:var(--black)}
-.btn-ghost{background:transparent;border:1px solid #e6e6e6;color:var(--black)}
-
-/* Cart */
-.cart-btn{position:relative}
-#cartCount{position:absolute;top:-8px;right:-10px;background:#ff3b3b;color:#fff;border-radius:999px;padding:4px 7px;font-size:12px;font-weight:700}
-.cart-drawer{position:fixed;right:18px;bottom:18px;width:360px;max-width:92vw;background:#fff;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,0.18);z-index:2000;padding:12px;display:none}
-.cart-drawer.open{display:block}
-.cart-header{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
-.cart-items{max-height:340px;overflow:auto;margin-top:8px}
-.cart-item{display:flex;gap:10px;padding:10px 6px;border-bottom:1px solid #f1f1f1;align-items:center}
-.cart-item img{width:58px;height:58px;object-fit:cover;border-radius:8px}
-.qty-controls{display:flex;gap:6px;align-items:center}
-.small{font-size:.9rem;color:var(--muted)}
-
-/* Testimonials */
-.testimonials{margin:28px 0;padding:20px;border-radius:12px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
-.testimonial{font-style:italic;color:#444;padding:10px 0}
-
-/* Gallery & Lightbox */
-.gallery{display:flex;gap:12px;overflow:auto;padding:12px 0}
-.gallery img{width:260px;border-radius:12px;cursor:pointer;flex:0 0 auto}
-#lightboxOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:3000;align-items:center;justify-content:center}
-#lightboxOverlay.open{display:flex}
-#lightboxImage{max-width:92%;max-height:84%;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-.light-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:44px;cursor:pointer;padding:12px;user-select:none}
-.light-prev{left:18px}.light-next{right:18px}
-.light-close{position:absolute;top:18px;right:22px;color:#fff;font-size:32px;cursor:pointer}
-
-/* Contact iframe wrapper */
-.iframe-wrap{max-width:760px;margin:14px auto;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-.iframe-wrap iframe{width:100%;height:915px;border:0;display:block}
-
-/* Admin UI */
-#adminToggle{position:fixed;left:18px;bottom:18px;z-index:2600;background:#111;color:#fff;padding:10px 12px;border-radius:10px;cursor:pointer}
-#adminPanel{position:fixed;left:18px;bottom:72px;width:360px;max-width:92vw;background:#fff;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,0.18);z-index:2600;padding:12px;display:none}
-#adminPanel.open{display:block}
-.admin-row{display:flex;gap:8px;flex-direction:column}
-.admin-row input, .admin-row textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e6e6}
-
-/* Footer */
-footer{padding:22px 18px;text-align:center;color:#8a8a8a;margin-top:28px;font-size:.95rem}
-
-/* Responsive */
-@media (max-width:900px){ .hero{padding:64px 12px} .hero h1{font-size:1.8rem} .gallery img{width:220px} }
-@media (max-width:640px){ nav{display:none} .product-media{padding-bottom:82%} .cart-drawer{right:10px;left:10px;width:auto} .iframe-wrap iframe{height:760px} }
-</style>
+    /* Floating WhatsApp pulse animation */
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(37, 211, 102, 0.7); }
+      50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(37, 211, 102, 0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(37, 211, 102, 0.7); }
+    }
+    .floating-whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      padding:14px 16px;
+      border-radius:50%;
+      font-size:22px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      z-index:1000;
+      animation: pulse 2s infinite;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Venture</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- HEADER -->
+  <header>
+    <h1>Venture</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <div style="display:flex;gap:10px;align-items:center">
-    <button id="openCart" class="btn btn-primary cart-btn" aria-label="Open cart">
-      Cart <span id="cartCount" style="display:none">0</span>
-    </button>
-    <button id="floatOrderTop" class="btn btn-ghost" onclick="window.open(orderFormUrl,'_blank');trackOrderClick('FloatingTop')">Order Now</button>
-  </div>
-</header>
-
-<main class="container" id="home">
-  <section class="hero" aria-label="hero">
-    <h1>Hi, I'm Abeer Aamir!</h1>
-    <p>Trendy shirts, hoodies and sportswear — curated for style and comfort.</p>
-    <a class="cta" href="#products" id="heroShop">Shop Now</a>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <h2>Hi, I'm Abeer Aamir!</h2>
+    <p>Scroll down to see some of my work</p>
   </section>
 
-  <section id="products">
-    <h2 style="text-align:center;margin-top:6px">Our Products</h2>
-    <div class="products-grid" id="productGrid" aria-live="polite">
-      <!-- injected -->
+  <!-- PRODUCTS -->
+  <section id="products" class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 1">
+      <h3>Product 1</h3>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
     </div>
-  </section>
-
-  <section class="testimonials">
-    <h3 style="text-align:center;margin-top:0">What Our Customers Say</h3>
-    <div class="testimonial">“Absolutely love the hoodie set! Super comfortable and stylish.” – Sarah K.</div>
-    <div class="testimonial">“Shirts fit perfectly and the quality is amazing.” – Ahmed R.</div>
-    <div class="testimonial">“Fast delivery and excellent customer service!” – Fatima L.</div>
-  </section>
-
-  <section id="gallery">
-    <h2 style="text-align:center">Gallery</h2>
-    <div class="gallery" id="galleryRow">
-      <img src="images/gallery1-720.webp" alt="Gallery 1" loading="lazy" data-index="0">
-      <img src="images/gallery2-720.webp" alt="Gallery 2" loading="lazy" data-index="1">
-      <img src="images/gallery3-720.webp" alt="Gallery 3" loading="lazy" data-index="2">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 2">
+      <h3>Product 2</h3>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 3">
+      <h3>Product 3</h3>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 style="text-align:center">Contact Us</h2>
-    <div class="iframe-wrap" role="region" aria-label="contact form">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
-        loading="lazy"
-        title="Contact form - Venture">
-        Loading…
-      </iframe>
-    </div>
-    <div style="text-align:center;margin-top:12px">
-      <a class="btn btn-primary" target="_blank" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid%20for%20my%20order.%20Transaction%20ID:%20_____%20Product:%20_____">Send Payment on WhatsApp</a>
-    </div>
+  <!-- CONTACT -->
+  <section id="contact" style="padding:40px; text-align:center;">
+    <h2>Contact Me</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" 
+            width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </section>
-</main>
 
-<!-- Floating Order CTA -->
-<button id="floatOrder" style="position:fixed;right:18px;bottom:18px;padding:14px 18px;border-radius:50px;background:var(--gold);border:0;font-weight:700;z-index:2500;cursor:pointer" onclick="window.open(orderFormUrl,'_blank');trackOrderClick('FloatingCTA')">Order Now</button>
-
-<!-- Cart Drawer -->
-<div id="cartDrawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-label="Shopping cart">
-  <div class="cart-header">
-    <strong>Your Cart</strong>
-    <div>
-      <button id="closeCart" class="btn btn-ghost" aria-label="Close cart">Close</button>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Venture. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/9230006190087" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
-    <div class="small" id="cartSummary">Items: 0</div>
-    <div style="display:flex;gap:8px">
-      <button id="clearCart" class="btn btn-ghost">Clear</button>
-      <button id="placeOrder" class="btn btn-primary">Place Order</button>
-    </div>
-  </div>
-  <div style="margin-top:10px;font-size:.88rem;color:var(--muted)">
-    Note: This site does not process payments. "Place Order" opens the order form and copies your cart summary to clipboard — paste into the form.
-  </div>
-</div>
+  </footer>
 
-<!-- Lightbox -->
-<div id="lightboxOverlay" role="dialog" aria-modal="true" aria-hidden="true">
-  <span class="light-close" id="lbClose" aria-label="Close">&times;</span>
-  <div class="light-nav light-prev" id="lbPrev">&#10094;</div>
-  <img id="lightboxImage" alt="Enlarged gallery image">
-  <div class="light-nav light-next" id="lbNext">&#10095;</div>
-</div>
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20a%20question." 
+     target="_blank" class="floating-whatsapp">
+     <i class="fab fa-whatsapp"></i>
+  </a>
 
-<!-- Admin toggle / panel -->
-<button id="adminToggle" title="Admin">Admin</button>
-<div id="adminPanel" role="region" aria-label="Admin panel">
-  <h4 style="margin:4px 0 8px">Catalog Admin (client-only)</h4>
-  <div class="admin-row">
-    <input id="admTitle" placeholder="Title (e.g. Hoodie Set)">
-    <textarea id="admDesc" rows="3" placeholder="Short description"></textarea>
-    <input id="admPrice" type="number" placeholder="Price (numeric)">
-    <input id="admImage" placeholder="Image base name or full URL (e.g. hoodieset)">
-    <div style="display:flex;gap:8px">
-      <button id="admAdd" class="btn btn-primary">Add Product</button>
-      <button id="admExport" class="btn btn-ghost">Export JSON</button>
-      <button id="admReset" class="btn btn-ghost">Reset Local</button>
-    </div>
-    <small style="color:var(--muted)">Image base name: use base (e.g. <code>hoodieset</code>). The system will generate responsive sources like <code>hoodieset-360.webp</code>, <code>hoodieset-720.webp</code>, etc. Or paste a full image URL in the field to skip generation.</small>
-  </div>
-</div>
-
-<footer>&copy; 2025 Venture. All rights reserved • Follow us on Instagram / Facebook</footer>
-
-<script>
-/* ============================
-   Configuration
-   ============================ */
-const orderFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform';
-const PRODUCTS_JSON = 'products.json'; // optional external file
-
-/* ============================
-   Default product set (fallback)
-   ============================ */
-const defaultProducts = [
-  { id:'hoodie-set', title:'Hoodie Set', description:'Matching hoodie set — comfortable, durable, modern cut.', price:3200, imageBase:'hoodieset' },
-  { id:'hoodie', title:'Hoodie', description:'Classic hoodie with modern fit and reinforced seams.', price:1800, imageBase:'hoodie' },
-  { id:'shirt', title:'Shirt', description:'Slim-fit t-shirt with premium stitching and soft touch.', price:1100, imageBase:'shirt1' }
-];
-
-/* ============================
-   Storage keys & helpers
-   ============================ */
-const CART_KEY = 'venture_cart_v1';
-const CATALOG_KEY = 'venture_catalog_v1';
-
-function getCart(){ try{ return JSON.parse(localStorage.getItem(CART_KEY)) || {}; }catch(e){return{}} }
-function saveCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); }
-function getLocalCatalog(){ try{ return JSON.parse(localStorage.getItem(CATALOG_KEY)); }catch(e){ return null; } }
-function saveLocalCatalog(data){ localStorage.setItem(CATALOG_KEY, JSON.stringify(data)); }
-
-/* ============================
-   Load products: external JSON -> localStorage fallback -> default
-   ============================ */
-let products = [];
-
-async function loadProducts(){
-  // 1) Prefer localStorage catalog if present
-  const localCatalog = getLocalCatalog();
-  if(localCatalog && Array.isArray(localCatalog) && localCatalog.length){
-    products = localCatalog;
-    renderProducts();
-    return;
-  }
-  // 2) Try fetch external file
-  try{
-    const resp = await fetch(PRODUCTS_JSON, {cache:'no-cache'});
-    if(resp.ok){
-      const data = await resp.json();
-      if(Array.isArray(data) && data.length){
-        products = data;
-        saveLocalCatalog(products);
-        renderProducts();
-        return;
-      }
-    }
-  }catch(err){ /* ignore fetch errors */ }
-  // 3) Fallback default
-  products = defaultProducts;
-  saveLocalCatalog(products);
-  renderProducts();
-}
-
-function generateId(title){ return title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'') + '-' + Math.random().toString(36).slice(2,7); }
-
-/* ============================
-   DOM refs
-   ============================ */
-const productGrid = document.getElementById('productGrid');
-const cartCountEl = document.getElementById('cartCount');
-const openCartBtn = document.getElementById('openCart');
-const cartDrawer = document.getElementById('cartDrawer');
-const cartItemsEl = document.getElementById('cartItems');
-const placeOrderBtn = document.getElementById('placeOrder');
-const clearCartBtn = document.getElementById('clearCart');
-const closeCartBtn = document.getElementById('closeCart');
-const floatOrderBtn = document.getElementById('floatOrder');
-
-/* ============================
-   Utility: build responsive <picture> HTML
-   Accepts either:
-   - imageBase: 'hoodieset' (constructs hoodieset-360/720/1200.webp & .jpg)
-   - or full URL: 'https://...' (single source)
-   ============================ */
-function buildPictureHTML(imageBase, altText='Product image'){
-  // If the input looks like a full URL (starts with http or /), use direct <img>
-  if(/^https?:\/\//i.test(imageBase) || imageBase.startsWith('/')){
-    return `<img src="${imageBase}" alt="${escapeHtml(altText)}" loading="lazy">`;
-  }
-  // Otherwise assume base name and create webp/jpg srcsets
-  const sizes = [
-    {w:360, suffix:'-360'},
-    {w:720, suffix:'-720'},
-    {w:1200, suffix:'-1200'}
-  ];
-  // Build srcset strings
-  const webpSrcset = sizes.map(s => `images/${imageBase}${s.suffix}.webp ${s.w}w`).join(', ');
-  const jpgSrcset = sizes.map(s => `images/${imageBase}${s.suffix}.jpg ${s.w}w`).join(', ');
-  // sizes attr
-  const sizesAttr = '(max-width:600px) 90vw, (max-width:1000px) 45vw, 360px';
-  // Picture markup
-  return `
-    <picture>
-      <source type="image/webp" srcset="${webpSrcset}" sizes="${sizesAttr}">
-      <source type="image/jpeg" srcset="${jpgSrcset}" sizes="${sizesAttr}">
-      <img src="images/${imageBase}-720.jpg" alt="${escapeHtml(altText)}" loading="lazy" decoding="async">
-    </picture>
-  `;
-}
-function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-/* ============================
-   Render products
-   ============================ */
-function renderProducts(){
-  productGrid.innerHTML = '';
-  products.forEach(p => {
-    const title = escapeHtml(p.title || '');
-    const desc = escapeHtml(p.description || '');
-    const price = Number(p.price || 0);
-    const imgBase = p.imageBase || p.image || '';
-    const pic = buildPictureHTML(imgBase, title);
-    const id = p.id || generateId(title);
-    // ensure id persisted in products array
-    p.id = id;
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <div class="product-media">${pic}</div>
-      <div class="product-body">
-        <div>
-          <div class="product-title">${title}</div>
-          <div class="product-desc">${desc}</div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-          <div style="font-weight:700">PKR ${price.toLocaleString()}</div>
-          <div class="product-actions">
-            <button class="btn btn-primary" data-add="${id}">Order Now</button>
-            <button class="btn btn-ghost" data-addcart="${id}">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    `;
-    productGrid.appendChild(card);
-  });
-  // persist any newly generated ids
-  saveLocalCatalog(products);
-}
-
-/* ============================
-   Cart functions (localStorage)
-   ============================ */
-function updateCartUI(){
-  const cart = getCart();
-  const ids = Object.keys(cart);
-  const qty = ids.reduce((s,k) => s + (cart[k].qty || 0), 0);
-  cartCountEl.style.display = qty ? 'inline-block' : 'none';
-  cartCountEl.textContent = qty;
-  document.getElementById('cartSummary').textContent = `Items: ${qty}`;
-  // render items
-  cartItemsEl.innerHTML = '';
-  ids.forEach(id => {
-    const entry = cart[id];
-    const prod = products.find(p => p.id === id);
-    if(!prod) return;
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.innerHTML = `
-      <img src="${(prod.imageBase?('images/'+prod.imageBase+'-360.jpg'): (prod.image||''))}" alt="${escapeHtml(prod.title||'')}">
-      <div style="flex:1">
-        <div style="font-weight:700">${escapeHtml(prod.title)}</div>
-        <div class="small">PKR ${Number(prod.price||0).toLocaleString()}</div>
-        <div style="margin-top:6px;display:flex;align-items:center;gap:8px">
-          <div class="qty-controls">
-            <button class="btn-ghost" data-decrease="${id}">-</button>
-            <span style="padding:6px 8px">${entry.qty}</span>
-            <button class="btn-ghost" data-increase="${id}">+</button>
-          </div>
-          <button class="btn-ghost" data-remove="${id}">Remove</button>
-        </div>
-      </div>
-    `;
-    cartItemsEl.appendChild(div);
-  });
-}
-
-function addToCart(id, qty=1){
-  const cart = getCart();
-  if(!cart[id]) cart[id] = { qty: 0 };
-  cart[id].qty += qty;
-  saveCart(cart);
-  updateCartUI();
-  trackOrderClick(id, 'add_to_cart');
-}
-
-/* Product grid click delegation */
-productGrid.addEventListener('click', (e) => {
-  const addId = e.target.getAttribute('data-add');
-  const addCartId = e.target.getAttribute('data-addcart');
-  if(addId){
-    // open order form and copy product summary to clipboard
-    window.open(orderFormUrl, '_blank');
-    trackOrderClick(addId, 'order_now_click');
-    const prod = products.find(p => p.id === addId);
-    copyTextToClipboard(`${prod.title} — PKR ${Number(prod.price||0).toLocaleString()}`);
-    return;
-  }
-  if(addCartId){
-    addToCart(addCartId, 1);
-    return;
-  }
-});
-
-/* Cart controls */
-openCartBtn.addEventListener('click', ()=>{ cartDrawer.classList.toggle('open'); cartDrawer.setAttribute('aria-hidden', cartDrawer.classList.contains('open') ? 'false' : 'true'); updateCartUI(); });
-closeCartBtn.addEventListener('click', ()=>{ cartDrawer.classList.remove('open'); cartDrawer.setAttribute('aria-hidden','true'); });
-cartItemsEl.addEventListener('click', (e)=>{
-  const idInc = e.target.getAttribute('data-increase');
-  const idDec = e.target.getAttribute('data-decrease');
-  const idRm = e.target.getAttribute('data-remove');
-  const cart = getCart();
-  if(idInc){ cart[idInc].qty += 1; saveCart(cart); updateCartUI(); return; }
-  if(idDec){ cart[idDec].qty = Math.max(1, cart[idDec].qty - 1); saveCart(cart); updateCartUI(); return; }
-  if(idRm){ delete cart[idRm]; saveCart(cart); updateCartUI(); return; }
-});
-clearCartBtn.addEventListener('click', ()=>{ localStorage.removeItem(CART_KEY); updateCartUI(); });
-
-/* Place Order: copy cart summary and open form */
-placeOrderBtn.addEventListener('click', async () => {
-  const cart = getCart();
-  if(Object.keys(cart).length === 0){
-    alert('Cart empty — add items first or use "Order Now" on any product.');
-    return;
-  }
-  let summary = 'Order from Venture:\\n';
-  let total = 0;
-  for(const id of Object.keys(cart)){
-    const prod = products.find(p => p.id === id);
-    const qty = cart[id].qty;
-    total += Number(prod.price||0) * qty;
-    summary += `${prod.title} — Qty: ${qty} — PKR ${Number(prod.price||0).toLocaleString()} each\\n`;
-  }
-  summary += `Total (estimate): PKR ${total.toLocaleString()}\\nName:\\nPhone:\\nAddress:\\nNotes:`;
-  try{
-    await navigator.clipboard.writeText(summary);
-    window.open(orderFormUrl, '_blank');
-    alert('Cart summary copied to clipboard. Paste into the order form to complete your order.');
-    trackOrderClick('Cart_PlaceOrder', 'place_order');
-  }catch(e){
-    window.open(orderFormUrl, '_blank');
-    alert('Could not copy automatically. The order form opened in a new tab. Please copy this summary manually:\\n\\n' + summary);
-  }
-});
-
-/* Initialize cart count */
-(function initCart(){ updateCartUI(); })();
-
-/* ============================
-   Gallery lightbox
-   ============================ */
-const galleryRow = document.getElementById('galleryRow');
-const lbOverlay = document.getElementById('lightboxOverlay');
-const lbImage = document.getElementById('lightboxImage');
-const lbPrev = document.getElementById('lbPrev');
-const lbNext = document.getElementById('lbNext');
-const lbClose = document.getElementById('lbClose');
-let galleryImages = Array.from(galleryRow.querySelectorAll('img'));
-let currentIndex = 0;
-function openLightboxByIndex(idx){ currentIndex = idx; lbImage.src = galleryImages[currentIndex].src; lbOverlay.classList.add('open'); lbOverlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-function closeLightbox(){ lbOverlay.classList.remove('open'); lbOverlay.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-galleryRow.addEventListener('click', (e)=>{ if(e.target.tagName==='IMG'){ const idx = galleryImages.indexOf(e.target); openLightboxByIndex(idx); }});
-lbPrev.addEventListener('click', ()=>{ currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; lbImage.src = galleryImages[currentIndex].src; });
-lbNext.addEventListener('click', ()=>{ currentIndex = (currentIndex + 1) % galleryImages.length; lbImage.src = galleryImages[currentIndex].src; });
-lbClose.addEventListener('click', closeLightbox);
-lbOverlay.addEventListener('click', (e)=>{ if(e.target === lbOverlay) closeLightbox(); });
-document.addEventListener('keydown', (e)=>{ if(!lbOverlay.classList.contains('open')) return; if(e.key==='ArrowLeft') lbPrev.click(); if(e.key==='ArrowRight') lbNext.click(); if(e.key==='Escape') closeLightbox(); });
-let startX = 0;
-lbOverlay.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, false);
-lbOverlay.addEventListener('touchend', (e)=>{ const endX = e.changedTouches[0].clientX; const diff = endX - startX; if(Math.abs(diff) > 50){ if(diff > 0) lbPrev.click(); else lbNext.click(); } }, false);
-
-/* ============================
-   Admin UI (client-side)
-   - toggles panel
-   - add product (saved to localStorage)
-   - export JSON
-   - reset local catalog (restore external/default)
-   ============================ */
-const adminToggle = document.getElementById('adminToggle');
-const adminPanel = document.getElementById('adminPanel');
-const admTitle = document.getElementById('admTitle');
-const admDesc = document.getElementById('admDesc');
-const admPrice = document.getElementById('admPrice');
-const admImage = document.getElementById('admImage');
-const admAdd = document.getElementById('admAdd');
-const admExport = document.getElementById('admExport');
-const admReset = document.getElementById('admReset');
-
-adminToggle.addEventListener('click', ()=>{ adminPanel.classList.toggle('open'); adminPanel.style.display = adminPanel.classList.contains('open') ? 'block' : 'none'; adminToggle.textContent = adminPanel.classList.contains('open') ? 'Close Admin' : 'Admin'; });
-
-admAdd.addEventListener('click', ()=>{
-  const title = admTitle.value.trim();
-  const desc = admDesc.value.trim();
-  const price = Number(admPrice.value) || 0;
-  const imgVal = admImage.value.trim();
-  if(!title){ alert('Title required'); return; }
-  const id = generateId(title);
-  const item = { id, title, description: desc, price, imageBase: imgVal || '' };
-  products.unshift(item); // add to front
-  saveLocalCatalog(products);
-  renderProducts();
-  admTitle.value = ''; admDesc.value=''; admPrice.value=''; admImage.value='';
-});
-
-admExport.addEventListener('click', ()=>{
-  const dataStr = JSON.stringify(products, null, 2);
-  const blob = new Blob([dataStr], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'products-export.json';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-});
-
-admReset.addEventListener('click', async ()=>{
-  if(!confirm('Reset local catalog to external/default? You will lose local edits.')) return;
-  localStorage.removeItem(CATALOG_KEY);
-  await loadProducts();
-  alert('Catalog reset.');
-});
-
-/* ============================
-   Helper: copy text to clipboard
-   ============================ */
-async function copyTextToClipboard(text){
-  try{
-    await navigator.clipboard.writeText(text);
-    // small UX cue on floating button
-    const prev = document.getElementById('floatOrder');
-    if(prev){
-      const old = prev.textContent;
-      prev.textContent = 'Copied';
-      setTimeout(()=>{ prev.textContent = old; }, 1200);
-    }
-  }catch(e){ console.warn('Clipboard copy failed', e); }
-}
-
-/* ============================
-   Small navigation helpers
-   ============================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-  anchor.addEventListener('click', function(e){
-    e.preventDefault();
-    const id = this.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if(el){ el.scrollIntoView({ behavior:'smooth', block:'start' }); }
-  });
-});
-document.getElementById('heroShop').addEventListener('click', ()=>{ trackOrderClick('Hero_Shop_CTA','cta_click'); });
-
-/* ============================
-   Boot: load products and render
-   ============================ */
-loadProducts();
-
-</script>
 </body>
 </html>
