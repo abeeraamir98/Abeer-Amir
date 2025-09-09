@@ -1,289 +1,661 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venture | Trendy Apparel</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Venture | Trendy Apparel</title>
+<meta name="description" content="Venture — trendy shirts, hoodies and sportswear. Order via quick form. Fast delivery, quality materials." />
+<meta property="og:title" content="Venture | Trendy Apparel" />
+<meta property="og:description" content="Shop hoodies, shirts and curated sportswear. Order via a single quick form." />
+<meta property="og:image" content="images/hoodieset-1200.jpg" />
+<meta property="og:url" content="https://yourwebsite.com" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23d4af37'/%3E%3Ctext x='50' y='56' font-size='40' text-anchor='middle' fill='%23000' font-family='Arial' font-weight='700'%3EV%3C/text%3E%3C/svg%3E">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<!-- Fonts & icons -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W6ZWQKFQV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3W6ZWQKFQV');
+  function trackEvent(name, props){ try{ gtag('event', name, props||{}); }catch(e){console.warn(e)} }
+</script>
 
-  <style>
-    :root {
-      --gold: #d4af37;
-      --black: #000;
-      --white: #fff;
-      --radius: 12px;
-    }
+<style>
+:root{
+  --gold:#d4af37; --black:#0b0b0b; --white:#fff; --muted:#666; --radius:12px; --maxw:1200px;
+  --card-shadow: 0 10px 30px rgba(11,11,11,0.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#fafafa;color:var(--black);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
 
-    body {
-      margin: 0;
-      font-family: "Montserrat", sans-serif;
-      background: var(--white);
-      color: var(--black);
-    }
+/* header */
+header{position:sticky;top:0;background:linear-gradient(90deg,#0b0b0b,#111);color:#fff;z-index:1100;padding:10px 18px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.header-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:700;letter-spacing:.6px}
+nav{display:flex;gap:14px;align-items:center}
+nav a{color:#fff;padding:8px 10px;border-radius:8px;font-weight:600;opacity:.95;transition:background .18s,color .18s}
+nav a.active,nav a:hover{background:rgba(255,255,255,0.04);color:var(--gold)}
+.mobile-toggle{display:none}
 
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+/* container */
+.container{max-width:var(--maxw);margin:0 auto;padding:28px 18px}
 
-    /* Header */
-    header {
-      background: var(--black);
-      color: var(--white);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a { margin-left: 15px; color: var(--white); font-weight: 600; }
-    nav a:hover { color: var(--gold); }
+/* hero */
+.hero{display:flex;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.36)),url('images/hoodieset-1200.jpg') center/cover no-repeat;color:#fff;padding:64px;border-radius:12px;margin:18px 0}
+.hero .copy{max-width:680px}
+.hero h1{font-size:2.1rem;margin:.2rem 0}
+.hero p{margin:.5rem 0;color:#f1f1f1}
+.cta{background:var(--gold);color:var(--black);padding:12px 18px;border-radius:999px;font-weight:700;display:inline-block;transition:transform .14s}
+.cta:hover{transform:scale(1.03)}
 
-    /* Sections */
-    section {
-      display: none;
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section.active { display: block; }
+/* controls */
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0}
+.search{flex:1;max-width:520px;display:flex;gap:8px}
+.search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e8e8e8}
+.filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.filter-btn{background:#fff;border:1px solid #eee;padding:8px 12px;border-radius:999px;cursor:pointer}
+.filter-btn.active{background:var(--black);color:var(--gold);border-color:var(--gold)}
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url('images/hoodieset.jpg') center/cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
-    .cta {
-      background: var(--gold);
-      color: var(--black);
-      padding: 12px 25px;
-      border-radius: 999px;
-      font-weight: bold;
-      display: inline-block;
-    }
+/* products */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:6px}
+.product-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #eee;box-shadow:var(--card-shadow);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,opacity .45s;opacity:1}
+.product-card.small-hidden{opacity:0;transform:translateY(18px) scale(.995)}
+.product-media{position:relative;padding-bottom:78%;overflow:hidden}
+.product-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.product-card:hover .product-media img{transform:scale(1.05)}
+.product-body{padding:12px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.product-title{font-weight:700}
+.product-desc{color:var(--muted);font-size:.95rem;margin:0}
+.product-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.price{font-weight:800;color:var(--gold)}
+.actions{display:flex;gap:8px;align-items:center}
 
-    /* Currency selector */
-    .currency-switcher {
-      text-align: right;
-      margin-bottom: 20px;
-    }
-    .currency-switcher select {
-      padding: 6px 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-weight: bold;
-    }
+/* cart drawer */
+.cart-btn{position:relative}
+#cartCount{position:absolute;top:-8px;right:-10px;background:#ff3b3b;color:#fff;padding:4px 7px;border-radius:999px;font-weight:700;display:none}
+.cart-drawer{position:fixed;right:18px;bottom:18px;width:380px;max-width:92vw;background:#fff;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,0.18);z-index:2000;padding:12px;display:none}
+.cart-drawer.open{display:block}
+.cart-items{max-height:340px;overflow:auto;margin-top:8px}
+.cart-item{display:flex;gap:10px;padding:8px 6px;border-bottom:1px solid #f3f3f3;align-items:center}
+.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:8px}
+.qty-controls{display:flex;gap:6px;align-items:center}
+.small{font-size:.9rem;color:var(--muted)}
 
-    /* Products */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      border: 1px solid #eee;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      background: var(--white);
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    .card h3 { margin: 10px 0 5px; }
-    .card p { padding: 0 10px; color: #444; font-size: 0.95rem; }
-    .price {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--gold);
-      margin: 8px 0;
-    }
-    .btn-order {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: var(--black);
-      color: var(--gold);
-      font-weight: bold;
-    }
-    .btn-order:hover { background: var(--gold); color: var(--black); }
+/* testimonials, faq */
+.testimonials,.faq{background:#fff;border-radius:12px;padding:18px;margin-top:18px;box-shadow:0 8px 30px rgba(0,0,0,0.03)}
+.faq-item{margin-bottom:12px}
+.faq-q{font-weight:700}
+.faq-a{color:var(--muted)}
 
-    /* Forms */
-    .forms iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: var(--radius);
-    }
+/* gallery & lightbox */
+.gallery{display:flex;gap:12px;overflow:auto;padding:12px 0}
+.gallery img{width:260px;border-radius:12px;cursor:pointer;flex:0 0 auto}
+#lightboxOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:3000;align-items:center;justify-content:center}
+#lightboxOverlay.open{display:flex}
+#lightboxImage{max-width:92%;max-height:84%;border-radius:10px}
+.light-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:44px;cursor:pointer;padding:12px;user-select:none}
+.light-prev{left:18px}.light-next{right:18px}
+.light-close{position:absolute;top:18px;right:22px;color:#fff;font-size:32px;cursor:pointer}
 
-    /* Footer */
-    footer {
-      background: var(--black);
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+/* contact iframe */
+.iframe-wrap{max-width:760px;margin:14px auto;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+.iframe-wrap iframe{width:100%;height:915px;border:0;display:block}
 
-    .social-links {
-      margin-bottom: 10px;
-    }
-    .social-links a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: var(--gold);
-      transition: transform 0.2s, color 0.2s;
-    }
-    .social-links a:hover {
-      color: var(--white);
-      transform: scale(1.2);
-    }
-  </style>
+/* footer */
+footer{padding:22px 18px;text-align:center;color:#fff;background:#111;margin-top:22px}
+.social-links{margin-top:8px;display:flex;gap:12px;justify-content:center;align-items:center}
+.social-links a{color:#fff;font-size:20px;transition:transform .18s,color .18s}
+.social-links a:hover{transform:scale(1.18)}
+.social-links a[href*="wa.me"]:hover{color:#25D366}
+.social-links a[href*="instagram.com"]:hover{color:#E4405F}
+.social-links a[href*="facebook.com"]:hover{color:#1877F2}
+
+/* floating whatsapp pulse */
+@keyframes pulse{0%{transform:scale(1);box-shadow:0 0 0 rgba(37,211,102,.30)}50%{transform:scale(1.08);box-shadow:0 0 18px rgba(37,211,102,.55)}100%{transform:scale(1);box-shadow:0 0 0 rgba(37,211,102,.30)}}
+.floating-whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px;border-radius:50%;font-size:22px;z-index:2500;box-shadow:0 8px 30px rgba(0,0,0,.2);animation:pulse 2.2s infinite}
+
+/* responsive */
+@media (max-width:900px){ .hero{flex-direction:column;align-items:flex-start;padding:36px} .hero h1{font-size:1.6rem} .gallery img{width:200px} }
+@media (max-width:640px){ nav{display:none} .mobile-toggle{display:block} .product-media{padding-bottom:82%} .iframe-wrap iframe{height:760px} }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
+<header>
+  <div class="header-inner">
     <div class="logo">Venture</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+    <nav id="nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
-  </header>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="openCart" class="btn btn-primary cart-btn" aria-label="Open cart">Cart <span id="cartCount" style="display:none">0</span></button>
+      <button class="btn btn-ghost" id="orderNowTop" onclick="window.open(orderFormUrl,'_blank');trackEvent('order_cta','floating-top');">Order Now</button>
+      <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><i class="fa fa-bars"></i></button>
+    </div>
+  </div>
+</header>
 
-  <!-- HOME -->
-  <section id="home" class="active">
-    <div class="hero">
-      <h1>Hi, I'm Abeer Aamir!</h1>
-      <p>Trendy shirts, hoodies and sportswear — curated for style and comfort.</p>
-      <a class="cta" href="#products">Shop Now</a>
+<main class="container" id="main">
+  <section class="hero" id="home" aria-label="hero">
+    <div class="copy">
+      <h1>Hi, I'm Abeer Aamir — Venture</h1>
+      <p>Trendy shirts, hoodies and sportswear — quality fabrics, modern fit. Browse, add to cart, and place your order via the quick form.</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="cta" href="#products" id="ctaShop">Shop Now</a>
+        <a class="btn btn-ghost" href="https://wa.me/9230006190087" target="_blank">Message Us</a>
+      </div>
+    </div>
+    <div style="min-width:260px;max-width:420px">
+      <picture>
+        <source type="image/webp" srcset="images/hoodieset-720.webp 720w, images/hoodieset-1200.webp 1200w">
+        <img src="images/hoodieset-720.jpg" alt="Hoodie set" style="border-radius:10px;box-shadow:0 20px 60px rgba(11,11,11,.12)">
+      </picture>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section id="products">
-    <h2 style="text-align:center;">Our Products</h2>
-
-    <!-- Currency Selector -->
-    <div class="currency-switcher">
-      <label for="currency">Currency: </label>
-      <select id="currency">
+  <!-- controls -->
+  <div class="controls">
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Search products — e.g. hoodie, shirt" aria-label="Search products">
+      <button id="clearSearch" class="filter-btn">Clear</button>
+    </div>
+    <div class="filters" id="categoryFilters">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="hoodies">Hoodies</button>
+      <button class="filter-btn" data-cat="sets">Sets</button>
+      <button class="filter-btn" data-cat="shirts">Shirts</button>
+    </div>
+    <div style="margin-left:auto;text-align:right;">
+      <label for="currencySelect" style="font-weight:600;margin-right:6px">Currency</label>
+      <select id="currencySelect" aria-label="Currency">
         <option value="PKR">PKR</option>
         <option value="USD">USD</option>
       </select>
     </div>
+  </div>
 
-    <div class="products">
-      <div class="card" data-price="4499">
-        <img src="images/hoodieset.jpg" alt="Hoodie Set">
-        <h3>Hoodie Set</h3>
-        <p>Matching hoodie set — comfortable, durable, modern cut.</p>
-        <p class="price">PKR 4,499</p>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      </div>
-      <div class="card" data-price="2999">
-        <img src="images/hoodie.jpg" alt="Hoodie">
-        <h3>Hoodie</h3>
-        <p>Classic hoodie with modern fit and reinforced seams.</p>
-        <p class="price">PKR 2,999</p>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      </div>
-      <div class="card" data-price="1499">
-        <img src="images/shirt1.jpg" alt="Shirt">
-        <h3>Shirt</h3>
-        <p>Slim-fit t-shirt with premium stitching and soft touch.</p>
-        <p class="price">PKR 1,499</p>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      </div>
+  <!-- products -->
+  <section id="products">
+    <h2 style="text-align:center;margin-top:0">Our Products</h2>
+    <div class="products-grid" id="productGrid" aria-live="polite">
+      <!-- injected by JS -->
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 style="text-align:center;">About Venture</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      Venture is built on passion for modern apparel — blending comfort, durability, and fashion.  
-      Our mission is to bring affordable luxury to everyone with products that are trendy, durable, and stylish.
-    </p>
+  <!-- testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h3 style="margin-top:0;text-align:center">What Our Customers Say</h3>
+    <div class="testimonial">“Absolutely love the hoodie set! Super comfortable and stylish.” – Sarah K.</div>
+    <div class="testimonial">“Shirts fit perfectly and the quality is amazing.” – Ahmed R.</div>
+    <div class="testimonial">“Fast delivery and excellent customer service!” – Fatima L.</div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- gallery -->
   <section id="gallery">
-    <h2 style="text-align:center;">Gallery</h2>
-    <p style="text-align:center;">(Add lifestyle/product images here)</p>
+    <h2 style="text-align:center">Gallery</h2>
+    <div class="gallery" id="galleryRow">
+      <img src="images/gallery1-720.jpg" alt="Gallery 1" loading="lazy" data-index="0">
+      <img src="images/gallery2-720.jpg" alt="Gallery 2" loading="lazy" data-index="1">
+      <img src="images/gallery3-720.jpg" alt="Gallery 3" loading="lazy" data-index="2">
+    </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- faq -->
+  <section id="faq" class="faq">
+    <h3 style="margin-top:0">Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <div class="faq-q">What sizes do you offer?</div>
+      <div class="faq-a">We offer S, M, L, XL. For custom fits, include size notes in the order form.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is your return policy?</div>
+      <div class="faq-a">If a product has a defect, we offer exchange or refund within 7 days of delivery — keep it unworn with tags.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I confirm payment?</div>
+      <div class="faq-a">After payment, use the WhatsApp “Send Payment” button with transaction ID so we can confirm and dispatch your order.</div>
+    </div>
+  </section>
+
+  <!-- contact -->
   <section id="contact">
-    <h2 style="text-align:center;">Contact Us</h2>
-    <div class="forms">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <h2 style="text-align:center">Contact Us</h2>
+    <div class="iframe-wrap" role="region" aria-label="contact form">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" loading="lazy" title="Contact form - Venture"></iframe>
+    </div>
+    <div style="text-align:center;margin-top:12px">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid%20for%20my%20order.%20Transaction%20ID:%20_____%20Product:%20_____">Send Payment on WhatsApp</a>
     </div>
   </section>
+</main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="social-links">
-      <a href="https://wa.me/9230006190087?text=Hello%20Venture!" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank"><i class="fab fa-facebook"></i></a>
+<!-- floating CTA & whatsapp -->
+<button id="floatOrder" style="position:fixed;right:18px;bottom:88px;padding:14px 18px;border-radius:50px;background:var(--gold);border:0;font-weight:700;z-index:2400;cursor:pointer" onclick="window.open(orderFormUrl,'_blank');trackEvent('floating_order')">Order Now</button>
+<a href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20a%20question." target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp" onclick="trackEvent('whatsapp_click')"><i class="fab fa-whatsapp"></i></a>
+
+<!-- cart drawer -->
+<div id="cartDrawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-label="Shopping cart">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <strong>Your Cart</strong>
+    <div><button id="closeCart" class="btn btn-ghost">Close</button></div>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
+    <div class="small" id="cartSummary">Items: 0</div>
+    <div style="display:flex;gap:8px">
+      <button id="clearCart" class="btn btn-ghost">Clear</button>
+      <button id="placeOrder" class="btn btn-primary">Place Order</button>
     </div>
-    <p>&copy; 2025 Venture. All rights reserved.</p>
-  </footer>
+  </div>
+  <div style="margin-top:10px;font-size:.88rem;color:var(--muted)">
+    Note: Payments are handled offline. "Place Order" opens the order form and copies your cart summary to clipboard — paste into the form.
+  </div>
+</div>
 
-  <!-- JS -->
-  <script>
-    // Section switching
-    function showPage(id) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
+<!-- lightbox -->
+<div id="lightboxOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <span class="light-close" id="lbClose" aria-label="Close">&times;</span>
+  <div class="light-nav light-prev" id="lbPrev">&#10094;</div>
+  <img id="lightboxImage" alt="Enlarged gallery image">
+  <div class="light-nav light-next" id="lbNext">&#10095;</div>
+</div>
+
+<!-- footer -->
+<footer>
+  <div style="font-weight:700">Venture</div>
+  <div style="margin-top:8px">Trendy apparel • Quality fabrics • Fast support</div>
+  <div class="social-links" style="margin-top:12px">
+    <a href="https://wa.me/9230006190087" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div style="margin-top:12px;font-size:.9rem;color:#bbb">&copy; 2025 Venture. All rights reserved.</div>
+</footer>
+
+<script>
+/* -------------------------
+  CONFIG
+  ------------------------- */
+const orderFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform';
+const cartKey = 'venture_cart_v3';
+const productsData = [
+  { id:'hoodie-set', title:'Hoodie Set', description:'Matching hoodie set — comfortable, durable, modern cut.', pricePKR:4499, category:'sets', imageBase:'hoodieset' },
+  { id:'hoodie', title:'Hoodie', description:'Classic hoodie with modern fit and reinforced seams.', pricePKR:2999, category:'hoodies', imageBase:'hoodie' },
+  { id:'shirt', title:'Shirt', description:'Slim-fit t-shirt with premium stitching and soft touch.', pricePKR:1499, category:'shirts', imageBase:'shirt1' }
+];
+
+/* -------------------------
+  UTIL: currency & geolocate
+  ------------------------- */
+let visitorCurrency = 'PKR';
+let exchangeRatePKRtoUSD = 300; // fallback
+
+async function fetchExchangeRate(){
+  try{
+    // try a free provider; may be rate-limited - fallback if error
+    const res = await fetch('https://api.exchangerate.host/latest?base=PKR&symbols=USD');
+    if(res.ok){
+      const json = await res.json();
+      if(json && json.rates && json.rates.USD){
+        exchangeRatePKRtoUSD = Number((1 / json.rates.USD).toFixed(4)) || exchangeRatePKRtoUSD;
+      }
     }
-    document.querySelectorAll("nav a, .cta").forEach(link => {
-      link.addEventListener("click", e => {
-        if (link.getAttribute("href").startsWith("#")) {
-          e.preventDefault();
-          const pageId = link.getAttribute("href").substring(1);
-          showPage(pageId);
-          history.pushState(null, "", "#" + pageId);
+  }catch(e){ /* ignore, use fallback */ }
+}
+
+async function detectVisitorCurrency(){
+  try{
+    // lightweight IP geolocation
+    const res = await fetch('https://ipapi.co/json/');
+    if(res.ok){
+      const j = await res.json();
+      if(j && j.country_code === 'PK'){
+        visitorCurrency = 'PKR';
+      } else {
+        visitorCurrency = 'USD';
+      }
+    } else {
+      // fallback: default to USD for non-Pakistan
+      visitorCurrency = 'USD';
+    }
+  }catch(e){
+    visitorCurrency = 'USD';
+  }
+  // Set selector to detected currency (user can override)
+  const sel = document.getElementById('currencySelect');
+  if(sel){
+    sel.value = visitorCurrency;
+  }
+}
+
+/* -------------------------
+  RENDER: products
+  ------------------------- */
+const productGrid = document.getElementById('productGrid');
+function pictureHTML(base, alt){
+  if(!base) return `<img src="images/placeholder-720.jpg" alt="${alt}">`;
+  return `<picture>
+      <source type="image/webp" srcset="images/${base}-360.webp 360w, images/${base}-720.webp 720w, images/${base}-1200.webp 1200w" sizes="(max-width:600px) 90vw, (max-width:1000px) 45vw, 360px">
+      <source type="image/jpeg" srcset="images/${base}-360.jpg 360w, images/${base}-720.jpg 720w, images/${base}-1200.jpg 1200w" sizes="(max-width:600px) 90vw, (max-width:1000px) 45vw, 360px">
+      <img src="images/${base}-720.jpg" alt="${alt}" loading="lazy" decoding="async">
+    </picture>`;
+}
+
+function formatPricePKR(n){ return 'PKR ' + Number(n).toLocaleString(); }
+function formatPriceUSD(n){ return 'USD $' + (n/ exchangeRatePKRtoUSD).toFixed(2); }
+
+function renderProducts(list){
+  const arr = list || productsData;
+  productGrid.innerHTML = '';
+  arr.forEach(p => {
+    const card = document.createElement('article');
+    card.className = 'product-card';
+    card.dataset.id = p.id;
+    card.dataset.price = p.pricePKR;
+    card.dataset.category = p.category;
+    card.innerHTML = `
+      <div class="product-media">${pictureHTML(p.imageBase,p.title)}</div>
+      <div class="product-body">
+        <div>
+          <div class="product-title">${p.title}</div>
+          <div class="product-desc">${p.description}</div>
+        </div>
+        <div class="product-row">
+          <div class="price">${visitorCurrency === 'USD' ? formatPriceUSD(p.pricePKR) : formatPricePKR(p.pricePKR)}</div>
+          <div class="actions">
+            <button class="btn btn-primary" data-order="${p.id}">Order Now</button>
+            <button class="btn btn-ghost" data-add="${p.id}">Add to Cart</button>
+          </div>
+        </div>
+      </div>`;
+    productGrid.appendChild(card);
+  });
+  lazyLoadImages(); revealOnScroll();
+}
+
+/* update visible prices (currency toggle) */
+function updatePrices(currency){
+  document.querySelectorAll('.product-card').forEach(card=>{
+    const pricePKR = Number(card.dataset.price || 0);
+    const el = card.querySelector('.price');
+    if(!el) return;
+    el.textContent = currency === 'USD' ? formatPriceUSD(pricePKR) : formatPricePKR(pricePKR);
+  });
+}
+
+/* -------------------------
+  SEARCH & FILTER
+  ------------------------- */
+const searchInput = document.getElementById('searchInput');
+const categoryFilters = document.getElementById('categoryFilters');
+
+function applyFilters(){
+  const q = (searchInput.value || '').trim().toLowerCase();
+  const activeCat = categoryFilters.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+  const filtered = productsData.filter(p => {
+    const matchCat = activeCat === 'all' || p.category === activeCat;
+    const matchQ = !q || p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+  renderProducts(filtered);
+}
+
+/* event wiring */
+searchInput.addEventListener('input', applyFilters);
+document.getElementById('clearSearch').addEventListener('click', ()=>{ searchInput.value=''; applyFilters(); });
+categoryFilters.addEventListener('click', e=>{
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  categoryFilters.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+});
+
+/* -------------------------
+  LAZY LOAD & REVEAL
+  ------------------------- */
+function lazyLoadImages(){
+  const imgs = document.querySelectorAll('img[loading="lazy"]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          const img = ent.target;
+          if(img.dataset.src){ img.src = img.dataset.src; }
+          obs.unobserve(img);
         }
       });
-    });
-    window.addEventListener("load", () => {
-      const hash = window.location.hash.substring(1);
-      if (hash) showPage(hash);
-    });
+    }, {rootMargin:'200px'});
+    imgs.forEach(i=> io.observe(i));
+  }
+}
 
-    // Currency switcher logic
-    const exchangeRate = 300; // 1 USD = 300 PKR (adjust as needed)
-    const currencySelect = document.getElementById("currency");
-    const cards = document.querySelectorAll(".card");
-
-    currencySelect.addEventListener("change", () => {
-      const currency = currencySelect.value;
-      cards.forEach(card => {
-        const pricePKR = parseInt(card.dataset.price, 10);
-        const priceEl = card.querySelector(".price");
-        if (currency === "USD") {
-          const priceUSD = (pricePKR / exchangeRate).toFixed(2);
-          priceEl.textContent = "USD $" + priceUSD;
-        } else {
-          priceEl.textContent = "PKR " + pricePKR.toLocaleString();
+function revealOnScroll(){
+  const cards = document.querySelectorAll('.product-card');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.remove('small-hidden');
+          obs.unobserve(e.target);
         }
       });
+    }, { threshold: 0.12 });
+    cards.forEach(c=>{
+      c.classList.add('small-hidden');
+      io.observe(c);
     });
-  </script>
+  } else {
+    cards.forEach(c=> c.classList.remove('small-hidden'));
+  }
+}
+
+/* -------------------------
+  CART (localStorage)
+  ------------------------- */
+function getCart(){ try{ return JSON.parse(localStorage.getItem(cartKey)) || {}; }catch(e){ return {}; } }
+function saveCart(cart){ localStorage.setItem(cartKey, JSON.stringify(cart)); }
+
+const cartCountEl = document.getElementById('cartCount');
+const cartDrawer = document.getElementById('cartDrawer');
+const cartItemsEl = document.getElementById('cartItems');
+
+function updateCartUI(){
+  const cart = getCart();
+  const ids = Object.keys(cart);
+  const qty = ids.reduce((s,k)=> s + cart[k].qty, 0);
+  cartCountEl.style.display = qty ? 'inline-block' : 'none';
+  cartCountEl.textContent = qty;
+  document.getElementById('cartSummary').textContent = `Items: ${qty}`;
+  cartItemsEl.innerHTML = '';
+  ids.forEach(id=>{
+    const entry = cart[id];
+    const prod = productsData.find(p=>p.id===id);
+    if(!prod) return;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="images/${prod.imageBase}-360.jpg" alt="${prod.title}">
+      <div style="flex:1">
+        <div style="font-weight:700">${prod.title}</div>
+        <div class="small">${visitorCurrency==='USD'?formatPriceUSD(prod.pricePKR):formatPricePKR(prod.pricePKR)}</div>
+        <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+          <button class="btn-ghost" data-decrease="${id}">-</button>
+          <span>${entry.qty}</span>
+          <button class="btn-ghost" data-increase="${id}">+</button>
+          <button class="btn-ghost" data-remove="${id}">Remove</button>
+        </div>
+      </div>
+    `;
+    cartItemsEl.appendChild(div);
+  });
+}
+
+function addToCart(id, qty=1){
+  const cart = getCart();
+  if(!cart[id]) cart[id] = { qty:0 };
+  cart[id].qty += qty;
+  saveCart(cart);
+  updateCartUI();
+  trackEvent('add_to_cart',{product:id});
+}
+
+document.getElementById('productGrid').addEventListener('click', (e)=>{
+  const orderId = e.target.getAttribute('data-order');
+  const addId = e.target.getAttribute('data-add');
+  if(orderId){
+    const prod = productsData.find(p=>p.id===orderId);
+    if(prod) copyTextToClipboard(`${prod.title} — ${visitorCurrency==='USD'?formatPriceUSD(prod.pricePKR):formatPricePKR(prod.pricePKR)}`);
+    window.open(orderFormUrl,'_blank');
+    trackEvent('order_now_click',{product:orderId});
+  }
+  if(addId){ addToCart(addId,1); }
+});
+
+/* cart drawer open/close */
+document.getElementById('openCart').addEventListener('click', ()=>{
+  cartDrawer.classList.toggle('open');
+  cartDrawer.setAttribute('aria-hidden', cartDrawer.classList.contains('open') ? 'false' : 'true');
+  updateCartUI();
+});
+document.getElementById('closeCart').addEventListener('click', ()=>{ cartDrawer.classList.remove('open'); cartDrawer.setAttribute('aria-hidden','true'); });
+cartItemsEl.addEventListener('click', (e)=>{
+  const inc = e.target.getAttribute('data-increase');
+  const dec = e.target.getAttribute('data-decrease');
+  const rem = e.target.getAttribute('data-remove');
+  const cart = getCart();
+  if(inc){ cart[inc].qty += 1; saveCart(cart); updateCartUI(); return; }
+  if(dec){ cart[dec].qty = Math.max(1, cart[dec].qty - 1); saveCart(cart); updateCartUI(); return; }
+  if(rem){ delete cart[rem]; saveCart(cart); updateCartUI(); return; }
+});
+document.getElementById('clearCart').addEventListener('click', ()=>{ localStorage.removeItem(cartKey); updateCartUI(); });
+
+/* place order: copy summary & open form */
+document.getElementById('placeOrder').addEventListener('click', async ()=>{
+  const cart = getCart();
+  if(Object.keys(cart).length === 0){ alert('Cart empty — add items first or use "Order Now".'); return; }
+  let summary = 'Order from Venture:\\n';
+  let total = 0;
+  for(const id of Object.keys(cart)){
+    const prod = productsData.find(p=>p.id===id);
+    const qty = cart[id].qty;
+    total += prod.pricePKR * qty;
+    summary += `${prod.title} — Qty: ${qty} — ${visitorCurrency==='USD'?formatPriceUSD(prod.pricePKR):formatPricePKR(prod.pricePKR)} each\\n`;
+  }
+  summary += `Total (estimate): ${visitorCurrency==='USD'?formatPriceUSD(total):formatPricePKR(total)}\\nName:\\nPhone:\\nAddress:\\nNotes:`;
+  try{
+    await navigator.clipboard.writeText(summary);
+    window.open(orderFormUrl,'_blank');
+    alert('Cart summary copied to clipboard. Paste into the order form to complete your order.');
+    trackEvent('place_order',{method:'form'});
+  }catch(e){
+    window.open(orderFormUrl,'_blank');
+    alert('Could not copy automatically. The order form opened — please paste this summary manually:\\n\\n'+summary);
+  }
+});
+
+/* helper: copy text to clipboard with small UI cue */
+async function copyTextToClipboard(text){
+  try{
+    await navigator.clipboard.writeText(text);
+    const btn = document.getElementById('floatOrder');
+    if(btn){ const old = btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=old,1200); }
+  }catch(e){ console.warn('copy failed',e); }
+}
+
+/* -------------------------
+  gallery lightbox
+  ------------------------- */
+const galleryRow = document.getElementById('galleryRow');
+const lbOverlay = document.getElementById('lightboxOverlay');
+const lbImage = document.getElementById('lightboxImage');
+const lbPrev = document.getElementById('lbPrev');
+const lbNext = document.getElementById('lbNext');
+const lbClose = document.getElementById('lbClose');
+let galleryImages = Array.from(galleryRow.querySelectorAll('img'));
+let currentIndex = 0;
+function openLightbox(idx){
+  currentIndex = idx;
+  lbImage.src = galleryImages[currentIndex].src;
+  lbOverlay.classList.add('open'); lbOverlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+}
+function closeLightbox(){ lbOverlay.classList.remove('open'); lbOverlay.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+galleryRow.addEventListener('click', (e)=>{ if(e.target.tagName==='IMG'){ const idx = galleryImages.indexOf(e.target); openLightbox(idx); }});
+lbPrev.addEventListener('click', ()=>{ currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length; lbImage.src=galleryImages[currentIndex].src; });
+lbNext.addEventListener('click', ()=>{ currentIndex=(currentIndex+1)%galleryImages.length; lbImage.src=galleryImages[currentIndex].src; });
+lbClose.addEventListener('click', closeLightbox);
+lbOverlay.addEventListener('click', (e)=>{ if(e.target===lbOverlay) closeLightbox(); });
+document.addEventListener('keydown',(e)=>{ if(!lbOverlay.classList.contains('open')) return; if(e.key==='ArrowLeft') lbPrev.click(); if(e.key==='ArrowRight') lbNext.click(); if(e.key==='Escape') closeLightbox(); });
+let startX=0;
+lbOverlay.addEventListener('touchstart', (e)=>{ startX=e.touches[0].clientX; }, false);
+lbOverlay.addEventListener('touchend', (e)=>{ const endX=e.changedTouches[0].clientX; const diff=endX-startX; if(Math.abs(diff)>50){ if(diff>0) lbPrev.click(); else lbNext.click(); } }, false);
+
+/* -------------------------
+  NAV highlight on scroll
+  ------------------------- */
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('main section, main > section');
+if('IntersectionObserver' in window){
+  const navObs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href').slice(1) === entry.target.id));
+      }
+    });
+  },{threshold:0.5});
+  ['products','gallery','testimonials','faq','contact'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) navObs.observe(el);
+  });
+}
+
+/* -------------------------
+  CURRENCY: auto-detect & selector
+  ------------------------- */
+async function initCurrencyFlow(){
+  await fetchExchangeRate(); // attempt to get live rate
+  await detectVisitorCurrency(); // set visitorCurrency and update selector
+  // if visitor currency detection set USD, then apply that
+  const sel = document.getElementById('currencySelect');
+  if(sel){
+    sel.addEventListener('change', ()=>{
+      visitorCurrency = sel.value;
+      updatePrices(visitorCurrency);
+    });
+    // set initial
+    sel.value = visitorCurrency;
+  }
+  updatePrices(visitorCurrency);
+}
+
+/* -------------------------
+  BOOT
+  ------------------------- */
+async function boot(){
+  await initCurrencyFlow();
+  renderProducts();
+  updateCartUI();
+  // re-collect gallery images
+  galleryImages = Array.from(galleryRow.querySelectorAll('img'));
+}
+boot();
+
+/* expose for debugging if needed */
+window.Venture = { productsData, addToCart, getCart: ()=>getCart(), orderFormUrl };
+
+</script>
 </body>
 </html>
