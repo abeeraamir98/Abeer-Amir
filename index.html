@@ -38,6 +38,7 @@
       top: 0;
       z-index: 1000;
     }
+    .logo img { height: 40px; }
     nav a { margin-left: 15px; color: var(--white); font-weight: 600; }
     nav a:hover { color: var(--gold); }
 
@@ -53,7 +54,7 @@
     /* Hero */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url('images/hoodieset.jpg') center/cover no-repeat;
+                  url('hoodieset.jpg') center/cover no-repeat;
       color: var(--white);
       text-align: center;
       padding: 100px 20px;
@@ -86,7 +87,8 @@
     }
     .card h3 { margin: 10px 0 5px; }
     .card p { padding: 0 10px; color: #444; font-size: 0.95rem; }
-    .price { font-size: 1.1rem; font-weight: bold; color: var(--gold); margin: 5px 0; }
+    .price { font-weight: bold; margin: 8px 0; }
+    .note { font-size: 0.8rem; color: #666; margin-top: 5px; }
     .btn-order {
       display: inline-block;
       margin-top: 10px;
@@ -97,7 +99,6 @@
       font-weight: bold;
     }
     .btn-order:hover { background: var(--gold); color: var(--black); }
-    .shipping-note { font-size: 0.8rem; color: #666; margin-top: 5px; }
 
     /* Forms */
     .forms iframe {
@@ -107,6 +108,19 @@
       border-radius: var(--radius);
     }
 
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery-grid img {
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
     footer {
       background: var(--black);
       color: #ccc;
@@ -114,22 +128,23 @@
       padding: 20px;
       margin-top: 40px;
     }
-    .social a { margin: 0 10px; color: var(--gold); font-weight: bold; }
+    footer a { color: var(--gold); margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="logo">Venture</div>
+    <div class="logo"><img src="venturelogo.png" alt="Venture Logo"></div>
     <nav>
       <a href="#home">Home</a>
       <a href="#products">Products</a>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
     </nav>
   </header>
 
@@ -147,31 +162,31 @@
     <h2 style="text-align:center;">Our Products</h2>
     <div class="products">
       <div class="card">
-        <img src="images/hoodieset.jpg" alt="Hoodie Set">
+        <img src="hoodieset.jpg" alt="Hoodie Set">
         <h3>Hoodie Set</h3>
         <p>Matching hoodie set — comfortable, durable, modern cut.</p>
-        <div class="price">$50</div>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-        <div class="shipping-note">📦 Shipping cost will be confirmed after address verification.</div>
-        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid.%20Transaction%20ID:%20_____%20Product:%20Hoodie%20Set" target="_blank">Send Payment on WhatsApp</a>
+        <p class="price">$50</p>
+        <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+        <p class="note">📦 Shipping cost will be confirmed after address verification.</p>
+        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20Order:%20Hoodie%20Set" target="_blank">Send Payment on WhatsApp</a>
       </div>
       <div class="card">
-        <img src="images/hoodie.jpg" alt="Hoodie">
+        <img src="hoodie.jpg" alt="Hoodie">
         <h3>Hoodie</h3>
         <p>Classic hoodie with modern fit and reinforced seams.</p>
-        <div class="price">$25</div>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-        <div class="shipping-note">📦 Shipping cost will be confirmed after address verification.</div>
-        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid.%20Transaction%20ID:%20_____%20Product:%20Hoodie" target="_blank">Send Payment on WhatsApp</a>
+        <p class="price">$25</p>
+        <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+        <p class="note">📦 Shipping cost will be confirmed after address verification.</p>
+        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20Order:%20Hoodie" target="_blank">Send Payment on WhatsApp</a>
       </div>
       <div class="card">
-        <img src="images/shirt1.jpg" alt="Shirt">
+        <img src="shirt1.jpg" alt="Shirt">
         <h3>Shirt</h3>
         <p>Slim-fit t-shirt with premium stitching and soft touch.</p>
-        <div class="price">$12</div>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-        <div class="shipping-note">📦 Shipping cost will be confirmed after address verification.</div>
-        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20I%20have%20paid.%20Transaction%20ID:%20_____%20Product:%20Shirt" target="_blank">Send Payment on WhatsApp</a>
+        <p class="price">$12</p>
+        <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+        <p class="note">📦 Shipping cost will be confirmed after address verification.</p>
+        <a class="btn-order" href="https://wa.me/9230006190087?text=Hello%20Venture!%20Order:%20Shirt" target="_blank">Send Payment on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -188,7 +203,36 @@
   <!-- GALLERY -->
   <section id="gallery">
     <h2 style="text-align:center;">Gallery</h2>
-    <p style="text-align:center;">(Add lifestyle/product images here)</p>
+    <div class="gallery-grid">
+      <img src="hoodie.jpg" alt="Hoodie - Front View">
+      <img src="hoodie2.jpg" alt="Hoodie - Alternate View">
+      <img src="hoodieset.jpg" alt="Full Hoodie Set">
+      <img src="shirt1.jpg" alt="Premium Shirt">
+    </div>
+  </section>
+
+  <!-- PRICING & SHIPPING -->
+  <section id="pricing">
+    <h2 style="text-align:center;">Pricing & Shipping Policy</h2>
+    <ul style="max-width:600px; margin:auto; line-height:1.8;">
+      <li>Hoodie Set: <strong>$50</strong></li>
+      <li>Hoodie: <strong>$25</strong></li>
+      <li>Shirt: <strong>$12</strong></li>
+    </ul>
+    <p style="text-align:center; margin-top:15px;">
+      📦 Shipping charges will be confirmed after address verification.  
+      Delivery times may vary depending on location.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 style="text-align:center;">Frequently Asked Questions</h2>
+    <div style="max-width:700px; margin:auto; line-height:1.8;">
+      <p><strong>Q: How long does delivery take?</strong><br>A: Typically 5–10 business days, depending on location.</p>
+      <p><strong>Q: How do I pay?</strong><br>A: Place your order via the form, then confirm payment through WhatsApp.</p>
+      <p><strong>Q: Can I return or exchange items?</strong><br>A: Yes, see our Returns & Exchanges section for details.</p>
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -198,20 +242,21 @@
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
     <div style="text-align:center; margin-top:20px;">
-      <a class="btn-order" href="https://wa.me/9230006190087" target="_blank">Chat on WhatsApp</a>
+      <a class="btn-order" href="https://wa.me/9230006190087" target="_blank">📲 Chat on WhatsApp</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="social">
-      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank">Instagram</a> |
-      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
+    &copy; 2025 Venture. All rights reserved.  
+    <div>
+      <a href="https://www.instagram.com/abeeraamir00/?__pwa=1" target="_blank">Instagram</a> | 
+      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
+      <a href="https://wa.me/9230006190087" target="_blank">WhatsApp</a>
     </div>
-    <p>&copy; 2025 Venture. All rights reserved.</p>
   </footer>
 
-  <!-- JS to handle page switching + popup -->
+  <!-- JS -->
   <script>
     function showPage(id) {
       document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
@@ -232,16 +277,12 @@
       const hash = window.location.hash.substring(1);
       if (hash) showPage(hash);
     });
-
-    // Popup before redirecting to form
-    document.querySelectorAll(".btn-order").forEach(btn => {
-      if (btn.textContent.includes("Order Now")) {
-        btn.addEventListener("click", e => {
-          alert("Reminder: Shipping charges will be confirmed after you submit your address.");
-        });
-      }
+    // popup reminder on Order Now
+    document.querySelectorAll(".order-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Reminder: Shipping charges will be confirmed after you submit your address.");
+      });
     });
   </script>
 </body>
 </html>
-
