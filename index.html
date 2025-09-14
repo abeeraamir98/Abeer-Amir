@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Venture Clothing</title>
+  <title>Abeer Amir</title>
   <style>
     :root {
       --black: #111;
@@ -20,7 +20,7 @@
     section { padding:60px 20px; }
     h2 { text-align:center; margin-bottom:25px; }
 
-    .products, .gallery-grid, .payments { 
+    .products, .gallery-grid { 
       display:grid; 
       grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
       gap:20px; 
@@ -59,7 +59,10 @@
 
 <!-- HEADER -->
 <header>
-  <div class="logo"><img src="venturelogo.png" alt="Venture Logo"></div>
+  <div class="logo">
+    <img src="logo.png" alt="Abeer Amir Logo"
+         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-size:20px;font-weight:bold;color:white;\'>Abeer Amir</span>');">
+  </div>
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
@@ -75,7 +78,7 @@
 
 <!-- HERO -->
 <section id="home" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hoodieset.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px;">
-  <h1>Welcome to Venture Clothing</h1>
+  <h1>Welcome to Abeer Amir</h1>
   <p>Premium apparel. Modern cuts. Customizable options.</p>
 </section>
 
@@ -221,12 +224,16 @@
 
 <!-- FOOTER -->
 <footer>
-  <div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+    <img src="logo.png" alt="Abeer Amir Logo" style="height:28px;"
+         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-weight:bold;color:#fff;\'>Abeer Amir</span>');">
+    <span>&copy; 2025 Abeer Amir. All rights reserved.</span>
+  </div>
+  <div style="margin-top:10px;">
     <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a> | 
     <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
     <a href="https://wa.me/9230006190087" target="_blank">WhatsApp</a>
   </div>
-  <p>&copy; 2025 Venture. All rights reserved.</p>
 </footer>
 
 <!-- JS -->
@@ -240,4 +247,3 @@
 
 </body>
 </html>
-
