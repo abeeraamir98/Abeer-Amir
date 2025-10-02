@@ -15,35 +15,26 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <!-- Pinterest Base Code -->
+  <!-- Pinterest Tag Base Code -->
   <script>
   !function(e){if(!window.pintrk){window.pintrk = function () {
-  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
-  var n=window.pintrk;n.queue=[],n.version="3.0";
-  var t=document.createElement("script");
-  t.async=!0,t.src=e;
-  var r=document.getElementsByTagName("script")[0];
-  r.parentNode.insertBefore(t,r)}}
-  ("https://s.pinimg.com/ct/core.js");
-
-  pintrk('load','2612894491362'); 
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+    n=window.pintrk;n.queue=[],n.version="3.0";var
+    t=document.createElement("script");t.async=!0;t.src=e;var
+    r=document.getElementsByTagName("script")[0];
+    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2612894491362', {em: 'aatiraamir56@gmail.com'});
   pintrk('page');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none;" alt=""
-    src="https://ct.pinterest.com/v3/?event=init&tid=2612894491362&noscript=1" />
-  </noscript>
-  <!-- End Pinterest Base Code -->
-
-  <!-- Fire PageVisit Event -->
-  <script>
-  pintrk('track', 'pagevisit', {
-    event_id: 'pg_home'
-  });
-  </script>
+  <!-- End Pinterest Tag -->
 
   <style>
-    :root { --black: #111; --white: #fff; --gold: #f4c542; --radius: 12px; }
+    :root {
+      --black: #111;
+      --white: #fff;
+      --gold: #f4c542;
+      --radius: 12px;
+    }
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; }
     header { background:var(--black); color:var(--white); padding:15px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; }
     header img { height:45px; }
@@ -55,7 +46,9 @@
     .card { background:#fff; border-radius:var(--radius); box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; text-align:center; }
     .card img { width:100%; height:280px; object-fit:cover; border-radius:var(--radius); }
     .card h3 { margin:15px 0 5px; }
+    .card p { color:#444; font-size:0.95rem; }
     .price { font-weight:bold; margin:8px 0; color:var(--gold); }
+    .note { font-size:0.8rem; color:#666; margin-top:5px; }
     .btn-order { display:inline-block; margin-top:10px; padding:10px 20px; border-radius:var(--radius); background:var(--black); color:var(--white); font-weight:bold; text-decoration:none; transition:0.3s; }
     .btn-order:hover { background:var(--gold); color:var(--black); }
     .gallery-grid img { border-radius:var(--radius); box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
@@ -67,93 +60,129 @@
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3VGVS6K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3VGVS6K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- HEADER -->
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="Abeer Amir Logo"
-         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-size:20px;font-weight:bold;color:white;\'>Abeer Amir</span>');">
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#customize">Customize</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Abeer Amir Logo"
+           onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-size:20px;font-weight:bold;color:white;\'>Abeer Amir</span>');">
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#customize">Customize</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section id="home" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hoodieset.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px;">
-  <h1>Welcome to Abeer Amir</h1>
-  <p>Premium apparel. Modern cuts. Customizable options.</p>
-</section>
+  <!-- HERO -->
+  <section id="home" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hoodieset.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px;">
+    <h1>Welcome to Abeer Amir</h1>
+    <p>Premium apparel. Modern cuts. Customizable options.</p>
+  </section>
 
-<!-- PRODUCTS -->
-<section id="products">
-  <h2>Our Products</h2>
-  <div class="products">
+  <!-- PRODUCTS -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+      <!-- Repeat each product card here -->
+      <div class="card">
+        <img src="shirt1.jpg" alt="Shirt 1">
+        <h3>Shirt 1</h3>
+        <p>Slim-fit t-shirt with premium stitching.</p>
+        <p class="price">$14.99</p>
+        <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+        <p class="note">📦 Shipping cost will be confirmed after address verification.</p>
+        <a class="btn-order" href="https://wa.me/9230006190087?text=Order:%20Shirt%201" target="_blank">Send Payment on WhatsApp</a>
+      </div>
+      <!-- Add the rest of your products (shirt2, shirt3, hoodie, hoodieset) similarly -->
+    </div>
+  </section>
 
-    <div class="card">
+  <!-- CUSTOMIZE -->
+  <section id="customize">
+    <h2>Customizable Products</h2>
+    <div class="products">
+      <!-- Repeat customization cards -->
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="hoodie.jpg" alt="Hoodie Front">
+      <img src="hoodie2.jpg" alt="Hoodie Alt">
+      <img src="hoodieset.jpg" alt="Hoodie Set">
       <img src="shirt1.jpg" alt="Shirt 1">
-      <h3>Shirt 1</h3>
-      <p>Slim-fit t-shirt with premium stitching.</p>
-      <p class="price">$14.99</p>
-      <a class="btn-order order-btn" 
-         onclick="pintrk('track','addtocart',{event_id:'cart_shirt1',value:14.99,order_quantity:1,currency:'USD'});" 
-         href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" 
-         target="_blank">Order Now</a>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="hoodie.jpg" alt="Hoodie">
-      <h3>Hoodie</h3>
-      <p>Classic hoodie with modern fit.</p>
-      <p class="price">$24.99</p>
-      <a class="btn-order order-btn" 
-         onclick="pintrk('track','addtocart',{event_id:'cart_hoodie',value:24.99,order_quantity:1,currency:'USD'});" 
-         href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" 
-         target="_blank">Order Now</a>
+  <!-- PRICING -->
+  <section id="pricing">
+    <h2>Pricing & Shipping</h2>
+    <ul style="max-width:600px; margin:auto; line-height:1.8;">
+      <li>Shirts: <strong>$14.99</strong></li>
+      <li>Hoodie: <strong>$24.99</strong></li>
+      <li>Hoodie Set: <strong>$49.99</strong></li>
+    </ul>
+    <p style="text-align:center; margin-top:15px;">
+      📦 Shipping charges will be confirmed after address verification. Delivery times may vary depending on location.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div style="max-width:700px; margin:auto; line-height:1.8;">
+      <p><strong>Q: How long does delivery take?</strong><br>A: Typically 5–10 business days.</p>
+      <p><strong>Q: How do I pay?</strong><br>A: Place order via form, then confirm payment on WhatsApp.</p>
+      <p><strong>Q: Can I return items?</strong><br>A: Yes, see our Returns & Exchanges section.</p>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" width="640" height="915" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div style="text-align:center; margin-top:20px;">
+      <a class="btn-order" href="https://wa.me/9230006190087" target="_blank">📲 Chat on WhatsApp</a>
+    </div>
+  </section>
 
-<!-- CHECKOUT DEMO (thank-you page simulation) -->
-<section id="checkout">
-  <h2>Checkout Success Example</h2>
-  <button class="btn-order" onclick="pintrk('track','checkout',{
-    event_id:'order_demo',
-    value:49.99,
-    order_quantity:1,
-    currency:'USD',
-    line_items:[{product_price:49.99}]
-  }); alert('Checkout event fired to Pinterest!');">
-    Simulate Checkout Event
-  </button>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+      <img src="logo.png" alt="Abeer Amir Logo" style="height:28px;"
+           onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-weight:bold;color:#fff;\'>Abeer Amir</span>');">
+      <span>&copy; 2025 Abeer Amir. All rights reserved.</span>
+    </div>
+    <div style="margin-top:10px;">
+      <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a> | 
+      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
+      <a href="https://wa.me/9230006190087" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
-    <img src="logo.png" alt="Abeer Amir Logo" style="height:28px;"
-         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-weight:bold;color:#fff;\'>Abeer Amir</span>');">
-    <span>&copy; 2025 Abeer Amir. All rights reserved.</span>
-  </div>
-  <div style="margin-top:10px;">
-    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a> | 
-    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
-    <a href="https://wa.me/9230006190087" target="_blank">WhatsApp</a>
-  </div>
-</footer>
+  <!-- JS -->
+  <script>
+    document.querySelectorAll(".order-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Reminder: Shipping charges will be confirmed after you submit your address.");
+      });
+    });
+  </script>
 
 </body>
 </html>
