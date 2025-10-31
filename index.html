@@ -1,11 +1,3 @@
-Got it. Here’s your **complete `index.html`**, updated with:
-
-* **Mobile-friendly contact form** (responsive iframe).
-* **Pinterest + GA event tracking** re-enabled on all order/customize buttons.
-* **Descriptive alt text** for products/gallery.
-* Keeps your Google Form + WhatsApp flows intact.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,59 +5,165 @@ Got it. Here’s your **complete `index.html`**, updated with:
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abeer Amir</title>
   <style>
-    :root { --black:#111; --white:#fff; --gold:#f4c542; --radius:12px; }
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fafafa; scroll-behavior:smooth;}
-    header { background:var(--black); color:var(--white); padding:15px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000;}
-    header img { height:45px; }
-    nav a { margin-left:15px; color:var(--white); font-weight:600; text-decoration:none; }
-    nav a:hover { color:var(--gold); }
-    section { padding:60px 20px; }
-    h2 { text-align:center; margin-bottom:25px; }
-    .products, .gallery-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1100px;margin:auto;}
-    .card { background:#fff; border-radius:var(--radius); box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; text-align:center;}
-    .card img { width:100%; height:220px; object-fit:cover; border-radius:var(--radius);}
-    .card h3 { margin:15px 0 5px;}
-    .card p { color:#444; font-size:0.95rem;}
-    .price { font-weight:bold; margin:8px 0; color:var(--gold);}
-    .btn-order { display:inline-block;margin-top:10px;padding:10px 20px;border-radius:var(--radius);background:var(--black);color:var(--white);font-weight:bold;text-decoration:none;transition:0.3s;cursor:pointer;}
-    .btn-order:hover { background:var(--gold); color:var(--black);}
-    .gallery-grid img { border-radius:var(--radius); box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s;}
-    .gallery-grid img:hover { transform:scale(1.05);}
-    footer {background:var(--black);color:#ccc;text-align:center;padding:20px;margin-top:40px;}
-    footer a {color:var(--gold);margin:0 10px;}
-    footer a:hover {text-decoration:underline;}
+    :root {
+      --black:#111;
+      --white:#fff;
+      --gold:#f4c542;
+      --radius:12px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#fafafa;
+      scroll-behavior:smooth;
+    }
+    header {
+      background:var(--black);
+      color:var(--white);
+      padding:15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      flex-wrap:wrap;
+    }
+    header img {
+      height:45px;
+    }
+    nav a {
+      margin-left:15px;
+      color:var(--white);
+      font-weight:600;
+      text-decoration:none;
+    }
+    nav a:hover {
+      color:var(--gold);
+    }
+    section {
+      padding:60px 20px;
+    }
+    h2 {
+      text-align:center;
+      margin-bottom:25px;
+    }
+    .products, .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      max-width:1100px;
+      margin:auto;
+    }
+    .card {
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      padding:20px;
+      text-align:center;
+      overflow:hidden;
+    }
+    .card img {
+      width:100%;
+      height:auto;
+      max-height:250px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      display:block;
+    }
+    .card h3 {
+      margin:15px 0 5px;
+    }
+    .card p {
+      color:#444;
+      font-size:0.95rem;
+    }
+    .price {
+      font-weight:bold;
+      margin:8px 0;
+      color:var(--gold);
+    }
+    .btn-order {
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 20px;
+      border-radius:var(--radius);
+      background:var(--black);
+      color:var(--white);
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+      cursor:pointer;
+    }
+    .btn-order:hover {
+      background:var(--gold);
+      color:var(--black);
+    }
+    .gallery-grid img {
+      width:100%;
+      height:auto;
+      border-radius:var(--radius);
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      display:block;
+    }
+    .gallery-grid img:hover {
+      transform:scale(1.05);
+    }
+    footer {
+      background:var(--black);
+      color:#ccc;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+    footer a {
+      color:var(--gold);
+      margin:0 10px;
+    }
+    footer a:hover {
+      text-decoration:underline;
+    }
+    @media (max-width:600px) {
+      nav {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+      nav a {
+        margin:8px;
+      }
+    }
   </style>
 
   <!-- Pinterest Tag -->
   <script>
-  !function(e){if(!window.pintrk){window.pintrk = function () {
-  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
-  var n=window.pintrk;n.queue=[],n.version="3.0";
-  var t=document.createElement("script");t.async=!0;
-  t.src=e;var r=document.getElementsByTagName("script")[0];
-  r.parentNode.insertBefore(t,r)}}
-  ("https://s.pinimg.com/ct/core.js");
-  pintrk('load', '549769521098', { em: 'aatiraamir56@gmail.com' });
-  pintrk('page');
+    !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
+    var n=window.pintrk;n.queue=[],n.version="3.0";
+    var t=document.createElement("script");t.async=!0;
+    t.src=e;var r=document.getElementsByTagName("script")[0];
+    r.parentNode.insertBefore(t,r)}}
+    ("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '549769521098', { em: 'aatiraamir56@gmail.com' });
+    pintrk('page');
   </script>
   <noscript>
-  <img height="1" width="1" style="display:none;" alt=""
-  src="https://ct.pinterest.com/v3/?event=init&tid=549769521098&noscript=1" />
+    <img height="1" width="1" style="display:none;" alt=""
+         src="https://ct.pinterest.com/v3/?event=init&tid=549769521098&noscript=1" />
   </noscript>
-  <!-- End Pinterest Tag -->
 
-  <!-- Google Analytics 4 -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // replace with your GA4 ID
+    gtag('config', 'G-XXXXXXX');
   </script>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <img src="logo.png" alt="Abeer Amir Logo"
@@ -76,165 +174,72 @@ Got it. Here’s your **complete `index.html`**, updated with:
     <a href="#products">Products</a>
     <a href="#customize">Customize</a>
     <a href="#gallery">Gallery</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
   </nav>
 </header>
 
-<!-- HERO -->
 <section id="home" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hoodieset.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px;">
   <h1>Welcome to Abeer Amir</h1>
   <p>Premium apparel. Modern cuts. Customizable options.</p>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products">
   <h2>Our Products</h2>
   <div class="products">
 
     <div class="card">
-      <img src="shirt1.jpg" alt="Abeer Amir Shirt 1 - Slim-fit t-shirt with premium stitching">
+      <img src="shirt1.jpg" alt="Slim-fit t-shirt with premium stitching">
       <h3>Shirt 1</h3>
       <p>Slim-fit t-shirt with premium stitching.</p>
       <p class="price">$14.99</p>
       <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <p class="note">📦 Shipping cost confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Order:%20Shirt%201" target="_blank">Pay on WhatsApp</a>
+      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Shirt%201" target="_blank">Pay on WhatsApp</a>
     </div>
 
     <div class="card">
-      <img src="shirt2.jpg" alt="Abeer Amir Shirt 2 - Trendy slim-fit t-shirt">
+      <img src="shirt2.jpg" alt="Trendy slim-fit t-shirt">
       <h3>Shirt 2</h3>
       <p>Trendy slim-fit t-shirt, perfect daily wear.</p>
       <p class="price">$14.99</p>
       <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <p class="note">📦 Shipping cost confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Order:%20Shirt%202" target="_blank">Pay on WhatsApp</a>
+      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Shirt%202" target="_blank">Pay on WhatsApp</a>
     </div>
 
     <div class="card">
-      <img src="shirt3.jpg" alt="Abeer Amir Shirt 3 - Soft cotton t-shirt with premium cut">
-      <h3>Shirt 3</h3>
-      <p>Soft cotton t-shirt with premium cut.</p>
-      <p class="price">$14.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <p class="note">📦 Shipping cost confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Order:%20Shirt%203" target="_blank">Pay on WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <img src="hoodie.jpg" alt="Abeer Amir Hoodie - Classic hoodie with modern fit">
+      <img src="hoodie.jpg" alt="Classic hoodie with modern fit">
       <h3>Hoodie</h3>
       <p>Classic hoodie with modern fit.</p>
       <p class="price">$24.99</p>
       <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <p class="note">📦 Shipping cost confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Order:%20Hoodie" target="_blank">Pay on WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <img src="hoodieset.jpg" alt="Abeer Amir Hoodie Set - Matching hoodie set, durable and stylish">
-      <h3>Hoodie Set</h3>
-      <p>Matching hoodie set, durable & stylish.</p>
-      <p class="price">$49.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <p class="note">📦 Shipping cost confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Order:%20Hoodie%20Set" target="_blank">Pay on WhatsApp</a>
+      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Hoodie" target="_blank">Pay on WhatsApp</a>
     </div>
 
   </div>
 </section>
 
-<!-- CUSTOMIZE -->
 <section id="customize">
   <h2>Customizable Products</h2>
   <div class="products">
-
     <div class="card">
       <img src="shirt1.jpg" alt="Custom Shirt with Abeer Amir Logo">
       <h3>Custom Shirt</h3>
       <p>Personalize with Abeer Amir Logo, text, or designs.</p>
       <p class="price">$19.99</p>
       <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Customize Now</a>
-      <p class="note">📦 Shipping confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Custom%20Order:%20Shirt" target="_blank">Send Custom Request</a>
+      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Custom%20Order:%20Shirt" target="_blank">Send Custom Request</a>
     </div>
-
-    <div class="card">
-      <img src="hoodie.jpg" alt="Custom Hoodie with Abeer Amir Logo">
-      <h3>Custom Hoodie</h3>
-      <p>Customize your hoodie with Abeer Amir Logo.</p>
-      <p class="price">$29.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Customize Now</a>
-      <p class="note">📦 Shipping confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Custom%20Order:%20Hoodie" target="_blank">Send Custom Request</a>
-    </div>
-
-    <div class="card">
-      <img src="hoodieset.jpg" alt="Custom Hoodie Set with Abeer Amir Logo">
-      <h3>Custom Hoodie Set</h3>
-      <p>Full set with custom logo and designs.</p>
-      <p class="price">$49.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Customize Now</a>
-      <p class="note">📦 Shipping confirmed after address verification.</p>
-      <a class="btn-order order-btn" href="https://wa.me/9230006190087?text=Custom%20Order:%20Hoodie%20Set" target="_blank">Send Custom Request</a>
-    </div>
-
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-grid">
-    <img src="hoodie.jpg" alt="Gallery: Hoodie front view">
-    <img src="hoodie2.jpg" alt="Gallery: Hoodie side view">
-    <img src="hoodieset.jpg" alt="Gallery: Hoodie set showcase">
-    <img src="shirt1.jpg" alt="Gallery: Shirt 1 flat lay">
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <h2>Pricing & Shipping</h2>
-  <ul style="max-width:600px; margin:auto; line-height:1.8;">
-    <li>Shirts: <strong>$14.99</strong></li>
-    <li>Custom Shirts: <strong>$19.99</strong></li>
-    <li>Hoodie: <strong>$24.99</strong></li>
-    <li>Custom Hoodie: <strong>$29.99</strong></li>
-    <li>Hoodie Set: <strong>$49.99</strong></li>
-  </ul>
-  <p style="text-align:center; margin-top:15px;">
-    📦 Shipping charges confirmed after address verification.  
-    Delivery times may vary depending on location.
-  </p>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <div style="max-width:700px; margin:auto; line-height:1.8;">
-    <p><strong>Q: How long does delivery take?</strong><br>A: Typically 5–10 business days.</p>
-    <p><strong>Q: How do I pay?</strong><br>A: Place order via form, then confirm payment on WhatsApp.</p>
-    <p><strong>Q: Can I return items?</strong><br>A: Yes, returns accepted within 14 days of delivery.</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact Us</h2>
-  <div style="max-width:100%;overflow:hidden;">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true" width="100%" height="915" frameborder="0" marginheight="0" marginwidth="0" style="width:100%;">Loading…</iframe>
-  </div>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
+          width="100%" height="915" frameborder="0" style="width:100%;max-width:900px;margin:auto;display:block;">Loading…</iframe>
   <div style="text-align:center; margin-top:20px;">
-    <a class="btn-order" href="https://wa.me/9230006190087" target="_blank">📲 Chat on WhatsApp</a>
+    <a class="btn-order" href="https://wa.me/923006190087" target="_blank">📲 Chat on WhatsApp</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
     <img src="logo.png" alt="Abeer Amir Logo" style="height:28px;"
@@ -244,28 +249,21 @@ Got it. Here’s your **complete `index.html`**, updated with:
   <div style="margin-top:10px;">
     <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a> | 
     <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
-    <a href="https://wa.me/9230006190087" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
   </div>
 </footer>
 
-<!-- JS -->
 <script>
   document.querySelectorAll(".order-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       const card = btn.closest(".card");
       const product = card.querySelector("h3").innerText;
-      const price = card.querySelector(".price").innerText.replace('$','');
+      const price = card.querySelector(".price") ? card.querySelector(".price").innerText.replace('$','') : 0;
       const eventID = 'evt_' + Date.now();
 
-      // Pinterest events
       pintrk('track', 'addtocart', { event_id: eventID, value: price, currency: 'USD', product_name: product });
-      pintrk('track', 'checkout', { event_id: eventID, value: price, currency: 'USD', product_name: product });
-
-      // GA4 events
       gtag('event', 'add_to_cart', { event_id: eventID, value: price, currency:'USD', items:[{item_name: product}] });
-      gtag('event', 'purchase', { event_id: eventID, value: price, currency:'USD', items:[{item_name: product}] });
 
-      // Alert
       alert("Reminder: Shipping charges will be confirmed after you submit your address.");
     });
   });
@@ -273,7 +271,3 @@ Got it. Here’s your **complete `index.html`**, updated with:
 
 </body>
 </html>
-```
-
-This is ready to replace your `index.html` on GitHub.
-Want me to
