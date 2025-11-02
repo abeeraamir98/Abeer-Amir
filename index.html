@@ -2,272 +2,384 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abeer Amir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abeer Amir | Premium Apparel</title>
   <style>
     :root {
-      --black:#111;
-      --white:#fff;
-      --gold:#f4c542;
-      --radius:12px;
+      --black: #111;
+      --white: #fff;
+      --gold: #f4c542;
+      --radius: 12px;
     }
+
     body {
       font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      background:#fafafa;
-      scroll-behavior:smooth;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: var(--black);
+      scroll-behavior: smooth;
     }
+
     header {
-      background:var(--black);
-      color:var(--white);
-      padding:15px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      flex-wrap:wrap;
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
     }
-    header img {
-      height:45px;
+
+    header .logo img {
+      height: 50px;
+      width: auto;
     }
+
     nav a {
-      margin-left:15px;
-      color:var(--white);
-      font-weight:600;
-      text-decoration:none;
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      color:var(--gold);
+      color: var(--gold);
     }
+
     section {
-      padding:60px 20px;
+      padding: 40px 20px;
+      text-align: center;
     }
-    h2 {
-      text-align:center;
-      margin-bottom:25px;
+
+    #home {
+      background: #f8f8f8;
     }
-    .products, .gallery-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-      max-width:1100px;
-      margin:auto;
+
+    #home h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
     }
+
+    #home p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* PRODUCTS SECTION */
+    #products {
+      background: var(--white);
+    }
+
+    #products h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
     .card {
-      background:#fff;
-      border-radius:var(--radius);
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      padding:20px;
-      text-align:center;
-      overflow:hidden;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
     }
+
     .card img {
-      width:100%;
-      height:auto;
-      max-height:250px;
-      object-fit:cover;
-      border-radius:var(--radius);
-      display:block;
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+      margin-bottom: 15px;
     }
-    .card h3 {
-      margin:15px 0 5px;
-    }
-    .card p {
-      color:#444;
-      font-size:0.95rem;
-    }
+
     .price {
-      font-weight:bold;
-      margin:8px 0;
-      color:var(--gold);
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.2em;
     }
+
     .btn-order {
-      display:inline-block;
-      margin-top:10px;
-      padding:10px 20px;
-      border-radius:var(--radius);
-      background:var(--black);
-      color:var(--white);
-      font-weight:bold;
-      text-decoration:none;
-      transition:0.3s;
-      cursor:pointer;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      background: var(--black);
+      color: var(--white);
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
     }
+
     .btn-order:hover {
-      background:var(--gold);
-      color:var(--black);
+      background: var(--gold);
+      color: var(--black);
     }
-    .gallery-grid img {
-      width:100%;
-      height:auto;
-      border-radius:var(--radius);
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      display:block;
+
+    .reviews {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      background: #f9f9f9;
+      text-align: left;
     }
-    .gallery-grid img:hover {
-      transform:scale(1.05);
+
+    .reviews p {
+      margin: 5px 0;
+      font-size: 0.95em;
     }
+
+    form {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    form h4 {
+      margin-bottom: 5px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9em;
+    }
+
+    select, textarea, button {
+      width: 100%;
+      padding: 8px;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      font-family: inherit;
+    }
+
+    button {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
     footer {
-      background:var(--black);
-      color:#ccc;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 30px 20px;
     }
-    footer a {
-      color:var(--gold);
-      margin:0 10px;
+
+    .footer-content img {
+      height: 40px;
+      width: auto;
+      margin-bottom: 10px;
     }
-    footer a:hover {
-      text-decoration:underline;
+
+    .social-links {
+      margin-top: 10px;
     }
-    @media (max-width:600px) {
-      nav {
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
+
+    .social-links a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+    }
+
+    #form-feedback {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
+
       nav a {
-        margin:8px;
+        margin: 10px 10px 0 0;
+        display: inline-block;
       }
     }
   </style>
-
-  <!-- Pinterest Tag -->
-  <script>
-    !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
-    var n=window.pintrk;n.queue=[],n.version="3.0";
-    var t=document.createElement("script");t.async=!0;
-    t.src=e;var r=document.getElementsByTagName("script")[0];
-    r.parentNode.insertBefore(t,r)}}
-    ("https://s.pinimg.com/ct/core.js");
-    pintrk('load', '549769521098', { em: 'aatiraamir56@gmail.com' });
-    pintrk('page');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none;" alt=""
-         src="https://ct.pinterest.com/v3/?event=init&tid=549769521098&noscript=1" />
-  </noscript>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
 </head>
 <body>
-
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="Abeer Amir Logo"
-         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-size:20px;font-weight:bold;color:white;\'>Abeer Amir</span>');">
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#customize">Customize</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section id="home" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hoodieset.jpg') center/cover no-repeat; color:white; text-align:center; padding:100px 20px;">
-  <h1>Welcome to Abeer Amir</h1>
-  <p>Premium apparel. Modern cuts. Customizable options.</p>
-</section>
-
-<section id="products">
-  <h2>Our Products</h2>
-  <div class="products">
-
-    <div class="card">
-      <img src="shirt1.jpg" alt="Slim-fit t-shirt with premium stitching">
-      <h3>Shirt 1</h3>
-      <p>Slim-fit t-shirt with premium stitching.</p>
-      <p class="price">$14.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Shirt%201" target="_blank">Pay on WhatsApp</a>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Abeer Amir Logo" />
     </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div class="card">
-      <img src="shirt2.jpg" alt="Trendy slim-fit t-shirt">
-      <h3>Shirt 2</h3>
-      <p>Trendy slim-fit t-shirt, perfect daily wear.</p>
-      <p class="price">$14.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Shirt%202" target="_blank">Pay on WhatsApp</a>
+  <section id="home">
+    <h1>Welcome to Abeer Amir</h1>
+    <p>Premium apparel. Modern cuts. Customizable options made for you.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="card">
+        <img src="shirt1.jpg" alt="Slim-fit premium t-shirt" />
+        <h3>Classic Slim-Fit T-Shirt</h3>
+        <p>Lightweight cotton t-shirt with premium stitching and sleek design.</p>
+        <p class="price">$14.99</p>
+        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
+
+        <h4>Customer Reviews:</h4>
+        <div class="reviews" id="reviews-container">
+          <!-- Reviews load dynamically -->
+        </div>
+        <button id="load-more" class="btn-order" style="margin-top:15px;">Load More Reviews</button>
+
+        <form id="review-form">
+          <h4>Leave a Review:</h4>
+          <label for="rating">Rating:</label>
+          <select id="rating" name="rating" required>
+            <option value="">Select rating</option>
+            <option value="5">5/5</option>
+            <option value="4">4/5</option>
+            <option value="3">3/5</option>
+            <option value="2">2/5</option>
+            <option value="1">1/5</option>
+          </select>
+
+          <label for="review">Review:</label>
+          <textarea id="review" name="review" rows="3" placeholder="Write your feedback..." required></textarea>
+
+          <div id="form-feedback"></div>
+
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="hoodie.jpg" alt="Classic hoodie with modern fit">
-      <h3>Hoodie</h3>
-      <p>Classic hoodie with modern fit.</p>
-      <p class="price">$24.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Order:%20Hoodie" target="_blank">Pay on WhatsApp</a>
+  <footer id="contact">
+    <div class="footer-content">
+      <img src="logo.png" alt="Abeer Amir Logo" />
+      <p>&copy; 2025 Abeer Amir. All rights reserved.</p>
     </div>
-
-  </div>
-</section>
-
-<section id="customize">
-  <h2>Customizable Products</h2>
-  <div class="products">
-    <div class="card">
-      <img src="shirt1.jpg" alt="Custom Shirt with Abeer Amir Logo">
-      <h3>Custom Shirt</h3>
-      <p>Personalize with Abeer Amir Logo, text, or designs.</p>
-      <p class="price">$19.99</p>
-      <a class="btn-order order-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Customize Now</a>
-      <a class="btn-order order-btn" href="https://wa.me/923006190087?text=Custom%20Order:%20Shirt" target="_blank">Send Custom Request</a>
+    <div class="social-links">
+      <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
+      <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0TqniP2l3kkN-fNrB6i0A88ACMjdtnBGBXFzlvVQ56TFgpQ/viewform?embedded=true"
-          width="100%" height="915" frameborder="0" style="width:100%;max-width:900px;margin:auto;display:block;">Loading…</iframe>
-  <div style="text-align:center; margin-top:20px;">
-    <a class="btn-order" href="https://wa.me/923006190087" target="_blank">📲 Chat on WhatsApp</a>
-  </div>
-</section>
+  <!-- 🔥 Firebase + Review Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
 
-<footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
-    <img src="logo.png" alt="Abeer Amir Logo" style="height:28px;"
-         onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=\'font-weight:bold;color:#fff;\'>Abeer Amir</span>');">
-    <span>&copy; 2025 Abeer Amir. All rights reserved.</span>
-  </div>
-  <div style="margin-top:10px;">
-    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a> | 
-    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a> | 
-    <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
-  </div>
-</footer>
+    // ⚙️ Replace these values with your Firebase config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
 
-<script>
-  document.querySelectorAll(".order-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".card");
-      const product = card.querySelector("h3").innerText;
-      const price = card.querySelector(".price") ? card.querySelector(".price").innerText.replace('$','') : 0;
-      const eventID = 'evt_' + Date.now();
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-      pintrk('track', 'addtocart', { event_id: eventID, value: price, currency: 'USD', product_name: product });
-      gtag('event', 'add_to_cart', { event_id: eventID, value: price, currency:'USD', items:[{item_name: product}] });
+    const reviewsContainer = document.getElementById('reviews-container');
+    const loadMoreBtn = document.getElementById('load-more');
+    const reviewForm = document.getElementById('review-form');
+    const feedback = document.getElementById('form-feedback');
 
-      alert("Reminder: Shipping charges will be confirmed after you submit your address.");
+    const reviewsPerPage = 3;
+    let reviewsData = [];
+    let currentIndex = 0;
+
+    function createStarRating(rating) {
+      return '⭐'.repeat(rating) + '☆'.repeat(5 - rating);
+    }
+
+    async function loadReviews() {
+      const querySnapshot = await getDocs(collection(db, "reviews"));
+      reviewsData = [];
+      querySnapshot.forEach(doc => reviewsData.push(doc.data()));
+      renderReviews();
+    }
+
+    function renderReviews() {
+      const slice = reviewsData.slice(currentIndex, currentIndex + reviewsPerPage);
+      slice.forEach(review => {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${createStarRating(review.rating)}</strong> “${review.text}” — ${review.reviewer}`;
+        reviewsContainer.appendChild(p);
+      });
+      currentIndex += reviewsPerPage;
+      if (currentIndex >= reviewsData.length) loadMoreBtn.style.display = 'none';
+    }
+
+    loadMoreBtn.addEventListener('click', renderReviews);
+
+    reviewForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      feedback.style.color = 'red';
+      feedback.textContent = '';
+
+      const rating = parseInt(reviewForm.rating.value);
+      const reviewText = reviewForm.review.value.trim();
+
+      if (!rating || reviewText === '') {
+        feedback.textContent = 'Please fill out all fields.';
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "reviews"), {
+          rating,
+          text: reviewText,
+          reviewer: "Anonymous"
+        });
+        feedback.style.color = 'green';
+        feedback.textContent = 'Review submitted successfully!';
+        reviewForm.reset();
+        reviewsContainer.innerHTML = '';
+        currentIndex = 0;
+        loadMoreBtn.style.display = 'inline-block';
+        await loadReviews();
+      } catch (error) {
+        feedback.textContent = 'Error submitting review: ' + error.message;
+      }
     });
-  });
-</script>
 
+    // Initial load
+    loadReviews();
+  </script>
 </body>
-</html>
+  </html>
