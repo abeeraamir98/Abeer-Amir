@@ -6,10 +6,10 @@
   <title>Abeer Amir | Premium Apparel</title>
   <style>
     :root {
-      --black: #111;
-      --white: #fff;
-      --gold: #f4c542;
-      --radius: 12px;
+      --black:#111;
+      --white:#fff;
+      --gold:#f4c542;
+      --radius:12px;
     }
 
     body {
@@ -18,7 +18,6 @@
       padding: 0;
       background: #fafafa;
       color: var(--black);
-      scroll-behavior: smooth;
     }
 
     header {
@@ -36,7 +35,6 @@
 
     header .logo img {
       height: 50px;
-      width: auto;
     }
 
     nav a {
@@ -44,45 +42,15 @@
       text-decoration: none;
       margin-left: 20px;
       font-weight: bold;
-      transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--gold);
-    }
+    nav a:hover { color: var(--gold); }
 
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    #home {
-      background: #f8f8f8;
-    }
-
-    #home h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    #home p {
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    /* PRODUCTS SECTION */
-    #products {
-      background: var(--white);
-    }
-
-    #products h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-    }
+    section { padding: 40px 20px; text-align:center; }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 20px;
       max-width: 1100px;
       margin: 0 auto;
@@ -91,295 +59,112 @@
     .card {
       background: #fff;
       border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 20px;
       text-align: center;
-      overflow: hidden;
     }
 
     .card img {
       width: 100%;
       height: auto;
-      max-height: 250px;
+      max-height: 260px;
       object-fit: cover;
       border-radius: var(--radius);
-      display: block;
       margin-bottom: 15px;
     }
 
-    .price {
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 1.2em;
-    }
+    .price { color: var(--gold); font-size: 1.2em; font-weight: bold; }
 
     .btn-order {
       display: inline-block;
-      margin-top: 10px;
       padding: 10px 20px;
-      border-radius: var(--radius);
       background: var(--black);
       color: var(--white);
-      font-weight: bold;
+      border-radius: var(--radius);
       text-decoration: none;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .btn-order:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    .reviews {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: var(--radius);
-      background: #f9f9f9;
-      text-align: left;
-    }
-
-    .reviews p {
-      margin: 5px 0;
-      font-size: 0.95em;
-    }
-
-    form {
-      margin-top: 15px;
-      text-align: left;
-    }
-
-    form h4 {
-      margin-bottom: 5px;
-    }
-
-    form label {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.9em;
-    }
-
-    select, textarea, button {
-      width: 100%;
-      padding: 8px;
-      border-radius: var(--radius);
-      border: 1px solid #ccc;
-      margin-top: 5px;
-      font-family: inherit;
-    }
-
-    button {
-      background: var(--black);
-      color: var(--white);
-      border: none;
       font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
+      margin-top: 10px;
     }
 
-    button:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
+    .btn-order:hover { background: var(--gold); color: var(--black); }
 
     footer {
       background: var(--black);
       color: var(--white);
-      text-align: center;
+      text-align:center;
       padding: 30px 20px;
-    }
-
-    .footer-content img {
-      height: 40px;
-      width: auto;
-      margin-bottom: 10px;
-    }
-
-    .social-links {
-      margin-top: 10px;
+      margin-top: 50px;
     }
 
     .social-links a {
       color: var(--white);
-      text-decoration: none;
       margin: 0 10px;
-      font-weight: bold;
+      text-decoration:none;
+      font-weight:bold;
     }
 
-    .social-links a:hover {
-      color: var(--gold);
-    }
-
-    #form-feedback {
-      margin-top: 8px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin: 10px 10px 0 0;
-        display: inline-block;
-      }
-    }
+    .social-links a:hover { color: var(--gold); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Abeer Amir Logo" />
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Brand Logo">
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="products">
+    
+    <div class="card">
+      <img src="shirt1.jpg" alt="Custom Printed Shirt">
+      <h3>Custom Printed Shirt</h3>
+      <p>Create your own design / logo printed shirt.</p>
+      <p class="price">Starting From 1200 PKR</p>
+      <a class="btn-order" href="https://wa.me/923006190087" target="_blank">Order on WhatsApp</a>
     </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home">
-    <h1>Welcome to Abeer Amir</h1>
-    <p>Premium apparel. Modern cuts. Customizable options made for you.</p>
-  </section>
-
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products">
-      <div class="card">
-        <img src="shirt1.jpg" alt="Slim-fit premium t-shirt" />
-        <h3>Classic Slim-Fit T-Shirt</h3>
-        <p>Lightweight cotton t-shirt with premium stitching and sleek design.</p>
-        <p class="price">$14.99</p>
-        <a class="btn-order" href="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform" target="_blank">Order Now</a>
-
-        <h4>Customer Reviews:</h4>
-        <div class="reviews" id="reviews-container">
-          <!-- Reviews load dynamically -->
-        </div>
-        <button id="load-more" class="btn-order" style="margin-top:15px;">Load More Reviews</button>
-
-        <form id="review-form">
-          <h4>Leave a Review:</h4>
-          <label for="rating">Rating:</label>
-          <select id="rating" name="rating" required>
-            <option value="">Select rating</option>
-            <option value="5">5/5</option>
-            <option value="4">4/5</option>
-            <option value="3">3/5</option>
-            <option value="2">2/5</option>
-            <option value="1">1/5</option>
-          </select>
-
-          <label for="review">Review:</label>
-          <textarea id="review" name="review" rows="3" placeholder="Write your feedback..." required></textarea>
-
-          <div id="form-feedback"></div>
-
-          <button type="submit">Submit Review</button>
-        </form>
-      </div>
+    <div class="card">
+      <img src="hoodie.jpg" alt="Custom Hoodie">
+      <h3>Custom Hoodie</h3>
+      <p>Premium hoodie with your name / logo embroidery.</p>
+      <p class="price">Starting From 2500 PKR</p>
+      <a class="btn-order" href="https://wa.me/923006190087" target="_blank">Order on WhatsApp</a>
     </div>
-  </section>
 
-  <footer id="contact">
-    <div class="footer-content">
-      <img src="logo.png" alt="Abeer Amir Logo" />
-      <p>&copy; 2025 Abeer Amir. All rights reserved.</p>
+    <div class="card">
+      <img src="hoodie2.jpg" alt="Front & Back Custom Hoodie">
+      <h3>Custom Hoodie (Front & Back)</h3>
+      <p>Personalized hoodie with printing both sides.</p>
+      <p class="price">Starting From 2800 PKR</p>
+      <a class="btn-order" href="https://wa.me/923006190087" target="_blank">Order on WhatsApp</a>
     </div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
-      <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
+
+    <div class="card">
+      <img src="hoodieset.jpg" alt="Custom Hoodie Set">
+      <h3>Custom Hoodie Set</h3>
+      <p>Couple / Best Friends Matching Hoodie Set.</p>
+      <p class="price">Starting From 4800 PKR</p>
+      <a class="btn-order" href="https://wa.me/923006190087" target="_blank">Order on WhatsApp</a>
     </div>
-  </footer>
 
-  <!-- 🔥 Firebase + Review Logic -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+  </div>
+</section>
 
-    // ⚙️ Replace these values with your Firebase config
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+<footer id="contact">
+  <img src="logo.png" alt="Brand Logo" style="height:45px;margin-bottom:10px;">
+  <p>&copy; 2025 Abeer Amir. All rights reserved.</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
+    <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
+  </div>
+</footer>
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    const reviewsContainer = document.getElementById('reviews-container');
-    const loadMoreBtn = document.getElementById('load-more');
-    const reviewForm = document.getElementById('review-form');
-    const feedback = document.getElementById('form-feedback');
-
-    const reviewsPerPage = 3;
-    let reviewsData = [];
-    let currentIndex = 0;
-
-    function createStarRating(rating) {
-      return '⭐'.repeat(rating) + '☆'.repeat(5 - rating);
-    }
-
-    async function loadReviews() {
-      const querySnapshot = await getDocs(collection(db, "reviews"));
-      reviewsData = [];
-      querySnapshot.forEach(doc => reviewsData.push(doc.data()));
-      renderReviews();
-    }
-
-    function renderReviews() {
-      const slice = reviewsData.slice(currentIndex, currentIndex + reviewsPerPage);
-      slice.forEach(review => {
-        const p = document.createElement('p');
-        p.innerHTML = `<strong>${createStarRating(review.rating)}</strong> “${review.text}” — ${review.reviewer}`;
-        reviewsContainer.appendChild(p);
-      });
-      currentIndex += reviewsPerPage;
-      if (currentIndex >= reviewsData.length) loadMoreBtn.style.display = 'none';
-    }
-
-    loadMoreBtn.addEventListener('click', renderReviews);
-
-    reviewForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      feedback.style.color = 'red';
-      feedback.textContent = '';
-
-      const rating = parseInt(reviewForm.rating.value);
-      const reviewText = reviewForm.review.value.trim();
-
-      if (!rating || reviewText === '') {
-        feedback.textContent = 'Please fill out all fields.';
-        return;
-      }
-
-      try {
-        await addDoc(collection(db, "reviews"), {
-          rating,
-          text: reviewText,
-          reviewer: "Anonymous"
-        });
-        feedback.style.color = 'green';
-        feedback.textContent = 'Review submitted successfully!';
-        reviewForm.reset();
-        reviewsContainer.innerHTML = '';
-        currentIndex = 0;
-        loadMoreBtn.style.display = 'inline-block';
-        await loadReviews();
-      } catch (error) {
-        feedback.textContent = 'Error submitting review: ' + error.message;
-      }
-    });
-
-    // Initial load
-    loadReviews();
-  </script>
 </body>
-  </html>
+</html>
