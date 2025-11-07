@@ -1,104 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abeer Amir | Premium Apparel</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>abeeraamir — Premium Streetwear</title>
+<meta name="description" content="abeeraamir — bold streetwear. Hoodies & shirts. 50% advance to confirm. Pay via JazzCash/EasyPaisa/NayaPay/Bank Transfer." />
+<link rel="icon" href="logo.png" />
 
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background:#111; color:#fff; }
-    header { padding: 20px; text-align: center; background:#000; border-bottom:1px solid #333; }
-    .products { display:flex; flex-wrap:wrap; justify-content:center; padding:40px 10px; gap:25px; }
-    .product { background:#1c1c1c; width:260px; padding:20px; border-radius:10px; text-align:center; }
-    .product img { width:100%; border-radius:8px; }
-    .product h3{margin:10px 0 5px}
-    .product p{font-size:14px; color:#bbb;}
-    .price{margin:8px 0; font-size:18px; font-weight:bold; color:#f4c542;}
-    button{background:#f4c542;color:#111;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-weight:bold;}
-    .order-area{padding:40px 20px; max-width:600px; margin:auto;}
-    input, select, textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:none; }
-    .social-links {text-align:center; padding:20px;}
-    .social-links a{color:#f4c542; margin:0 10px; text-decoration:none; font-weight:bold;}
-  </style>
+<style>
+  :root{
+    --black:#070707;
+    --gold:#d4af37;
+    --white:#ffffff;
+    --muted:#bdbdbd;
+    --card:#0f0f0f;
+    --radius:12px;
+    --container:1100px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .brand{display:flex;gap:14px;align-items:center}
+  .brand img{height:48px;border-radius:10px;background:#fff;padding:6px;}
+  .brand h1{margin:0;color:var(--gold);font-size:18px;letter-spacing:1px}
+  nav{display:flex;gap:16px}
+  nav a{color:var(--white);text-decoration:none;font-weight:700}
+  .container{max-width:var(--container);margin:28px auto;padding:0 18px}
+  .hero{display:flex;gap:28px;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .hero h2{margin:0;font-size:30px;color:var(--gold)}
+  .hero p{margin:8px 0;color:var(--muted)}
+  .btn{background:var(--gold);color:var(--black);padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none;cursor:pointer;border:none}
+  .btn.outline{background:transparent;color:var(--gold);border:2px solid rgba(212,175,55,0.15)}
+  .trust{margin-top:12px;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+  .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,0.6);display:flex;flex-direction:column;gap:10px;min-height:360px}
+  .thumb{height:260px;border-radius:10px;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .card h3{margin:0;font-size:18px}
+  .desc{color:var(--muted);font-size:14px}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+  .price{color:var(--gold);font-weight:900;font-size:18px}
+  .quick{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer}
+  .quick:hover{background:var(--gold);color:var(--black)}
 
+  /* Order form */
+  #orderSection{margin:34px auto;padding:22px;background:linear-gradient(180deg, #0e0e0e, #0b0b0b);border-radius:14px;max-width:820px;border:1px solid rgba(255,255,255,0.04)}
+  #orderSection h2{margin:6px 0 10px 0;color:var(--gold)}
+  .form-row{display:flex;gap:12px;flex-wrap:wrap}
+  input, select, textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#0b0b0b;color:var(--white)}
+  input::placeholder, textarea::placeholder{color:rgba(255,255,255,0.45)}
+  .half{flex:1 1 calc(50% - 12px)}
+  textarea{min-height:90px;resize:vertical}
+  .summary{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  .box{padding:12px;border-radius:10px;background:#0b0b0b;border:1px solid rgba(255,255,255,0.03)}
+  .box strong{display:block;color:var(--gold);font-weight:900}
+  .pay-notes{font-size:13px;color:var(--muted);margin-top:10px}
+  footer{padding:30px 18px;text-align:center;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+  .socials a{color:var(--gold);text-decoration:none;margin:0 10px;font-weight:800}
+  @media (max-width:780px){ .hero{flex-direction:column;align-items:flex-start} .thumb{height:200px} .half{flex-basis:100%} }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Abeer Amir Premium Apparel</h1>
-  <p>Quality Hoodies & Shirts — Premium Fabric — Made to Last</p>
+  <div class="brand">
+    <img src="logo.png" alt="logo">
+    <div>
+      <h1>abeeraamir</h1>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#orderSection">Order</a>
+    <a href="https://wa.me/923006190087" target="_blank" rel="noopener">Contact</a>
+  </nav>
 </header>
 
-<section class="products">
-  <div class="product">
-    <img src="shirt1.jpg">
-    <h3>Premium Shirt</h3>
-    <p>Soft & Breathable Fabric</p>
-    <div class="price">$14.99</div>
+<main class="container">
+  <section class="hero">
+    <div>
+      <h2>Bold Streetwear — Premium Drops</h2>
+      <p>Heavy-weight fabrics, crisp prints, and confident fits. 50% advance confirms order — remaining 50% on delivery. Payments via JazzCash / EasyPaisa / NayaPay / Bank Transfer.</p>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="document.getElementById('orderSection').scrollIntoView({behavior:'smooth'})">Place Order</button>
+        <button class="btn outline" onclick="window.open('https://wa.me/923006190087?text=I%20want%20to%20upload%20a%20design','_blank')">Upload Design</button>
+      </div>
+      <div class="trust">Unit price shown is PKR. Live totals calculate below. Advance 50% required to process order.</div>
+    </div>
+
+    <div style="width:420px">
+      <div class="thumb"><img src="shirt1.jpg" alt="featured" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 style="color:var(--gold);margin:8px 0">Featured Products</h2>
+    <div class="grid">
+
+      <article class="card">
+        <div class="thumb"><img src="shirt1.jpg" alt="Classic Shirt" loading="lazy"></div>
+        <h3>Classic Shirt</h3>
+        <p class="desc">Lightweight cotton blend, premium print finish.</p>
+        <div class="meta">
+          <div class="price">Rs 290</div>
+          <button class="quick" data-product="Classic Shirt">Order</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="hoodie.jpg" alt="Premium Hoodie" loading="lazy"></div>
+        <h3>Premium Hoodie</h3>
+        <p class="desc">Brushed interior, heavy-weight for warm comfort.</p>
+        <div class="meta">
+          <div class="price">Rs 290</div>
+          <button class="quick" data-product="Premium Hoodie">Order</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="hoodieset.jpg" alt="Couple Hoodie Set" loading="lazy"></div>
+        <h3>Couple Hoodie Set</h3>
+        <p class="desc">Matching set — perfect for gifting.</p>
+        <div class="meta">
+          <div class="price">Rs 290</div>
+          <button class="quick" data-product="Couple Hoodie Set">Order</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="orderSection">
+    <h2>Place Your Order</h2>
+
+    <form id="orderForm" autocomplete="on" novalidate>
+      <div class="form-row">
+        <input name="name" class="half" placeholder="Full Name *" required>
+        <input name="email" type="email" class="half" placeholder="Email (optional)">
+      </div>
+
+      <div class="form-row" style="margin-top:10px">
+        <input name="phone" class="half" placeholder="Phone (WhatsApp) *" required>
+        <input name="city" class="half" placeholder="City / Shipping Area *" required>
+      </div>
+
+      <div style="margin-top:10px">
+        <select name="product" required>
+          <option value="">Select product *</option>
+          <option>Classic Shirt</option>
+          <option>Premium Hoodie</option>
+          <option>Couple Hoodie Set</option>
+        </select>
+      </div>
+
+      <div class="form-row" style="margin-top:10px">
+        <select name="size" class="half" required>
+          <option value="">Select size *</option>
+          <option>Small</option><option>Medium</option><option>Large</option><option>Extra Large</option><option>2XL</option><option>3XL</option><option>4XL</option>
+        </select>
+
+        <input name="qty" type="number" min="1" value="1" class="half" required>
+      </div>
+
+      <div style="margin-top:10px">
+        <select name="payment" required>
+          <option value="">Payment Method (50% advance required) *</option>
+          <option>JazzCash</option>
+          <option>EasyPaisa</option>
+          <option>NayaPay (details provided on WhatsApp)</option>
+          <option>Bank Transfer (details provided on WhatsApp)</option>
+          <option>Cash on Delivery (50% advance still required)</option>
+        </select>
+      </div>
+
+      <div style="margin-top:10px">
+        <input name="txn" placeholder="Advance Transaction ID (if paid in advance)">
+      </div>
+
+      <div style="margin-top:10px">
+        <textarea name="notes" placeholder="Additional notes (optional)"></textarea>
+      </div>
+
+      <div class="summary" style="margin-top:14px">
+        <div class="box" style="flex:1">
+          <div style="font-size:13px;color:var(--muted)">Unit price</div>
+          <strong>Rs <span id="unitPrice">290</span></strong>
+        </div>
+        <div class="box" style="flex:1">
+          <div style="font-size:13px;color:var(--muted)">Quantity</div>
+          <strong id="qtyDisplay">1</strong>
+        </div>
+        <div class="box" style="flex:1">
+          <div style="font-size:13px;color:var(--muted)">Total</div>
+          <strong id="totalPrice">Rs 290</strong>
+        </div>
+        <div class="box" style="flex:1">
+          <div style="font-size:13px;color:var(--muted)">Advance (50%)</div>
+          <strong id="advancePrice">Rs 145</strong>
+        </div>
+      </div>
+
+      <div class="pay-notes">
+        <p style="margin:8px 0">Send advance payment to confirm. For <strong>JazzCash / EasyPaisa</strong> send to: <strong>+923006190087</strong>.</p>
+        <p style="margin:8px 0">For <strong>NayaPay</strong> or <strong>Bank Transfer</strong> we will send account details privately on WhatsApp after you submit the order.</p>
+        <p style="margin:8px 0;color:var(--muted)">Delivery charges: 150–250 PKR depending on city. Orders confirmed after advance payment.</p>
+      </div>
+
+      <div style="margin-top:12px">
+        <button type="submit" class="btn">Submit Order & Open WhatsApp</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <div style="max-width:900px;margin:auto">
+    <img src="logo.png" alt="logo" style="height:36px;margin-bottom:8px">
+    <div class="socials">
+      <a href="https://www.instagram.com/abeeraamir00" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://wa.me/923006190087" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div style="color:var(--muted);margin-top:8px">© 2025 abeeraamir — All rights reserved</div>
   </div>
-
-  <div class="product">
-    <img src="hoodie2.jpg">
-    <h3>Classic Hoodie</h3>
-    <p>Comfort Fit | Winter Essential</p>
-    <div class="price">$19.99</div>
-  </div>
-
-  <div class="product">
-    <img src="hoodieset.jpg">
-    <h3>Hoodie Set (Hoodie + Trouser)</h3>
-    <p>Matching Fit | Streetwear Look</p>
-    <div class="price">$24.99</div>
-  </div>
-</section>
-
-<section class="order-area">
-  <h2>Order Form</h2>
-
-  <p><strong>Pricing in PKR:</strong></p>
-  <p>S–XL → 290 PKR</p>
-  <p>2XL–4XL → 300 PKR</p>
-  <p><strong>Delivery:</strong> ~150–250 PKR depending on city</p>
-
-  <p style="margin-top:20px; background:#222; padding:12px; border-radius:6px;">
-    ✅ **Half Advance Payment Required Before Dispatch**<br>
-    Pay via **Easypaisa / JazzCash** → **<strong>+923006190087</strong>**
-  </p>
-
-  <form id="orderForm">
-    <input name="name" placeholder="Full Name" required>
-    <input name="phone" placeholder="Phone Number" required>
-    <input name="product" placeholder="Product Name / ID" required>
-    <input name="qty" type="number" min="1" placeholder="Quantity" required>
-    <select name="size" required>
-      <option value="">Select Size</option>
-      <option>Small</option>
-      <option>Medium</option>
-      <option>Large</option>
-      <option>Extra Large</option>
-    </select>
-    <input name="city" placeholder="City / Delivery Address" required>
-    <input name="payment" placeholder="Payment Method (Easypaisa / JazzCash)" required>
-    <input name="txn" placeholder="Transaction ID (Half Payment)">
-    <textarea name="notes" placeholder="Additional Notes"></textarea>
-    <button type="submit">Confirm Order via WhatsApp</button>
-  </form>
-</section>
-
-<div class="social-links">
-  <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
-  <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
-  <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
-</div>
+</footer>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
+/* CONFIG */
+const UNIT_PRICE = 290;
+const GOOGLE_FORM_POST = "https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/formResponse";
+const WHATSAPP_NUMBER = "923006190087";
+
+/* UI */
+const orderForm = document.getElementById("orderForm");
+const qtyField = orderForm.qty;
+const totalPriceEl = document.getElementById("totalPrice");
+const advancePriceEl = document.getElementById("advancePrice");
+const qtyDisplay = document.getElementById("qtyDisplay");
+
+/* Quick order buttons */
+document.querySelectorAll(".quick").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const product = btn.dataset.product || btn.textContent.trim();
+    orderForm.product.value = product;
+    window.scrollTo({ top: document.getElementById("orderSection").offsetTop - 20, behavior: "smooth" });
+    setTimeout(()=> orderForm.phone.focus(), 600);
+  });
+});
+
+/* Recalc totals */
+function recalc(){
+  const qty = Math.max(1, parseInt(qtyField.value || 1));
+  const total = qty * UNIT_PRICE;
+  const advance = Math.ceil(total * 0.5);
+  totalPriceEl.textContent = "Rs " + total;
+  advancePriceEl.textContent = "Rs " + advance;
+  qtyDisplay.textContent = qty;
+}
+qtyField.addEventListener("input", recalc);
+document.addEventListener("DOMContentLoaded", recalc);
+
+/* Submit: post to Google Form + open WhatsApp */
+orderForm.addEventListener("submit", function(e){
   e.preventDefault();
+
   const f = e.target;
-  const msg = `New Order%0AName: ${f.name.value}%0APhone: ${f.phone.value}%0AProduct: ${f.product.value}%0AQuantity: ${f.qty.value}%0ASize: ${f.size.value}%0ACity: ${f.city.value}%0APayment: ${f.payment.value}%0ATransaction ID: ${f.txn.value}%0ANotes: ${f.notes.value}`;
-  window.open("https://wa.me/923006190087?text=" + msg, "_blank");
+  const name = (f.name.value || "").trim();
+  const email = (f.email.value || "").trim();
+  const phone = (f.phone.value || "").trim();
+  const product = (f.product.value || "").trim();
+  const qty = (f.qty.value || "1").trim();
+  const size = (f.size.value || "").trim();
+  const city = (f.city.value || "").trim();
+  const payment = (f.payment.value || "").trim();
+  const txn = (f.txn.value || "").trim();
+  const notes = (f.notes.value || "").trim();
+  const total = (parseInt(qty) || 1) * UNIT_PRICE;
+  const advance = Math.ceil(total * 0.5);
+
+  if(!name || !phone || !product || !size){
+    alert("Please fill required fields: Name, Phone, Product and Size.");
+    return;
+  }
+
+  // 1) Post to Google Form (silent)
+  try{
+    const body = new URLSearchParams();
+    // entry ids from your form mapping
+    body.append("entry.1023236898", name);     // Full Name
+    body.append("entry.52676745", email);      // Email
+    body.append("entry.137888503", phone);     // Phone
+    body.append("entry.206571406", product);   // Product
+    body.append("entry.1295150796", qty);      // Quantity
+    body.append("entry.1944546251", size);     // Size
+    body.append("entry.1503622361", city);     // City
+    body.append("entry.1393941003", payment);  // Payment Method
+    body.append("entry.1354097368", txn);      // Transaction ID
+    body.append("entry.376470874", notes);     // Notes
+
+    fetch(GOOGLE_FORM_POST, { method: "POST", mode: "no-cors", body })
+      .catch(err => console.warn("Google post failed (non-fatal):", err));
+  }catch(err){
+    console.warn("Google post exception:", err);
+  }
+
+  // 2) Open WhatsApp with structured order
+  const lines = [
+    "New Order",
+    "------------------------",
+    "Name: " + name,
+    "Phone: " + phone,
+    "Email: " + (email || "-"),
+    "Product: " + product,
+    "Quantity: " + qty,
+    "Size: " + size,
+    "Total Price: Rs " + total,
+    "Advance (50%): Rs " + advance,
+    "City: " + city,
+    "Payment Method: " + payment,
+    "Transaction ID: " + (txn || "-"),
+    "Notes: " + (notes || "-"),
+    "------------------------",
+    "Please confirm and we will share payment details (NayaPay / Bank details sent on WhatsApp if selected)."
+  ];
+  const message = encodeURIComponent(lines.join("\n"));
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+
+  // Visual feedback
+  alert("Order sent to WhatsApp. Please complete the 50% advance payment to confirm.");
+  recalc();
 });
 </script>
-
 </body>
 </html>
