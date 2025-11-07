@@ -2,168 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- SEO -->
-  <title>Abeer Amir – Premium Streetwear & Custom Apparel</title>
-  <meta name="description" content="Premium shirts and hoodies with custom name printing. Cash on Delivery. Fast nationwide delivery in Pakistan.">
-
-  <!-- Social Preview -->
-  <meta property="og:title" content="Abeer Amir – Premium Streetwear & Custom Apparel">
-  <meta property="og:description" content="High-quality custom shirts and hoodies. Cash on Delivery.">
-  <meta property="og:image" content="logo.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
-
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abeer Amir | Premium Apparel</title>
 
   <style>
-    :root { --black:#111; --white:#fff; --gold:#f4c542; --radius:10px; }
-    body { font-family: Arial, sans-serif; margin:0; background:#fafafa; color:#111; }
-
-    header { background:#111; color:#fff; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
-    header img { height:50px; }
-    nav a { color:#fff; text-decoration:none; margin-left:20px; font-weight:bold; }
-    nav a:hover { color:#f4c542; }
-
-    .trust-box { background:#fff; padding:10px; margin:20px auto; max-width:900px; border-radius:var(--radius); border:1px solid #ddd; text-align:center; font-size:15px; }
-
-    section { padding:40px 20px; text-align:center; }
-    .product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; max-width:1100px; margin:auto; }
-
-    .card { background:#fff; border-radius:var(--radius); padding:20px; box-shadow:0 4px 12px rgba(0,0,0,.1); }
-    .card img { width:100%; border-radius:var(--radius); margin-bottom:10px; }
-    .price { color:#f4c542; font-size:1.2em; font-weight:700; margin:10px 0; }
-
-    .colors { display:flex; justify-content:center; gap:8px; margin-bottom:10px; }
-    .color-dot { width:20px; height:20px; border-radius:50%; border:2px solid #fff; box-shadow:0 0 3px rgba(0,0,0,.4); cursor:pointer; }
-
-    button.custom-order-btn,
-    .upload-btn { background:#111; color:#fff; padding:10px; border:none; width:100%; border-radius:var(--radius); cursor:pointer; font-weight:600; }
-    button:hover, .upload-btn:hover { background:#f4c542; color:#111; }
-
-    footer { background:#111; color:#fff; text-align:center; padding:25px 20px; margin-top:50px; }
-
-    .social-links a {
-      color:#f4c542;
-      margin:0 10px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .modal { position:fixed; top:0; left:0; width:100%; height:100%; display:none; background:rgba(0,0,0,.45); justify-content:center; align-items:center; z-index:200; }
-    .modal-content { background:#fff; padding:20px; border-radius:var(--radius); width:300px; text-align:center; }
-    .modal-content input, .modal-content select { width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ddd; }
-    #confirmOrder { background:#25D366; color:#fff; border:none; padding:10px; border-radius:6px; width:100%; cursor:pointer; }
-    #closeModal { margin-top:8px; background:#eee; border:none; padding:8px; border-radius:6px; width:100%; cursor:pointer; }
+    body { font-family: Arial, sans-serif; margin: 0; background:#111; color:#fff; }
+    header { padding: 20px; text-align: center; background:#000; border-bottom:1px solid #333; }
+    .products { display:flex; flex-wrap:wrap; justify-content:center; padding:40px 10px; gap:25px; }
+    .product { background:#1c1c1c; width:260px; padding:20px; border-radius:10px; text-align:center; }
+    .product img { width:100%; border-radius:8px; }
+    .product h3{margin:10px 0 5px}
+    .product p{font-size:14px; color:#bbb;}
+    .price{margin:8px 0; font-size:18px; font-weight:bold; color:#f4c542;}
+    button{background:#f4c542;color:#111;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-weight:bold;}
+    .order-area{padding:40px 20px; max-width:600px; margin:auto;}
+    input, select, textarea { width:100%; padding:10px; margin:8px 0; border-radius:6px; border:none; }
+    .social-links {text-align:center; padding:20px;}
+    .social-links a{color:#f4c542; margin:0 10px; text-decoration:none; font-weight:bold;}
   </style>
-</head>
 
+</head>
 <body>
 
 <header>
-  <img src="logo.png">
-  <nav>
-    <a href="#products">Products</a>
-    <a href="https://wa.me/923006190087" target="_blank">Contact</a>
-  </nav>
+  <h1>Abeer Amir Premium Apparel</h1>
+  <p>Quality Hoodies & Shirts — Premium Fabric — Made to Last</p>
 </header>
 
-<div class="trust-box">
-  ✓ Cash on Delivery <br>
-  ✓ 4–6 Day Delivery Time <br>
-  ✓ Premium Fabric Quality <br>
-  ✓ 24/7 WhatsApp Support
-</div>
+<section class="products">
+  <div class="product">
+    <img src="shirt1.jpg">
+    <h3>Premium Shirt</h3>
+    <p>Soft & Breathable Fabric</p>
+    <div class="price">$14.99</div>
+  </div>
 
-<div style="max-width:800px;margin:auto;">
-  <button class="upload-btn"
-    onclick="window.open('https://wa.me/923006190087?text=I%20want%20to%20upload%20my%20design','_blank')">
-    Upload Your Own Design
-  </button>
-</div>
+  <div class="product">
+    <img src="hoodie2.jpg">
+    <h3>Classic Hoodie</h3>
+    <p>Comfort Fit | Winter Essential</p>
+    <div class="price">$19.99</div>
+  </div>
 
-<section id="products">
-  <h2>Featured Products</h2>
-  <div class="product-grid">
-
-    <!-- Shirt -->
-    <div class="card">
-      <img id="shirt-img" src="shirt1.jpg">
-      <h3>Classic Shirt</h3>
-      <div class="colors">
-        <div class="color-dot" style="background:black" onclick="switchImage('shirt-img','shirt1.jpg')"></div>
-        <div class="color-dot" style="background:white" onclick="switchImage('shirt-img','shirt2.jpg')"></div>
-        <div class="color-dot" style="background:gray" onclick="switchImage('shirt-img','shirt3.jpg')"></div>
-      </div>
-      <div class="price">$14.99</div>
-      <button class="custom-order-btn" data-product="Shirt" data-price="14.99">Order Now</button>
-    </div>
-
-    <!-- Hoodie -->
-    <div class="card">
-      <img id="hoodie-img" src="hoodie.jpg">
-      <h3>Premium Hoodie</h3>
-      <div class="colors">
-        <div class="color-dot" style="background:black" onclick="switchImage('hoodie-img','hoodie.jpg')"></div>
-        <div class="color-dot" style="background:#555" onclick="switchImage('hoodie-img','hoodie2.jpg')"></div>
-      </div>
-      <div class="price">$19.99</div>
-      <button class="custom-order-btn" data-product="Hoodie" data-price="19.99">Order Now</button>
-    </div>
-
-    <!-- Hoodie Set -->
-    <div class="card">
-      <img id="hoodieset-img" src="hoodieset.jpg">
-      <h3>Couple Hoodie Set</h3>
-      <div class="price">$24.99</div>
-      <button class="custom-order-btn" data-product="Hoodie Set" data-price="24.99">Order Now</button>
-    </div>
-
+  <div class="product">
+    <img src="hoodieset.jpg">
+    <h3>Hoodie Set (Hoodie + Trouser)</h3>
+    <p>Matching Fit | Streetwear Look</p>
+    <div class="price">$24.99</div>
   </div>
 </section>
 
-<footer>
-  <img src="logo.png" style="height:45px;">
-  <p>© 2025 Abeer Amir — All Rights Reserved.</p>
+<section class="order-area">
+  <h2>Order Form</h2>
 
-  <div class="social-links">
-    <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
-    <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
-  </div>
-</footer>
+  <p><strong>Pricing in PKR:</strong></p>
+  <p>S–XL → 290 PKR</p>
+  <p>2XL–4XL → 300 PKR</p>
+  <p><strong>Delivery:</strong> ~150–250 PKR depending on city</p>
 
-<div id="orderModal" class="modal">
-  <div class="modal-content">
-    <h3 id="modalProduct"></h3>
-    <select id="size"><option value="">Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-    <input id="color" placeholder="Color (optional)">
-    <input id="customText" placeholder="Custom Name (optional)">
-    <p id="errorMsg" style="display:none;color:red;">Select size first.</p>
-    <button id="confirmOrder">Send to WhatsApp</button>
-    <button id="closeModal">Cancel</button>
-  </div>
+  <p style="margin-top:20px; background:#222; padding:12px; border-radius:6px;">
+    ✅ **Half Advance Payment Required Before Dispatch**<br>
+    Pay via **Easypaisa / JazzCash** → **<strong>+923006190087</strong>**
+  </p>
+
+  <form id="orderForm">
+    <input name="name" placeholder="Full Name" required>
+    <input name="phone" placeholder="Phone Number" required>
+    <input name="product" placeholder="Product Name / ID" required>
+    <input name="qty" type="number" min="1" placeholder="Quantity" required>
+    <select name="size" required>
+      <option value="">Select Size</option>
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+      <option>Extra Large</option>
+    </select>
+    <input name="city" placeholder="City / Delivery Address" required>
+    <input name="payment" placeholder="Payment Method (Easypaisa / JazzCash)" required>
+    <input name="txn" placeholder="Transaction ID (Half Payment)">
+    <textarea name="notes" placeholder="Additional Notes"></textarea>
+    <button type="submit">Confirm Order via WhatsApp</button>
+  </form>
+</section>
+
+<div class="social-links">
+  <a href="https://www.instagram.com/abeeraamir00" target="_blank">Instagram</a>
+  <a href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
+  <a href="https://wa.me/923006190087" target="_blank">WhatsApp</a>
 </div>
 
 <script>
-function switchImage(id, img){ document.getElementById(id).src = img; }
-
-const modal=document.getElementById("orderModal"), modalProduct=document.getElementById("modalProduct");
-let product="",price="";
-
-document.querySelectorAll(".custom-order-btn").forEach(b=>{
-  b.onclick=()=>{ product=b.dataset.product; price=b.dataset.price; modalProduct.innerText=`${product} - $${price}`; modal.style.display="flex"; };
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const f = e.target;
+  const msg = `New Order%0AName: ${f.name.value}%0APhone: ${f.phone.value}%0AProduct: ${f.product.value}%0AQuantity: ${f.qty.value}%0ASize: ${f.size.value}%0ACity: ${f.city.value}%0APayment: ${f.payment.value}%0ATransaction ID: ${f.txn.value}%0ANotes: ${f.notes.value}`;
+  window.open("https://wa.me/923006190087?text=" + msg, "_blank");
 });
-
-document.getElementById("closeModal").onclick=()=>modal.style.display="none";
-
-document.getElementById("confirmOrder").onclick=()=>{
-  let s=size.value.trim(); if(!s){ errorMsg.style.display="block"; return; }
-  let msg=`Product: ${product}%0APrice: $${price}%0ASize: ${s}%0AColor: ${color.value}%0AName: ${customText.value}`;
-  window.open(`https://wa.me/923006190087?text=${msg}`,"_blank"); modal.style.display="none";
-};
 </script>
 
 </body>
