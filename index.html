@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>abeeraamir — Premium Streetwear</title>
-<meta name="description" content="abeeraamir — bold streetwear. Hoodies & shirts. 50% advance to confirm. Pay via JazzCash/EasyPaisa/NayaPay/Bank Transfer." />
+<meta name="description" content="abeeraamir — hoodies & shirts. Prices in USD with PKR converter at checkout. 50% advance to confirm." />
 <link rel="icon" href="logo.png" />
 
 <style>
@@ -39,7 +39,8 @@
   .card h3{margin:0;font-size:18px}
   .desc{color:var(--muted);font-size:14px}
   .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
-  .price{color:var(--gold);font-weight:900;font-size:18px}
+  .price-usd{color:var(--gold);font-weight:900;font-size:18px}
+  .price-sub{color:var(--muted);font-size:12px}
   .quick{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer}
   .quick:hover{background:var(--gold);color:var(--black)}
 
@@ -81,12 +82,12 @@
   <section class="hero">
     <div>
       <h2>Bold Streetwear — Premium Drops</h2>
-      <p>Heavy-weight fabrics, crisp prints, and confident fits. 50% advance confirms order — remaining 50% on delivery. Payments via JazzCash / EasyPaisa / NayaPay / Bank Transfer.</p>
+      <p>Heavy-weight fabrics, crisp prints, and confident fits. 50% advance confirms order — remaining 50% on delivery. Prices show in USD; final checkout converts to PKR (1 USD = 300 PKR).</p>
       <div style="margin-top:12px">
         <button class="btn" onclick="document.getElementById('orderSection').scrollIntoView({behavior:'smooth'})">Place Order</button>
         <button class="btn outline" onclick="window.open('https://wa.me/923006190087?text=I%20want%20to%20upload%20a%20design','_blank')">Upload Design</button>
       </div>
-      <div class="trust">Unit price shown is PKR. Live totals calculate below. Advance 50% required to process order.</div>
+      <div class="trust">Unit USD price shown on product cards. Checkout converts to PKR (rate locked at 300 PKR per USD). Advance 50% required to process order.</div>
     </div>
 
     <div style="width:420px">
@@ -98,33 +99,39 @@
     <h2 style="color:var(--gold);margin:8px 0">Featured Products</h2>
     <div class="grid">
 
-      <article class="card">
+      <article class="card" data-usd="14.99">
         <div class="thumb"><img src="shirt1.jpg" alt="Classic Shirt" loading="lazy"></div>
         <h3>Classic Shirt</h3>
         <p class="desc">Lightweight cotton blend, premium print finish.</p>
         <div class="meta">
-          <div class="price">Rs 290</div>
-          <button class="quick" data-product="Classic Shirt">Order</button>
+          <div>
+            <div class="price-usd">$14.99 <span class="price-sub">(~ Rs <span class="converted">4497</span>)</span></div>
+          </div>
+          <button class="quick" data-product="Classic Shirt" data-usd="14.99">Order</button>
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-usd="19.99">
         <div class="thumb"><img src="hoodie.jpg" alt="Premium Hoodie" loading="lazy"></div>
         <h3>Premium Hoodie</h3>
         <p class="desc">Brushed interior, heavy-weight for warm comfort.</p>
         <div class="meta">
-          <div class="price">Rs 290</div>
-          <button class="quick" data-product="Premium Hoodie">Order</button>
+          <div>
+            <div class="price-usd">$19.99 <span class="price-sub">(~ Rs <span class="converted">5997</span>)</span></div>
+          </div>
+          <button class="quick" data-product="Premium Hoodie" data-usd="19.99">Order</button>
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" data-usd="24.99">
         <div class="thumb"><img src="hoodieset.jpg" alt="Couple Hoodie Set" loading="lazy"></div>
         <h3>Couple Hoodie Set</h3>
         <p class="desc">Matching set — perfect for gifting.</p>
         <div class="meta">
-          <div class="price">Rs 290</div>
-          <button class="quick" data-product="Couple Hoodie Set">Order</button>
+          <div>
+            <div class="price-usd">$24.99 <span class="price-sub">(~ Rs <span class="converted">7497</span>)</span></div>
+          </div>
+          <button class="quick" data-product="Couple Hoodie Set" data-usd="24.99">Order</button>
         </div>
       </article>
 
@@ -149,9 +156,9 @@
       <div style="margin-top:10px">
         <select name="product" required>
           <option value="">Select product *</option>
-          <option>Classic Shirt</option>
-          <option>Premium Hoodie</option>
-          <option>Couple Hoodie Set</option>
+          <option value="Classic Shirt" data-usd="14.99">$14.99 — Classic Shirt</option>
+          <option value="Premium Hoodie" data-usd="19.99">$19.99 — Premium Hoodie</option>
+          <option value="Couple Hoodie Set" data-usd="24.99">$24.99 — Couple Hoodie Set</option>
         </select>
       </div>
 
@@ -183,29 +190,30 @@
         <textarea name="notes" placeholder="Additional notes (optional)"></textarea>
       </div>
 
+      <!-- Minimal checkout summary (C) — shows PKR conversion but keeps it minimal -->
       <div class="summary" style="margin-top:14px">
         <div class="box" style="flex:1">
-          <div style="font-size:13px;color:var(--muted)">Unit price</div>
-          <strong>Rs <span id="unitPrice">290</span></strong>
+          <div style="font-size:13px;color:var(--muted)">Unit price (USD)</div>
+          <strong>$ <span id="unitUSD">14.99</span></strong>
+          <div class="price-sub">(~ Rs <span id="unitPKR">4497</span>)</div>
         </div>
-        <div class="box" style="flex:1">
-          <div style="font-size:13px;color:var(--muted)">Quantity</div>
-          <strong id="qtyDisplay">1</strong>
-        </div>
+
         <div class="box" style="flex:1">
           <div style="font-size:13px;color:var(--muted)">Total</div>
-          <strong id="totalPrice">Rs 290</strong>
+          <strong>$ <span id="totalUSD">14.99</span></strong>
+          <div class="price-sub">(~ Rs <span id="totalPKR">4497</span>)</div>
         </div>
+
         <div class="box" style="flex:1">
           <div style="font-size:13px;color:var(--muted)">Advance (50%)</div>
-          <strong id="advancePrice">Rs 145</strong>
+          <strong>$ <span id="advanceUSD">7.50</span></strong>
+          <div class="price-sub">(~ Rs <span id="advancePKR">2249</span>)</div>
         </div>
       </div>
 
       <div class="pay-notes">
-        <p style="margin:8px 0">Send advance payment to confirm. For <strong>JazzCash / EasyPaisa</strong> send to: <strong>+923006190087</strong>.</p>
-        <p style="margin:8px 0">For <strong>NayaPay</strong> or <strong>Bank Transfer</strong> we will send account details privately on WhatsApp after you submit the order.</p>
-        <p style="margin:8px 0;color:var(--muted)">Delivery charges: 150–250 PKR depending on city. Orders confirmed after advance payment.</p>
+        <p style="margin:8px 0">For <strong>JazzCash / EasyPaisa</strong> send advance to: <strong>+923006190087</strong>.</p>
+        <p style="margin:8px 0">For <strong>NayaPay</strong> or <strong>Bank Transfer</strong> we will share account details on WhatsApp after you submit the order.</p>
       </div>
 
       <div style="margin-top:12px">
@@ -230,43 +238,85 @@
 
 <script>
 /* CONFIG */
-const UNIT_PRICE = 290;
+const USD_TO_PKR = 300; // locked rate
 const GOOGLE_FORM_POST = "https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/formResponse";
 const WHATSAPP_NUMBER = "923006190087";
 
-/* UI */
+/* UI refs */
 const orderForm = document.getElementById("orderForm");
 const qtyField = orderForm.qty;
-const totalPriceEl = document.getElementById("totalPrice");
-const advancePriceEl = document.getElementById("advancePrice");
+const totalUSD = document.getElementById("totalUSD");
+const totalPKR = document.getElementById("totalPKR");
+const unitUSD = document.getElementById("unitUSD");
+const unitPKR = document.getElementById("unitPKR");
+const advanceUSD = document.getElementById("advanceUSD");
+const advancePKR = document.getElementById("advancePKR");
 const qtyDisplay = document.getElementById("qtyDisplay");
 
-/* Quick order buttons */
+/* Fill product card converted PKR values */
+document.querySelectorAll('.card').forEach(card=>{
+  const usd = parseFloat(card.dataset.usd || card.querySelector('.quick')?.dataset.usd || 0);
+  if(usd){
+    const p = card.querySelector('.converted');
+    if(p) p.textContent = Math.round(usd * USD_TO_PKR);
+  }
+});
+
+/* Quick order: prefill product + set unit price */
 document.querySelectorAll(".quick").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     const product = btn.dataset.product || btn.textContent.trim();
+    const usd = parseFloat(btn.dataset.usd || 0);
+    // choose product option
     orderForm.product.value = product;
+    // update unit price display
+    unitUSD.textContent = usd.toFixed(2);
+    unitPKR.textContent = Math.round(usd * USD_TO_PKR);
+    recalc();
     window.scrollTo({ top: document.getElementById("orderSection").offsetTop - 20, behavior: "smooth" });
     setTimeout(()=> orderForm.phone.focus(), 600);
   });
 });
 
-/* Recalc totals */
+/* When select changes, update unit */
+orderForm.product.addEventListener('change', function(){
+  const selected = orderForm.product.selectedOptions[0];
+  const usd = parseFloat(selected.dataset.usd || 0);
+  if(usd){
+    unitUSD.textContent = usd.toFixed(2);
+    unitPKR.textContent = Math.round(usd * USD_TO_PKR);
+  }
+  recalc();
+});
+
+/* Recalc function (minimal display) */
 function recalc(){
   const qty = Math.max(1, parseInt(qtyField.value || 1));
-  const total = qty * UNIT_PRICE;
-  const advance = Math.ceil(total * 0.5);
-  totalPriceEl.textContent = "Rs " + total;
-  advancePriceEl.textContent = "Rs " + advance;
-  qtyDisplay.textContent = qty;
+  const unitUsdVal = parseFloat(unitUSD.textContent) || 0;
+  const totalUsdVal = +(unitUsdVal * qty).toFixed(2);
+  const totalPkrVal = Math.round(totalUsdVal * USD_TO_PKR);
+  const advanceUsdVal = +(totalUsdVal / 2).toFixed(2);
+  const advancePkrVal = Math.ceil(totalPkrVal / 2);
+
+  totalUSD.textContent = totalUsdVal.toFixed(2);
+  totalPKR.textContent = totalPkrVal;
+  advanceUSD.textContent = advanceUsdVal.toFixed(2);
+  advancePKR.textContent = advancePkrVal;
 }
 qtyField.addEventListener("input", recalc);
-document.addEventListener("DOMContentLoaded", recalc);
+document.addEventListener("DOMContentLoaded", function(){
+  // set unit from first select option by default
+  const firstOpt = orderForm.product.selectedOptions[0];
+  if(firstOpt && firstOpt.dataset.usd) {
+    unitUSD.textContent = parseFloat(firstOpt.dataset.usd).toFixed(2);
+    unitPKR.textContent = Math.round(parseFloat(firstOpt.dataset.usd) * USD_TO_PKR);
+  }
+  recalc();
+});
 
-/* Submit: post to Google Form + open WhatsApp */
+/* Submit: post to Google Form + open WhatsApp with USD+PKR summary */
 orderForm.addEventListener("submit", function(e){
   e.preventDefault();
-
   const f = e.target;
   const name = (f.name.value || "").trim();
   const email = (f.email.value || "").trim();
@@ -278,18 +328,21 @@ orderForm.addEventListener("submit", function(e){
   const payment = (f.payment.value || "").trim();
   const txn = (f.txn.value || "").trim();
   const notes = (f.notes.value || "").trim();
-  const total = (parseInt(qty) || 1) * UNIT_PRICE;
-  const advance = Math.ceil(total * 0.5);
 
   if(!name || !phone || !product || !size){
     alert("Please fill required fields: Name, Phone, Product and Size.");
     return;
   }
 
+  const unitUsd = parseFloat(unitUSD.textContent) || 0;
+  const totalUsd = +(unitUsd * parseInt(qty)).toFixed(2);
+  const totalPkr = Math.round(totalUsd * USD_TO_PKR);
+  const advanceUsd = +(totalUsd / 2).toFixed(2);
+  const advancePkr = Math.ceil(totalPkr / 2);
+
   // 1) Post to Google Form (silent)
   try{
     const body = new URLSearchParams();
-    // entry ids from your form mapping
     body.append("entry.1023236898", name);     // Full Name
     body.append("entry.52676745", email);      // Email
     body.append("entry.137888503", phone);     // Phone
@@ -307,7 +360,7 @@ orderForm.addEventListener("submit", function(e){
     console.warn("Google post exception:", err);
   }
 
-  // 2) Open WhatsApp with structured order
+  // 2) Open WhatsApp with structured order (both USD & PKR)
   const lines = [
     "New Order",
     "------------------------",
@@ -315,24 +368,25 @@ orderForm.addEventListener("submit", function(e){
     "Phone: " + phone,
     "Email: " + (email || "-"),
     "Product: " + product,
-    "Quantity: " + qty,
     "Size: " + size,
-    "Total Price: Rs " + total,
-    "Advance (50%): Rs " + advance,
+    "Quantity: " + qty,
+    "Unit Price: $" + unitUsd.toFixed(2) + " (≈ Rs " + Math.round(unitUsd * USD_TO_PKR) + ")",
+    "Total: $" + totalUsd.toFixed(2) + " (≈ Rs " + totalPkr + ")",
+    "Advance (50%): $" + advanceUsd.toFixed(2) + " (≈ Rs " + advancePkr + ")",
     "City: " + city,
     "Payment Method: " + payment,
     "Transaction ID: " + (txn || "-"),
     "Notes: " + (notes || "-"),
     "------------------------",
-    "Please confirm and we will share payment details (NayaPay / Bank details sent on WhatsApp if selected)."
+    "Please confirm payment of the advance. NayaPay / Bank details provided on WhatsApp if selected."
   ];
   const message = encodeURIComponent(lines.join("\n"));
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
 
-  // Visual feedback
   alert("Order sent to WhatsApp. Please complete the 50% advance payment to confirm.");
   recalc();
 });
 </script>
 </body>
 </html>
+
