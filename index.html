@@ -3,168 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Premium custom apparel - T-shirts, hoodies, and sets with custom printing">
-<title>Abeer Apparel | Premium Wear</title>
+<title>Abeer Amir | Cart-Aware Multi-Product Order</title>
 <style>
 :root {
-    --primary-color: #111;
-    --background-color: #f7f7f7;
-    --white: #fff;
-    --text-color: #333;
-    --note-color: #444;
-    --shadow: 0 4px 10px rgba(0,0,0,0.1);
-    --border-radius: 10px;
-    --transition: all 0.3s ease;
+    --primary-color:#111;
+    --background-color:#f7f7f7;
+    --white:#fff;
+    --text-color:#333;
+    --note-color:#444;
+    --shadow:0 4px 10px rgba(0,0,0,0.1);
+    --border-radius:10px;
+    --transition:all 0.3s ease;
 }
-
-/* Reset & Base Styles */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {font-family: Arial, sans-serif;background: var(--background-color);color: var(--text-color);}
-header {background: var(--primary-color);color: var(--white);padding:15px;text-align:center;font-size:22px;}
-.container {width: 90%;max-width: 900px;margin: 30px auto;}
-.product {background: var(--white);padding:20px;border-radius: var(--border-radius);margin-bottom:25px;box-shadow: var(--shadow);transition: var(--transition);}
-.product:hover {transform: translateY(-2px);box-shadow: 0 6px 15px rgba(0,0,0,0.15);}
-.product h2 {margin-bottom:10px;color: var(--primary-color);}
-.price {font-size:18px;font-weight:bold;margin:8px 0;color: var(--primary-color);}
-.design-section {margin:15px 0;}
-.upload-label {font-weight:bold;display:block;margin-bottom:8px;}
-.design-upload {width:100%;padding:8px;margin-bottom:10px;}
-.preview-img {max-width:100%;border-radius: var(--border-radius);display:none;margin-top:10px;opacity:0;transition: opacity 0.3s ease;}
-.preview-img.show {opacity:1;}
-.btn {display:inline-block;background: var(--primary-color);color: var(--white);padding:10px 18px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;font-size:16px;width:100%;transition: var(--transition);box-shadow: 0 3px 8px rgba(0,0,0,0.1);}
-.btn:hover {background:#333;transform:translateY(-1px);}
-.btn:focus {outline:2px solid var(--primary-color);outline-offset:2px;}
-.btn:active {transform: translateY(0);box-shadow:0 1px 4px rgba(0,0,0,0.2);}
-.note {font-size:14px;margin-top:10px;color: var(--note-color);}
-.note p {margin:5px 0;}
-.note p:first-child {font-weight:bold;color:#d9534f;}
-.order-form-section {margin-top:40px;}
-.order-form-section h3 {margin-bottom:20px;color: var(--primary-color);}
-iframe {width:100%;border:none;border-radius: var(--border-radius);background: var(--white);}
-@media (max-width:768px){.container{width:95%;padding:10px;}.product{padding:15px;}header{font-size:20px;padding:12px;}}
-@media (max-width:480px){.btn{padding:12px 16px;}}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:var(--background-color);color:var(--text-color);}
+header{display:flex;align-items:center;justify-content:space-between;padding:15px;background:var(--primary-color);color:#fff;flex-wrap:wrap;}
+header img.logo{height:50px;width:auto;}
+header .brand-name{font-size:22px;margin-left:10px;flex:1;text-align:center;}
+header .social-links a{color:#fff;text-decoration:none;font-size:20px;margin:0 5px;transition:0.3s;}
+header .social-links a:hover{color:#25D366;}
+.container{width:90%;max-width:900px;margin:30px auto;}
+.product{background:var(--white);padding:20px;border-radius:var(--border-radius);margin-bottom:25px;box-shadow:var(--shadow);transition:var(--transition);position:relative;}
+.product:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+.product h2{margin-bottom:10px;color:var(--primary-color);}
+.product img.product-img{max-width:100%;border-radius:var(--border-radius);margin-bottom:10px;}
+.price{font-size:18px;font-weight:bold;margin:8px 0;color:var(--primary-color);}
+.selector{margin:10px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.selector label{font-weight:bold;margin-right:5px;}
+.selector select,.selector input[type=number]{padding:6px;border-radius:5px;border:1px solid #ccc;}
+.design-section{margin:15px 0;}
+.design-upload{width:100%;padding:8px;margin-bottom:10px;}
+.preview-container img{max-width:100px;margin-right:5px;border-radius:5px;}
+.btn{display:inline-block;background:var(--primary-color);color:var(--white);padding:10px 18px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;font-size:16px;transition:var(--transition);box-shadow:0 3px 8px rgba(0,0,0,0.1);width:100%;}
+.btn:hover{background:#333;transform:translateY(-1px);}
+.note{font-size:14px;margin-top:10px;color:var(--note-color);}
+.note p:first-child{font-weight:bold;color:#d9534f;}
+.sticky-order{position:fixed;bottom:20px;right:20px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.cart-checkbox{position:absolute;top:15px;right:15px;width:20px;height:20px;}
+@media(max-width:768px){.container{width:95%;padding:10px;}.product{padding:15px;}header .brand-name{font-size:20px;}header{flex-direction:column;text-align:center;}}
+@media(max-width:480px){.btn{padding:12px 16px;}}
 </style>
 </head>
 <body>
 
-<header>Abeer Apparel – Premium Custom Wear</header>
+<header>
+<img src="logo.png" alt="Abeer Apparel Logo" class="logo">
+<div class="brand-name">Abeer Apparel – Select Products to Order</div>
+<div class="social-links">
+  <a href="https://instagram.com/abeeraamir00" target="_blank">📸</a>
+  <a href="https://facebook.com/profile.php?id=61578291089372" target="_blank">📘</a>
+  <a href="https://abeeraamir98.github.io/Abeer-Amir" target="_blank">🌐</a>
+</div>
+</header>
 
 <div class="container">
 
-    <!-- Product Template -->
-    <div class="product" data-product="Premium T-Shirt" data-usd="14.99">
-        <h2>Premium T-Shirt</h2>
-        <p>Soft, breathable, high-quality fabric. Custom print available.</p>
-        <div class="price"></div>
-        <div class="design-section">
-            <label class="upload-label">Upload Your Design:</label>
-            <input type="file" accept="image/*" class="design-upload">
-            <img class="preview-img" alt="Design preview">
-        </div>
-        <button class="btn order-btn">Order via WhatsApp</button>
-        <div class="note">
-            <p>Advance Payment Required. Payment details will be shared privately on WhatsApp.</p>
-            <p>JazzCash / EasyPaisa: +923006190087</p>
-        </div>
-    </div>
-
-    <div class="product" data-product="Premium Hoodie" data-usd="19.99">
-        <h2>Premium Hoodie</h2>
-        <p>Warm, durable, thick fleece. Custom logo & text supported.</p>
-        <div class="price"></div>
-        <div class="design-section">
-            <label class="upload-label">Upload Your Design:</label>
-            <input type="file" accept="image/*" class="design-upload">
-            <img class="preview-img" alt="Design preview">
-        </div>
-        <button class="btn order-btn">Order via WhatsApp</button>
-        <div class="note">
-            <p>Advance Payment Required. Payment details will be shared privately on WhatsApp.</p>
-            <p>JazzCash / EasyPaisa: +923006190087</p>
-        </div>
-    </div>
-
-    <div class="product" data-product="Hoodie Set" data-usd="24.99">
-        <h2>Hoodie Set (Hoodie + Sweatpants)</h2>
-        <p>Matching premium set. Clean fit. Streetwear aesthetic.</p>
-        <div class="price"></div>
-        <div class="design-section">
-            <label class="upload-label">Upload Your Design:</label>
-            <input type="file" accept="image/*" class="design-upload">
-            <img class="preview-img" alt="Design preview">
-        </div>
-        <button class="btn order-btn">Order via WhatsApp</button>
-        <div class="note">
-            <p>Advance Payment Required. Payment details will be shared privately on WhatsApp.</p>
-            <p>JazzCash / EasyPaisa: +923006190087</p>
-        </div>
-    </div>
-
-    <!-- Order Form -->
-    <section class="order-form-section">
-        <h3>Complete Order Form (Required Before Production)</h3>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaenQcGH0rpxOp9SCOFEiAYb2_FmeN75URwuzHOveHUzCX9Q/viewform?embedded=true" height="2000" title="Order Form">Loading…</iframe>
-    </section>
-
+<!-- Product 1 -->
+<div class="product" data-product="Premium T-Shirt" data-usd="14.99">
+<input type="checkbox" class="cart-checkbox" title="Add to Order">
+<h2>Premium T-Shirt</h2>
+<img src="shirt1.jpg" alt="Premium T-Shirt" class="product-img">
+<div class="price"></div>
+<div class="selector">
+<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+<label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
+<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
 </div>
+<div class="design-section">
+<label class="upload-label">Upload Design (Max 3):</label>
+<input type="file" accept="image/*" class="design-upload" multiple>
+<div class="preview-container"></div>
+</div>
+</div>
+
+<!-- Product 2 -->
+<div class="product" data-product="Premium Hoodie" data-usd="19.99">
+<input type="checkbox" class="cart-checkbox" title="Add to Order">
+<h2>Premium Hoodie</h2>
+<img src="hoodie.jpg" alt="Premium Hoodie" class="product-img">
+<div class="price"></div>
+<div class="selector">
+<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+<label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
+<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
+</div>
+<div class="design-section">
+<label class="upload-label">Upload Design (Max 3):</label>
+<input type="file" accept="image/*" class="design-upload" multiple>
+<div class="preview-container"></div>
+</div>
+</div>
+
+<!-- Product 3 -->
+<div class="product" data-product="Hoodie Set" data-usd="24.99">
+<input type="checkbox" class="cart-checkbox" title="Add to Order">
+<h2>Hoodie Set (Hoodie + Sweatpants)</h2>
+<img src="hoodieset.jpg" alt="Hoodie Set" class="product-img">
+<div class="price"></div>
+<div class="selector">
+<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+<label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
+<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
+</div>
+<div class="design-section">
+<label class="upload-label">Upload Design (Max 3):</label>
+<input type="file" accept="image/*" class="design-upload" multiple>
+<div class="preview-container"></div>
+</div>
+</div>
+
+<button class="btn sticky-order" onclick="sendSelectedOrders()">📩 Send Selected Products via WhatsApp</button>
 
 <script>
 const PKR_RATE = 300;
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Price display
-    document.querySelectorAll('.product').forEach(product => {
-        const usd = parseFloat(product.dataset.usd);
-        const pkr = Math.round(usd * PKR_RATE);
-        product.querySelector('.price').textContent = `$${usd.toFixed(2)} | PKR ${pkr}`;
-    });
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.product').forEach(product=>{
+        const usd=parseFloat(product.dataset.usd);
+        const pkr=Math.round(usd*PKR_RATE);
+        product.querySelector('.price').textContent=`$${usd.toFixed(2)} | PKR ${pkr}`;
 
-    // Image preview & error handling
-    document.querySelectorAll('.design-upload').forEach(input => {
-        const preview = input.nextElementSibling;
-
-        input.addEventListener('change', function() {
-            if(this.files && this.files[0]){
-                const reader = new FileReader();
-                reader.onload = function(e){
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                    preview.classList.add('show');
-                };
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-
-        input.addEventListener('error', function(){
-            alert('Error uploading file. Please try again with a different image.');
-        });
-    });
-
-    // WhatsApp order button
-    document.querySelectorAll('.order-btn').forEach(btn => {
-        btn.addEventListener('click', function(){
-            const product = this.closest('.product');
-            const productName = product.dataset.product;
-            const priceUSD = parseFloat(product.dataset.usd).toFixed(2);
-            const pricePKR = Math.round(product.dataset.usd * PKR_RATE);
-            const hasDesign = product.querySelector('.preview-img').style.display === 'block';
-
-            const msg = `🛍 New Order Request
-
-Product: ${productName}
-Price: $${priceUSD} (PKR ${pricePKR})
-Design: ${hasDesign ? 'Yes - Will share in chat' : 'No design uploaded yet'}
-
-Please help me with:
-- Size options
-- Color choices
-- Payment details
-- Delivery timeline`;
-
-            window.open(`https://wa.me/923006190087?text=${encodeURIComponent(msg)}`, '_blank');
+        const upload=product.querySelector('.design-upload');
+        const previewContainer=product.querySelector('.preview-container');
+        upload.addEventListener('change',function(){
+            previewContainer.innerHTML='';
+            Array.from(this.files).slice(0,3).forEach(file=>{
+                const reader=new FileReader();
+                reader.onload=function(e){
+                    const img=document.createElement('img');
+                    img.src=e.target.result;
+                    previewContainer.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            });
         });
     });
 });
+
+function sendSelectedOrders(){
+    let message="🛍 New Multi-Product Order Request\n\n";
+    const selectedProducts=document.querySelectorAll('.product input.cart-checkbox:checked');
+    if(selectedProducts.length===0){
+        alert('Please select at least one product to order.');
+        return;
+    }
+
+    selectedProducts.forEach(checkbox=>{
+        const product=checkbox.closest('.product');
+        const name=product.dataset.product;
+        const usd=parseFloat(product.dataset.usd).toFixed(2);
+        const pkr=Math.round(product.dataset.usd*PKR_RATE);
+        const size=product.querySelector('.size').value;
+        const color=product.querySelector('.color').value;
+        const qty=product.querySelector('.quantity').value;
+        const designCount=product.querySelector('.preview-container').children.length;
+
+        message+=`Product: ${name}\nPrice: $${usd} (PKR ${pkr})\nQty: ${qty}\nSize: ${size}\nColor: ${color}\nDesigns: ${designCount>0?designCount:'No'}\n\n`;
+    });
+
+    message+="Please provide:\n- Payment details\n- Delivery timeline";
+
+    window.open(`https://wa.me/923006190087?text=${encodeURIComponent(message)}`,'_blank');
+}
 </script>
 
 </body>
