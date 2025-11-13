@@ -1,203 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abeer Amir | Cart-Aware Multi-Product Order</title>
-<style>
-:root {
-    --primary-color:#111;
-    --background-color:#f7f7f7;
-    --white:#fff;
-    --text-color:#333;
-    --note-color:#444;
-    --shadow:0 4px 10px rgba(0,0,0,0.1);
-    --border-radius:10px;
-    --transition:all 0.3s ease;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--background-color);color:var(--text-color);}
-header{display:flex;align-items:center;justify-content:space-between;padding:15px;background:var(--primary-color);color:#fff;flex-wrap:wrap;}
-header img.logo{height:50px;width:auto;}
-header .brand-name{font-size:22px;margin-left:10px;flex:1;text-align:center;}
-header .social-links a{color:#fff;text-decoration:none;font-size:20px;margin:0 5px;transition:0.3s;}
-header .social-links a:hover{color:#25D366;}
-.container{width:90%;max-width:900px;margin:30px auto;}
-.product{background:var(--white);padding:20px;border-radius:var(--border-radius);margin-bottom:25px;box-shadow:var(--shadow);transition:var(--transition);position:relative;}
-.product:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
-.product h2{margin-bottom:10px;color:var(--primary-color);}
-.product img.product-img{max-width:100%;border-radius:var(--border-radius);margin-bottom:10px;}
-.price{font-size:18px;font-weight:bold;margin:8px 0;color:var(--primary-color);}
-.selector{margin:10px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-.selector label{font-weight:bold;margin-right:5px;}
-.selector select,.selector input[type=number]{padding:6px;border-radius:5px;border:1px solid #ccc;}
-.design-section{margin:15px 0;}
-.design-upload{width:100%;padding:8px;margin-bottom:10px;}
-.preview-container img{max-width:100px;margin-right:5px;border-radius:5px;}
-.btn{display:inline-block;background:var(--primary-color);color:var(--white);padding:10px 18px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;font-size:16px;transition:var(--transition);box-shadow:0 3px 8px rgba(0,0,0,0.1);width:100%;}
-.btn:hover{background:#333;transform:translateY(-1px);}
-.note{font-size:14px;margin-top:10px;color:var(--note-color);}
-.note p:first-child{font-weight:bold;color:#d9534f;}
-.sticky-order{position:fixed;bottom:20px;right:20px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
-.cart-checkbox{position:absolute;top:15px;right:15px;width:20px;height:20px;}
-@media(max-width:768px){.container{width:95%;padding:10px;}.product{padding:15px;}header .brand-name{font-size:20px;}header{flex-direction:column;text-align:center;}}
-@media(max-width:480px){.btn{padding:12px 16px;}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abeer Amir Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .selector {
+      margin-top: 10px;
+    }
+    label {
+      font-size: 14px;
+    }
+    select, input[type="number"], input[type="file"] {
+      margin: 5px;
+      padding: 5px;
+    }
+    .whatsapp {
+      display: block;
+      background: #25D366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Abeer Amir Store</h1>
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product" data-product="Hoodie" data-usd="29.99">
+        <input type="checkbox" class="cart-checkbox" title="Add to Order">
+        <h2>Hoodie</h2>
+        <img src="hoodie.png" alt="Hoodie">
+        <div class="selector">
+          <label>Size:</label>
+          <select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label>
+          <select class="color"><option>Black</option><option selected>White</option><option>Grey</option></select>
+          <label>Qty:</label>
+          <input type="number" class="quantity" value="1" min="1">
+        </div>
+      </div>
 
-<header>
-<img src="logo.png" alt="Abeer Apparel Logo" class="logo">
-<div class="brand-name">Abeer Apparel – Select Products to Order</div>
-<div class="social-links">
-  <a href="https://instagram.com/abeeraamir00" target="_blank">📸</a>
-  <a href="https://facebook.com/profile.php?id=61578291089372" target="_blank">📘</a>
-  <a href="https://abeeraamir98.github.io/Abeer-Amir" target="_blank">🌐</a>
-</div>
-</header>
+      <!-- Product 2 -->
+      <div class="product" data-product="Cap" data-usd="9.99">
+        <input type="checkbox" class="cart-checkbox" title="Add to Order">
+        <h2>Cap</h2>
+        <img src="cap.png" alt="Cap">
+        <div class="selector">
+          <label>Color:</label>
+          <select class="color"><option selected>Black</option><option>Blue</option><option>Red</option></select>
+          <label>Qty:</label>
+          <input type="number" class="quantity" value="1" min="1">
+        </div>
+      </div>
 
-<div class="container">
+      <!-- Product 3 -->
+      <div class="product" data-product="Jacket" data-usd="39.99">
+        <input type="checkbox" class="cart-checkbox" title="Add to Order">
+        <h2>Jacket</h2>
+        <img src="jacket.png" alt="Jacket">
+        <div class="selector">
+          <label>Size:</label>
+          <select class="size"><option>S</option><option>M</option><option selected>L</option><option>XL</option></select>
+          <label>Qty:</label>
+          <input type="number" class="quantity" value="1" min="1">
+        </div>
+      </div>
 
-<!-- Product 1 -->
-<div class="product" data-product="Premium T-Shirt" data-usd="14.99">
-<input type="checkbox" class="cart-checkbox" title="Add to Order">
-<h2>Premium T-Shirt</h2>
-<img src="shirt1.jpg" alt="Premium T-Shirt" class="product-img">
-<div class="price"></div>
-<div class="selector">
-<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-<label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
-<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-</div>
-<div class="design-section">
-<label class="upload-label">Upload Design (Max 3):</label>
-<input type="file" accept="image/*" class="design-upload" multiple>
-<div class="preview-container"></div>
-</div>
-</div>
+      <!-- Product 4 (New Tshirt) -->
+      <div class="product" data-product="Tshirt" data-usd="14.99">
+        <input type="checkbox" class="cart-checkbox" title="Add to Order">
+        <h2>Tshirt</h2>
+        <img src="tshirt.PNG" alt="Tshirt">
+        <div class="selector">
+          <label>Size:</label>
+          <select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label>
+          <select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
+          <label>Qty:</label>
+          <input type="number" class="quantity" value="1" min="1">
+        </div>
+      </div>
+    </div>
 
-<!-- Product 2 -->
-<div class="product" data-product="Premium Hoodie" data-usd="19.99">
-<input type="checkbox" class="cart-checkbox" title="Add to Order">
-<h2>Premium Hoodie</h2>
-<img src="hoodie.jpg" alt="Premium Hoodie" class="product-img">
-<div class="price"></div>
-<div class="selector">
-<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-<label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
-<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-</div>
-<div class="design-section">
-<label class="upload-label">Upload Design (Max 3):</label>
-<input type="file" accept="image/*" class="design-upload" multiple>
-<div class="preview-container"></div>
-</div>
-</div>
-
-<!-- Product 3 -->
-<div class="product" data-product="Hoodie Set" data-usd="24.99">
-<input type="checkbox" class="cart-checkbox" title="Add to Order">
-<h2>Hoodie Set (Hoodie + Sweatpants)</h2>
-<img src="hoodieset.jpg" alt="Hoodie Set" class="product-img">
-<div class="price"></div>
-<div class="selector">
-<label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-<label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
-<label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-</div>
-<div class="design-section">
-<label class="upload-label">Upload Design (Max 3):</label>
-<input type="file" accept="image/*" class="design-upload" multiple>
-<div class="preview-container"></div>
-</div>
-</div>
-
-<!-- Product 4 -->
-<div class="product" data-product="Tshirt" data-usd="14.99">
-  <input type="checkbox" class="cart-checkbox" title="Add to Order">
-  <h2>Tshirt</h2>
-  <img src="tshirt.PNG" alt="Tshirt" class="product-img">
-  <div class="price"></div>
-  <div class="selector">
-    <label>Size:</label>
-    <select class="size">
-      <option>S</option>
-      <option selected>M</option>
-      <option>L</option>
-      <option>XL</option>
-    </select>
-    <label>Color:</label>
-    <select class="color">
-      <option selected>Black</option>
-      <option>White</option>
-      <option>Grey</option>
-    </select>
-    <label>Qty:</label>
-    <input type="number" class="quantity" value="1" min="1">
+    <a href="https://wa.me/923006190087?text=Hi%20I%20want%20to%20place%20an%20order" class="whatsapp">Order on WhatsApp</a>
   </div>
-  <div class="design-section">
-    <label class="upload-label">Upload Design (Max 3):</label>
-    <input type="file" accept="image/*" class="design-upload" multiple>
-    <div class="preview-container"></div>
-  </div>
-</div>
 
-<button class="btn sticky-order" onclick="sendSelectedOrders()">📩 Send Selected Products via WhatsApp</button>
-
-</div>
-
-<script>
-const PKR_RATE = 300;
-
-document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.product').forEach(product=>{
-        const usd=parseFloat(product.dataset.usd);
-        const pkr=Math.round(usd*PKR_RATE);
-        product.querySelector('.price').textContent=`$${usd.toFixed(2)} | PKR ${pkr}`;
-
-        const upload=product.querySelector('.design-upload');
-        const previewContainer=product.querySelector('.preview-container');
-        upload.addEventListener('change',function(){
-            previewContainer.innerHTML='';
-            Array.from(this.files).slice(0,3).forEach(file=>{
-                const reader=new FileReader();
-                reader.onload=function(e){
-                    const img=document.createElement('img');
-                    img.src=e.target.result;
-                    previewContainer.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            });
-        });
+  <script>
+    // Optional dynamic total calculation if needed later
+    document.querySelectorAll('.cart-checkbox').forEach(box => {
+      box.addEventListener('change', () => {
+        let selected = [...document.querySelectorAll('.cart-checkbox:checked')]
+          .map(x => x.closest('.product').getAttribute('data-product'))
+          .join(', ');
+        console.log("Selected items:", selected);
+      });
     });
-});
-
-function sendSelectedOrders(){
-    let message="🛍 New Multi-Product Order Request\n\n";
-    const selectedProducts=document.querySelectorAll('.product input.cart-checkbox:checked');
-    if(selectedProducts.length===0){
-        alert('Please select at least one product to order.');
-        return;
-    }
-
-    selectedProducts.forEach(checkbox=>{
-        const product=checkbox.closest('.product');
-        const name=product.dataset.product;
-        const usd=parseFloat(product.dataset.usd).toFixed(2);
-        const pkr=Math.round(product.dataset.usd*PKR_RATE);
-        const size=product.querySelector('.size').value;
-        const color=product.querySelector('.color').value;
-        const qty=product.querySelector('.quantity').value;
-        const designCount=product.querySelector('.preview-container').children.length;
-
-        message+=`Product: ${name}\nPrice: $${usd} (PKR ${pkr})\nQty: ${qty}\nSize: ${size}\nColor: ${color}\nDesigns: ${designCount>0?designCount:'No'}\n\n`;
-    });
-
-    message+="Please provide:\n- Payment details\n- Delivery timeline";
-
-    window.open(`https://wa.me/923006190087?text=${encodeURIComponent(message)}`,'_blank');
-}
-</script>
-
+  </script>
 </body>
 </html>
