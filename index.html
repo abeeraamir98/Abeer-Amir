@@ -93,7 +93,6 @@
       margin-top: 5px;
       color: #555;
     }
-    /* WhatsApp button */
     .whatsapp {
       display: block;
       background: #25D366;
@@ -115,9 +114,10 @@
   <div class="container">
     <h1>Abeer Amir Store</h1>
     <div class="products">
-      <!-- Product 1 -->
+
+      <!-- Hoodie -->
       <div class="product" data-price="29.99" data-name="Hoodie">
-        <img src="hoodie.png" alt="Hoodie">
+        <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg" alt="Hoodie">
         <div class="product-info">
           <div class="product-title">Hoodie</div>
           <div class="product-price">$29.99</div>
@@ -134,9 +134,9 @@
         </div>
       </div>
 
-      <!-- Product 2 -->
+      <!-- Cap -->
       <div class="product" data-price="9.99" data-name="Cap">
-        <img src="cap.png" alt="Cap">
+        <img src="https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg" alt="Cap">
         <div class="product-info">
           <div class="product-title">Cap</div>
           <div class="product-price">$9.99</div>
@@ -151,9 +151,9 @@
         </div>
       </div>
 
-      <!-- Product 3 -->
+      <!-- Jacket -->
       <div class="product" data-price="39.99" data-name="Jacket">
-        <img src="jacket.png" alt="Jacket">
+        <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie2.jpg" alt="Jacket">
         <div class="product-info">
           <div class="product-title">Jacket</div>
           <div class="product-price">$39.99</div>
@@ -168,9 +168,9 @@
         </div>
       </div>
 
-      <!-- Product 4 -->
+      <!-- Tshirt -->
       <div class="product" data-price="14.99" data-name="Tshirt">
-        <img src="tshirt.PNG" alt="Tshirt">
+        <img src="https://abeeraamir98.github.io/Abeer-Amir/tshirt.PNG" alt="Tshirt">
         <div class="product-info">
           <div class="product-title">Tshirt</div>
           <div class="product-price">$14.99</div>
@@ -186,6 +186,7 @@
           <a href="#" class="buy-btn">Buy Now</a>
         </div>
       </div>
+
     </div>
 
     <a id="whatsapp-order" href="#" class="whatsapp">Order on WhatsApp</a>
@@ -207,7 +208,7 @@
       }
 
       qtyInput.addEventListener('input', updateTotal);
-      updateTotal(); // initial
+      updateTotal();
     });
 
     function generateWhatsAppLink(productEl) {
@@ -215,7 +216,7 @@
       const size = productEl.querySelector('.size')?.value || '';
       const color = productEl.querySelector('.color')?.value || '';
       const qty = productEl.querySelector('.quantity').value;
-      return `https://wa.me/923006190087?text=Hi! I want to order ${qty} x ${name} ${size} ${color}`;
+      return `https://wa.me/923006190087?text=${encodeURIComponent(`Hi! I want to order ${qty} x ${name} ${size} ${color}`)}`;
     }
 
     document.querySelectorAll('.buy-btn').forEach(btn => {
@@ -227,7 +228,6 @@
       });
     });
 
-    // Optional: main WhatsApp button collects all products (like a cart)
     whatsappBtn.addEventListener('click', e => {
       e.preventDefault();
       let message = 'Hi! I want to order:\n';
