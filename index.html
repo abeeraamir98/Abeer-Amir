@@ -3,512 +3,246 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abeer Amir Store – Premium Apparel</title>
+<title>Abeer Amir Store – Shopify Style Grid</title>
 <style>
 :root {
-    --primary-color: #111;
-    --secondary-color: #e53935;
-    --background-color: #f9f9f9;
-    --white: #fff;
-    --text-color: #333;
-    --shadow: 0 4px 15px rgba(0,0,0,0.1);
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
+    --primary-color:#111;
+    --secondary-color:#e53935;
+    --background-color:#f7f7f7;
+    --white:#fff;
+    --text-color:#333;
+    --shadow:0 4px 10px rgba(0,0,0,0.1);
+    --border-radius:10px;
+    --transition:all 0.3s ease;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background-color);
-    color: var(--text-color);
-}
-
-/* Header */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 5%;
-    background: var(--primary-color);
-    color: #fff;
-    flex-wrap: wrap;
-}
-
-header img.logo {
-    height: 50px;
-    width: auto;
-}
-
-header .brand-name {
-    font-size: 24px;
-    font-weight: 600;
-    flex: 1;
-    text-align: center;
-}
-
-header .social-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 22px;
-    margin: 0 8px;
-    transition: var(--transition);
-}
-
-header .social-links a:hover { color: #25D366; }
-
-/* Hero Section */
-.hero {
-    width: 100%;
-    background: url('https://abeeraamir98.github.io/Abeer-Amir/hero.jpg') center/cover no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 120px 20px 80px 20px;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-}
-
-.hero .cta-btn {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    background: var(--secondary-color);
-    color: var(--white);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.hero .cta-btn:hover { background: #d32f2f; }
-
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-/* Featured Slider */
-.slider-container {
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.slider {
-    display: flex;
-    overflow-x: hidden;
-    gap: 20px;
-    scroll-behavior: smooth;
-}
-
-.featured-product {
-    flex: 0 0 auto;
-    width: 260px;
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.featured-product:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-
-.featured-product img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.featured-product .info {
-    padding: 12px;
-    text-align: center;
-}
-
-.featured-product .info .title {
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.featured-product .info .price {
-    font-weight: bold;
-    color: var(--secondary-color);
-}
-
-/* Slider Arrows */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    font-size: 24px;
-    padding: 8px 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-}
-
-.arrow:hover { background: #d32f2f; }
-
-.arrow-left { left: -10px; }
-.arrow-right { right: -10px; }
-
-/* Product Grid */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.product {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: var(--transition);
-}
-
-.product:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-
-.product img.product-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-bottom: 1px solid #eee;
-}
-
-.product-info {
-    padding: 15px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.product-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.product-price {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.selector {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.selector label { font-weight: 500; }
-
-.selector select,
-.selector input[type=number] {
-    padding: 6px 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.design-section {
-    margin-bottom: 12px;
-}
-
-.design-upload {
-    width: 100%;
-    padding: 7px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.preview-container img {
-    max-width: 60px;
-    margin-right: 5px;
-    border-radius: 6px;
-}
-
-.buy-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
-    margin-top: auto;
-}
-
-.buy-btn:hover { background-color: #d32f2f; }
-
-.sticky-order {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #25D366;
-    color: #fff;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.cart-checkbox {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 22px;
-    height: 22px;
-}
-
-@media(max-width:768px){
-    header { flex-direction: column; text-align: center; }
-    header .brand-name { font-size: 22px; margin: 10px 0; }
-    .hero h1 { font-size: 2rem; }
-    .hero p { font-size: 1rem; }
-}
-
-@media(max-width:480px){
-    .buy-btn { padding: 12px; font-size: 1rem; }
-    .featured-product { width: 200px; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:var(--background-color);color:var(--text-color);}
+header{display:flex;align-items:center;justify-content:space-between;padding:15px;background:var(--primary-color);color:#fff;flex-wrap:wrap;}
+header img.logo{height:50px;width:auto;}
+header .brand-name{font-size:22px;margin-left:10px;flex:1;text-align:center;}
+header .social-links a{color:#fff;text-decoration:none;font-size:20px;margin:0 5px;transition:0.3s;}
+header .social-links a:hover{color:#25D366;}
+.container{width:90%;max-width:1200px;margin:30px auto;}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.product{background:var(--white);border-radius:var(--border-radius);box-shadow:var(--shadow);overflow:hidden;position:relative;transition:var(--transition);}
+.product:hover{transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+.product img.product-img{width:100%;border-radius:var(--border-radius);}
+.product-info{padding:15px;text-align:center;position:relative;}
+.product-title{font-size:1.2rem;margin-bottom:5px;color:var(--primary-color);}
+.product-price{font-size:1rem;font-weight:bold;margin-bottom:10px;color:var(--secondary-color);}
+.selector{margin:10px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;}
+.selector label{font-weight:bold;}
+.selector select,.selector input[type=number]{padding:6px;border-radius:5px;border:1px solid #ccc;}
+.design-section{margin:15px 0;}
+.design-upload{width:100%;padding:8px;margin-bottom:10px;}
+.preview-container img{max-width:80px;margin-right:5px;border-radius:5px;}
+.buy-btn{display:block;position:absolute;bottom:15px;left:50%;transform:translateX(-50%);width:90%;padding:10px;text-align:center;background-color:var(--secondary-color);color:var(--white);font-weight:bold;border-radius:8px;text-decoration:none;cursor:pointer;transition:var(--transition);}
+.sticky-order{position:fixed;bottom:20px;right:20px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+.cart-checkbox{position:absolute;top:15px;right:15px;width:20px;height:20px;}
+@media(max-width:768px){.container{width:95%;padding:10px;}header .brand-name{font-size:20px;}header{flex-direction:column;text-align:center;}}
+@media(max-width:480px){.buy-btn{padding:12px 16px;}}
 </style>
 </head>
 <body>
 
 <header>
-    <img src="https://abeeraamir98.github.io/Abeer-Amir/logo.png" alt="Abeer Apparel Logo" class="logo">
-    <div class="brand-name">Abeer Amir Store – Premium Apparel</div>
-    <div class="social-links">
-        <a href="https://instagram.com/abeeraamir00" target="_blank">📸</a>
-        <a href="https://facebook.com/profile.php?id=61578291089372" target="_blank">📘</a>
-        <a href="https://abeeraamir00.myshopify.com/" target="_blank">🌐</a>
-    </div>
+<img src="https://abeeraamir98.github.io/Abeer-Amir/logo.png" alt="Abeer Apparel Logo" class="logo">
+<div class="brand-name">Abeer Amir Store – Select Products</div>
+<div class="social-links">
+  <a href="https://instagram.com/abeeraamir00" target="_blank">📸</a>
+  <a href="https://facebook.com/profile.php?id=61578291089372" target="_blank">📘</a>
+  <a href="https://abeeramir00.myshopify.com/" target="_blank">🌐</a>
+</div>
 </header>
 
-<section class="hero">
-    <h1>Welcome to Abeer Amir Store</h1>
-    <p>Premium quality apparel designed for style and comfort.</p>
-    <a href="#products" class="cta-btn">Shop Now</a>
-</section>
+<div class="container">
+  <div class="products">
 
-<!-- Featured Slider -->
-<div class="container slider-container">
-    <h2 style="text-align:center; margin-bottom:20px;">Featured Products</h2>
-    <button class="arrow arrow-left" onclick="slideLeft()">❮</button>
-    <div class="slider" id="featuredSlider">
-        <div class="featured-product">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg" alt="Premium T-Shirt">
-            <div class="info"><div class="title">Premium T-Shirt</div><div class="price">$14.99 | PKR 4497</div></div>
+    <!-- Product 1 -->
+    <div class="product" data-product="Premium T-Shirt" data-usd="14.99">
+      <input type="checkbox" class="cart-checkbox" title="Add to Order">
+      <img src="https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg" alt="Premium T-Shirt" class="product-img">
+      <div class="product-info">
+        <div class="product-title">Premium T-Shirt</div>
+        <div class="product-price"></div>
+        <div class="selector">
+          <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
+          <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
         </div>
-        <div class="featured-product">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg" alt="Premium Hoodie">
-            <div class="info"><div class="title">Premium Hoodie</div><div class="price">$19.99 | PKR 5997</div></div>
+        <div class="design-section">
+          <label>Upload Design (Max 3):</label>
+          <input type="file" accept="image/*" class="design-upload" multiple>
+          <div class="preview-container"></div>
         </div>
-        <div class="featured-product">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodieset.jpg" alt="Hoodie Set">
-            <div class="info"><div class="title">Hoodie Set</div><div class="price">$24.99 | PKR 7497</div></div>
-        </div>
+        <a href="#" class="buy-btn">Buy Now</a>
+      </div>
     </div>
-    <button class="arrow arrow-right" onclick="slideRight()">❯</button>
-</div>
 
-<!-- Product Grid -->
-<div class="container" id="products">
-    <h2 style="text-align:center; margin-bottom:20px;">All Products</h2>
-    <div class="products">
-
-        <!-- Product 1 -->
-        <div class="product" data-product="Premium T-Shirt" data-usd="14.99">
-            <input type="checkbox" class="cart-checkbox" title="Add to Order">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg" alt="Premium T-Shirt" class="product-img">
-            <div class="product-info">
-                <div class="product-title">Premium T-Shirt</div>
-                <div class="product-price"></div>
-                <div class="selector">
-                    <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-                    <label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
-                    <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-                </div>
-                <div class="design-section">
-                    <label>Upload Design (Max 3):</label>
-                    <input type="file" accept="image/*" class="design-upload" multiple>
-                    <div class="preview-container"></div>
-                </div>
-                <a href="#" class="buy-btn">Buy Now</a>
-            </div>
+    <!-- Product 2 -->
+    <div class="product" data-product="Premium Hoodie" data-usd="19.99">
+      <input type="checkbox" class="cart-checkbox" title="Add to Order">
+      <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg" alt="Premium Hoodie" class="product-img">
+      <div class="product-info">
+        <div class="product-title">Premium Hoodie</div>
+        <div class="product-price"></div>
+        <div class="selector">
+          <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
+          <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
         </div>
-
-        <!-- Product 2 -->
-        <div class="product" data-product="Premium Hoodie" data-usd="19.99">
-            <input type="checkbox" class="cart-checkbox" title="Add to Order">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg" alt="Premium Hoodie" class="product-img">
-            <div class="product-info">
-                <div class="product-title">Premium Hoodie</div>
-                <div class="product-price"></div>
-                <div class="selector">
-                    <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-                    <label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
-                    <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-                </div>
-                <div class="design-section">
-                    <label>Upload Design (Max 3):</label>
-                    <input type="file" accept="image/*" class="design-upload" multiple>
-                    <div class="preview-container"></div>
-                </div>
-                <a href="#" class="buy-btn">Buy Now</a>
-            </div>
+        <div class="design-section">
+          <label>Upload Design (Max 3):</label>
+          <input type="file" accept="image/*" class="design-upload" multiple>
+          <div class="preview-container"></div>
         </div>
-
-        <!-- Product 3 -->
-        <div class="product" data-product="Hoodie Set" data-usd="24.99">
-            <input type="checkbox" class="cart-checkbox" title="Add to Order">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodieset.jpg" alt="Hoodie Set" class="product-img">
-            <div class="product-info">
-                <div class="product-title">Hoodie Set</div>
-                <div class="product-price"></div>
-                <div class="selector">
-                    <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-                    <label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
-                    <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-                </div>
-                <div class="design-section">
-                    <label>Upload Design (Max 3):</label>
-                    <input type="file" accept="image/*" class="design-upload" multiple>
-                    <div class="preview-container"></div>
-                </div>
-                <a href="#" class="buy-btn">Buy Now</a>
-            </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="product" data-product="Classic Tshirt" data-usd="14.99">
-            <input type="checkbox" class="cart-checkbox" title="Add to Order">
-            <img src="https://abeeraamir98.github.io/Abeer-Amir/tshirt.jpg" alt="Classic Tshirt" class="product-img">
-            <div class="product-info">
-                <div class="product-title">Classic Tshirt</div>
-                <div class="product-price"></div>
-                <div class="selector">
-                    <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
-                    <label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
-                    <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
-                </div>
-                <div class="design-section">
-                    <label>Upload Design (Max 3):</label>
-                    <input type="file" accept="image/*" class="design-upload" multiple>
-                    <div class="preview-container"></div>
-                </div>
-                <a href="#" class="buy-btn">Buy Now</a>
-            </div>
-        </div>
-
+        <a href="#" class="buy-btn">Buy Now</a>
+      </div>
     </div>
+
+    <!-- Product 3 -->
+    <div class="product" data-product="Hoodie Set" data-usd="24.99">
+      <input type="checkbox" class="cart-checkbox" title="Add to Order">
+      <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodieset.jpg" alt="Hoodie Set" class="product-img">
+      <div class="product-info">
+        <div class="product-title">Hoodie Set</div>
+        <div class="product-price"></div>
+        <div class="selector">
+          <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label><select class="color"><option selected>Black</option><option>Grey</option><option>Blue</option></select>
+          <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
+        </div>
+        <div class="design-section">
+          <label>Upload Design (Max 3):</label>
+          <input type="file" accept="image/*" class="design-upload" multiple>
+          <div class="preview-container"></div>
+        </div>
+        <a href="#" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- Product 4 – Classic T-shirt with Shopify Buy Button -->
+    <div class="product" data-product="Classic Tshirt" data-usd="14.99">
+      <input type="checkbox" class="cart-checkbox" title="Add to Order">
+      <img src="https://abeeraamir98.github.io/Abeer-Amir/tshirt.jpg" alt="Classic Tshirt" class="product-img">
+      <div class="product-info">
+        <div class="product-title">Classic Tshirt</div>
+        <div class="product-price"></div>
+        <div class="selector">
+          <label>Size:</label><select class="size"><option>S</option><option selected>M</option><option>L</option><option>XL</option></select>
+          <label>Color:</label><select class="color"><option selected>Black</option><option>White</option><option>Grey</option></select>
+          <label>Qty:</label><input type="number" class="quantity" value="1" min="1">
+        </div>
+        <div class="design-section">
+          <label>Upload Design (Max 3):</label>
+          <input type="file" accept="image/*" class="design-upload" multiple>
+          <div class="preview-container"></div>
+        </div>
+
+        <!-- Shopify Buy Button for T-shirt -->
+        <div id='product-component-1764524468642'></div>
+        <script type="text/javascript">
+        (function () {
+          var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+          if (window.ShopifyBuy) {
+            if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+          } else { loadScript(); }
+          function loadScript() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = scriptURL;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+            script.onload = ShopifyBuyInit;
+          }
+          function ShopifyBuyInit() {
+            var client = ShopifyBuy.buildClient({
+              domain: 'hgkunn-sn.myshopify.com',
+              storefrontAccessToken: '86468718e7361c2323d418dd6b375556',
+            });
+            ShopifyBuy.UI.onReady(client).then(function (ui) {
+              ui.createComponent('product', {
+                id: '10313083552038',
+                node: document.getElementById('product-component-1764524468642'),
+                moneyFormat: '%24%7B%7Bamount%7D%7D',
+                options: {
+                  product: { layout: 'horizontal', contents: { img: true, description: true } },
+                  cart: { text: { button: "Checkout" } }
+                }
+              });
+            });
+          }
+        })();
+        </script>
+
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <button class="sticky-order" onclick="sendSelectedOrders()">📩 WhatsApp Order</button>
 
 <script>
-const PKR_RATE = 300;
+const PKR_RATE=300;
 
-// Product price & image preview
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.product').forEach(product => {
-        const usd = parseFloat(product.dataset.usd);
-        const pkr = Math.round(usd * PKR_RATE);
-        product.querySelector('.product-price').textContent = `$${usd.toFixed(2)} | PKR ${pkr}`;
+document.addEventListener('DOMContentLoaded',()=> {
+  document.querySelectorAll('.product').forEach(product=>{
+    if(product.dataset.product !== "Classic Tshirt") { // Skip Shopify product
+      const usd=parseFloat(product.dataset.usd);
+      const pkr=Math.round(usd*PKR_RATE);
+      product.querySelector('.product-price').textContent=`$${usd.toFixed(2)} | PKR ${pkr}`;
 
-        const upload = product.querySelector('.design-upload');
-        const previewContainer = product.querySelector('.preview-container');
-        upload.addEventListener('change', function () {
-            previewContainer.innerHTML = '';
-            Array.from(this.files).slice(0, 3).forEach(file => {
-                const reader = new FileReader();
-                reader.onload = e => {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    previewContainer.appendChild(img);
-                }
-                reader.readAsDataURL(file);
-            });
+      const upload=product.querySelector('.design-upload');
+      const previewContainer=product.querySelector('.preview-container');
+      upload.addEventListener('change',function(){
+        previewContainer.innerHTML='';
+        Array.from(this.files).slice(0,3).forEach(file=>{
+          const reader=new FileReader();
+          reader.onload=e=>{
+            const img=document.createElement('img');
+            img.src=e.target.result;
+            previewContainer.appendChild(img);
+          }
+          reader.readAsDataURL(file);
         });
-    });
-});
-
-// WhatsApp messaging
-function generateWhatsAppMessage(product) {
-    const name = product.dataset.product;
-    const usd = parseFloat(product.dataset.usd).toFixed(2);
-    const pkr = Math.round(product.dataset.usd * PKR_RATE);
-    const size = product.querySelector('.size').value;
-    const color = product.querySelector('.color').value;
-    const qty = product.querySelector('.quantity').value;
-    const designCount = product.querySelector('.preview-container').children.length;
-    return `Product: ${name}\nPrice: $${usd} (PKR ${pkr})\nQty: ${qty}\nSize: ${size}\nColor: ${color}\nDesigns: ${designCount > 0 ? designCount : 'No'}\n\n`;
-}
-
-document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        e.preventDefault();
-        const product = e.target.closest('.product');
-        const msg = generateWhatsAppMessage(product);
-        window.open(`https://wa.me/923006190087?text=${encodeURIComponent("🛍 Order Request\n\n" + msg)}`, '_blank');
-    });
-});
-
-function sendSelectedOrders() {
-    const selectedProducts = document.querySelectorAll('.product input.cart-checkbox:checked');
-    if (selectedProducts.length === 0) {
-        alert('Please select at least one product to order.');
-        return;
+      });
     }
-    let message = "🛍 Multi-Product Order\n\n";
-    selectedProducts.forEach(cb => {
-        message += generateWhatsAppMessage(cb.closest('.product'));
-    });
-    message += "Please provide payment details and delivery instructions.";
-    window.open(`https://wa.me/923006190087?text=${encodeURIComponent(message)}`, '_blank');
+  });
+});
+
+function generateWhatsAppMessage(product){
+  const name=product.dataset.product;
+  const usd=parseFloat(product.dataset.usd).toFixed(2);
+  const pkr=Math.round(product.dataset.usd*PKR_RATE);
+  const size=product.querySelector('.size').value;
+  const color=product.querySelector('.color').value;
+  const qty=product.querySelector('.quantity').value;
+  const designCount=product.querySelector('.preview-container').children.length;
+  return `Product: ${name}\nPrice: $${usd} (PKR ${pkr})\nQty: ${qty}\nSize: ${size}\nColor: ${color}\nDesigns: ${designCount>0?designCount:'No'}\n\n`;
 }
 
-// Slider controls
-const slider = document.getElementById('featuredSlider');
-function slideLeft() { slider.scrollBy({ left: -280, behavior: 'smooth' }); }
-function slideRight() { slider.scrollBy({ left: 280, behavior: 'smooth' }); }
+document.querySelectorAll('.buy-btn').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    const product=e.target.closest('.product');
+    const msg=generateWhatsAppMessage(product);
+    window.open(`https://wa.me/923006190087?text=${encodeURIComponent("🛍 Order Request\n\n"+msg)}`,'_blank');
+  });
+});
 
-// Auto-scroll slider
-setInterval(() => { slider.scrollBy({ left: 1, behavior: 'smooth' }); }, 20);
-
+function sendSelectedOrders(){
+  const selectedProducts=document.querySelectorAll('.product input.cart-checkbox:checked');
+  if(selectedProducts.length===0){
+    alert('Please select at least one product to order.');
+    return;
+  }
+  let message="🛍 Multi-Product Order\n\n";
+  selectedProducts.forEach(cb=>{
+    message+=generateWhatsAppMessage(cb.closest('.product'));
+  });
+  message+="Please provide payment details and delivery instructions.";
+  window.open(`https://wa.me/923006190087?text=${encodeURIComponent(message)}`,'_blank');
+}
 </script>
 
 </body>
