@@ -99,15 +99,17 @@ header .social-links a:hover { color: #25D366; }
 }
 
 /* Featured Slider */
-.slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 20px;
-    scroll-behavior: smooth;
+.slider-container {
+    position: relative;
+    margin-bottom: 40px;
 }
 
-.slider::-webkit-scrollbar { display: none; }
+.slider {
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
 
 .featured-product {
     flex: 0 0 auto;
@@ -141,6 +143,27 @@ header .social-links a:hover { color: #25D366; }
     font-weight: bold;
     color: var(--secondary-color);
 }
+
+/* Slider Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.arrow:hover { background: #d32f2f; }
+
+.arrow-left { left: -10px; }
+.arrow-right { right: -10px; }
 
 /* Product Grid */
 .products {
@@ -279,7 +302,6 @@ header .social-links a:hover { color: #25D366; }
 
 @media(max-width:480px){
     .buy-btn { padding: 12px; font-size: 1rem; }
-    .slider { gap: 15px; }
     .featured-product { width: 200px; }
 }
 </style>
@@ -292,11 +314,10 @@ header .social-links a:hover { color: #25D366; }
     <div class="social-links">
         <a href="https://instagram.com/abeeraamir00" target="_blank">📸</a>
         <a href="https://facebook.com/profile.php?id=61578291089372" target="_blank">📘</a>
-        <a href="https://abeeramir.odoo.com/" target="_blank">🌐</a>
+        <a href="https://abeeraamir00.myshopify.com/" target="_blank">🌐</a>
     </div>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
     <h1>Welcome to Abeer Amir Store</h1>
     <p>Premium quality apparel designed for style and comfort.</p>
@@ -304,31 +325,24 @@ header .social-links a:hover { color: #25D366; }
 </section>
 
 <!-- Featured Slider -->
-<div class="container">
+<div class="container slider-container">
     <h2 style="text-align:center; margin-bottom:20px;">Featured Products</h2>
-    <div class="slider">
+    <button class="arrow arrow-left" onclick="slideLeft()">❮</button>
+    <div class="slider" id="featuredSlider">
         <div class="featured-product">
             <img src="https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg" alt="Premium T-Shirt">
-            <div class="info">
-                <div class="title">Premium T-Shirt</div>
-                <div class="price">$14.99 | PKR 4497</div>
-            </div>
+            <div class="info"><div class="title">Premium T-Shirt</div><div class="price">$14.99 | PKR 4497</div></div>
         </div>
         <div class="featured-product">
             <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg" alt="Premium Hoodie">
-            <div class="info">
-                <div class="title">Premium Hoodie</div>
-                <div class="price">$19.99 | PKR 5997</div>
-            </div>
+            <div class="info"><div class="title">Premium Hoodie</div><div class="price">$19.99 | PKR 5997</div></div>
         </div>
         <div class="featured-product">
             <img src="https://abeeraamir98.github.io/Abeer-Amir/hoodieset.jpg" alt="Hoodie Set">
-            <div class="info">
-                <div class="title">Hoodie Set</div>
-                <div class="price">$24.99 | PKR 7497</div>
-            </div>
+            <div class="info"><div class="title">Hoodie Set</div><div class="price">$24.99 | PKR 7497</div></div>
         </div>
     </div>
+    <button class="arrow arrow-right" onclick="slideRight()">❯</button>
 </div>
 
 <!-- Product Grid -->
@@ -428,6 +442,7 @@ header .social-links a:hover { color: #25D366; }
 <script>
 const PKR_RATE = 300;
 
+// Product price & image preview
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product').forEach(product => {
         const usd = parseFloat(product.dataset.usd);
@@ -451,6 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// WhatsApp messaging
 function generateWhatsAppMessage(product) {
     const name = product.dataset.product;
     const usd = parseFloat(product.dataset.usd).toFixed(2);
@@ -484,6 +500,15 @@ function sendSelectedOrders() {
     message += "Please provide payment details and delivery instructions.";
     window.open(`https://wa.me/923006190087?text=${encodeURIComponent(message)}`, '_blank');
 }
+
+// Slider controls
+const slider = document.getElementById('featuredSlider');
+function slideLeft() { slider.scrollBy({ left: -280, behavior: 'smooth' }); }
+function slideRight() { slider.scrollBy({ left: 280, behavior: 'smooth' }); }
+
+// Auto-scroll slider
+setInterval(() => { slider.scrollBy({ left: 1, behavior: 'smooth' }); }, 20);
+
 </script>
 
 </body>
