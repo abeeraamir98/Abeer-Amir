@@ -4,53 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abeer Amir – Premium Apparel</title>
+<meta name="description" content="High-quality Cotton T-Shirts & Hoodies with free delivery across Pakistan. Shop now!">
+<meta name="keywords" content="Cotton T-Shirt, Hoodie, Premium Apparel, Pakistan, Free Delivery">
+<meta property="og:title" content="Abeer Amir – Premium Apparel">
+<meta property="og:description" content="High-quality Cotton T-Shirts & Hoodies with free delivery across Pakistan. Shop now!">
+<meta property="og:image" content="https://abeeraamir98.github.io/Abeer-Amir/1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg">
+<meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
 
 <style>
+/* RESET & GLOBAL */
 * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-body { background:#fafafa; scroll-behavior: smooth; }
+body { background:#fafafa; scroll-behavior:smooth; }
+a { text-decoration:none; }
+img { display:block; max-width:100%; }
 
 /* NAVBAR */
 nav {
     position: sticky; top:0; z-index:1000;
     display:flex; align-items:center; justify-content:space-between;
-    padding:15px 30px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    padding:15px 30px; background:rgba(255,255,255,0.95); box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
+nav.scrolled { background:white; box-shadow:0 2px 15px rgba(0,0,0,0.15); }
 nav img { height:55px; }
-nav a { margin-left:25px; text-decoration:none; color:#111; font-weight:600; transition:0.3s; }
+nav a { margin-left:25px; color:#111; font-weight:600; transition:0.3s; }
 nav a:hover { color:#25D366; }
 
 /* HERO SLIDER */
-.hero-slider { position:relative; overflow:hidden; height:400px; }
+.hero-slider { position:relative; overflow:hidden; height:90vh; }
 .slide { position:absolute; width:100%; height:100%; opacity:0; transition:opacity 1s ease-in-out; display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center; color:white; }
-.slide img { width:100%; height:100%; object-fit:cover; border-radius:0; }
+.slide img { width:100%; height:100%; object-fit:cover; }
 .slide.active { opacity:1; z-index:1; }
-.slide h1 { font-size:42px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); margin-bottom:10px; }
-.slide p { font-size:18px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); margin-bottom:15px; }
-.slide a { background:#25D366; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:bold; transition:0.3s; }
+
+.slide h1 { font-size:48px; text-shadow:2px 2px 10px rgba(0,0,0,0.6); margin-bottom:15px; }
+.slide p { font-size:20px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); margin-bottom:25px; }
+.slide a { background:#25D366; color:white; padding:14px 32px; border-radius:8px; font-weight:bold; transition:0.3s; }
 .slide a:hover { background:#128C7E; }
 
 /* HERO ARROWS */
-.arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:30px; color:white; cursor:pointer; user-select:none; padding:10px; background:rgba(0,0,0,0.3); border-radius:50%; }
+.arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:36px; color:white; cursor:pointer; user-select:none; padding:12px; background:rgba(0,0,0,0.3); border-radius:50%; }
 .arrow.left { left:20px; }
 .arrow.right { right:20px; }
 
 /* SECTION TITLES */
 .section { padding:60px 20px; text-align:center; }
-.section h2 { font-size:32px; margin-bottom:40px; }
+.section h2 { font-size:36px; margin-bottom:40px; }
 
 /* PRODUCT CAROUSEL */
 .carousel-container { position:relative; max-width:1200px; margin:0 auto; overflow:hidden; }
 .carousel { display:flex; transition:transform 0.4s ease; gap:20px; }
-.card { min-width:280px; background:white; border-radius:12px; padding:15px; box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center; position:relative; }
-.card img { width:100%; height:280px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
-.card .title { font-weight:bold; font-size:18px; }
-.card .price { font-weight:600; margin:5px 0; }
+.card { min-width:280px; background:white; border-radius:12px; padding:18px; box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center; position:relative; }
+.card img { width:100%; height:280px; object-fit:cover; border-radius:10px; margin-bottom:12px; }
+.card .title { font-weight:bold; font-size:20px; }
+.card .price { font-weight:600; margin:6px 0; font-size:18px; }
 .card .free { color:green; font-weight:bold; margin-bottom:8px; }
-.card label { display:block; margin:5px 0; font-weight:bold; }
-.card input, .card select { width:80%; padding:5px; margin-bottom:8px; border-radius:4px; border:1px solid #ccc; text-align:center; }
-
-/* QUICK BUY */
-.card .quick-buy { display:block; background:#25D366; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; font-weight:bold; }
+.card .quick-buy { display:block; background:#25D366; color:white; padding:10px 18px; border-radius:8px; font-weight:bold; margin-top:10px; }
+.card select, .card input[type=number] { padding:6px 8px; margin:5px 0; border-radius:6px; border:1px solid #ccc; }
 
 /* CAROUSEL ARROWS */
 .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:28px; background:rgba(0,0,0,0.25); color:white; border-radius:50%; padding:10px; cursor:pointer; }
@@ -58,23 +67,27 @@ nav a:hover { color:#25D366; }
 .carousel-arrow.right { right:10px; }
 
 /* CONTACT */
-.contact-container { max-width:700px; margin:50px auto; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
+.contact-container { max-width:750px; margin:50px auto; background:white; padding:35px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
 .contact-container h2 { text-align:center; margin-bottom:25px; font-size:28px; }
 .contact-container .info { font-size:16px; line-height:28px; }
-.contact-container .social a { display:block; margin-top:8px; text-decoration:none; color:#111; transition:0.3s; }
+.contact-container .social a { display:block; margin-top:8px; color:#111; transition:0.3s; }
 .contact-container .social a:hover { color:#25D366; }
 
 /* FOOTER */
 footer { text-align:center; padding:25px; color:#888; font-size:14px; }
 
 /* RESPONSIVE */
-@media(max-width:768px){ .slide h1{font-size:28px;} .slide p{font-size:14px;} .card{min-width:220px;} }
+@media(max-width:768px){
+    .slide h1{font-size:32px;}
+    .slide p{font-size:16px;}
+    .card{min-width:220px;}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="navbar">
     <img src="A logo.png" alt="Logo">
     <div>
         <a href="#home">Home</a>
@@ -86,15 +99,15 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
 <!-- HERO SLIDER -->
 <section id="home" class="hero-slider">
     <div class="slide active">
-        <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg">
-        <h1>Premium Cotton T-Shirts</h1>
-        <p>Soft, breathable & perfect for daily wear.</p>
-        <a href="#products">Shop Now</a>
-    </div>
-    <div class="slide">
         <img src="mk4_2.jpg">
         <h1>Comfortable Cotton Hoodies</h1>
         <p>Stay cozy with our premium collection.</p>
+        <a href="#products">Shop Now</a>
+    </div>
+    <div class="slide">
+        <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg">
+        <h1>Premium Cotton T-Shirts</h1>
+        <p>Soft, breathable & perfect for daily wear.</p>
         <a href="#products">Shop Now</a>
     </div>
     <div class="slide">
@@ -107,62 +120,61 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
     <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 </section>
 
-<!-- PRODUCTS SECTION (Carousel) -->
+<!-- PRODUCTS SECTION -->
 <section id="products" class="section">
     <h2>Our Products</h2>
     <div class="carousel-container">
         <div class="carousel" id="carousel">
-
-            <!-- Cotton Premium Hoodie (FIRST) -->
+            <!-- Cotton Premium Hoodie -->
             <div class="card">
                 <img src="mk4_2.jpg" alt="Cotton Premium Hoodie">
                 <div class="title">Cotton Premium Hoodie</div>
                 <div class="price">PKR 2,699.99</div>
                 <div class="free">Free Delivery</div>
-                <label for="premium-hoodie-qty">Quantity:</label>
-                <input type="number" id="premium-hoodie-qty" value="1" min="1" max="10">
-                <a class="quick-buy" href="#" onclick="orderPremiumHoodie(event)">Quick Buy</a>
+                Quantity: <input type="number" min="1" value="1"><br>
+                Color: 
+                <select>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Black</option>
+                    <option>White</option>
+                </select>
+                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium Hoodie">Quick Buy</a>
             </div>
-
             <!-- Cotton Premium T-Shirt -->
             <div class="card">
                 <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" alt="Cotton Premium T-Shirt">
                 <div class="title">Cotton Premium T-Shirt</div>
                 <div class="price">PKR 1,699.99</div>
                 <div class="free">Free Delivery</div>
-                <label for="premium-tshirt-qty">Quantity:</label>
-                <input type="number" id="premium-tshirt-qty" value="1" min="1" max="10">
-                <a class="quick-buy" href="#" onclick="orderPremiumTShirt(event)">Quick Buy</a>
+                Quantity: <input type="number" min="1" value="1"><br>
+                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium T-Shirt">Quick Buy</a>
             </div>
-
-            <!-- Cotton Classic T-Shirt (with color) -->
+            <!-- Cotton Classic T-Shirt -->
             <div class="card">
                 <img src="tshirt.jpg" alt="Cotton Classic T-Shirt">
                 <div class="title">Cotton Classic T-Shirt</div>
                 <div class="price">PKR 1,699.99</div>
                 <div class="free">Free Delivery</div>
-                <label for="classic-tshirt-color">Color:</label>
-                <select id="classic-tshirt-color">
-                    <option value="Black">Black</option>
-                    <option value="White">White</option>
-                    <option value="Blue">Blue</option>
+                Quantity: <input type="number" min="1" value="1"><br>
+                Color:
+                <select>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Black</option>
+                    <option>White</option>
                 </select>
-                <label for="classic-tshirt-qty">Quantity:</label>
-                <input type="number" id="classic-tshirt-qty" value="1" min="1" max="10">
-                <a class="quick-buy" href="#" onclick="orderClassicTShirt(event)">Quick Buy</a>
+                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Classic T-Shirt">Quick Buy</a>
             </div>
-
             <!-- Cotton Hoodies -->
             <div class="card">
                 <img src="b_convert_to_2800_by_1.png" alt="Cotton Hoodies">
                 <div class="title">Cotton Hoodies</div>
                 <div class="price">PKR 2,699.99</div>
                 <div class="free">Free Delivery</div>
-                <label for="hoodies-qty">Quantity:</label>
-                <input type="number" id="hoodies-qty" value="1" min="1" max="10">
-                <a class="quick-buy" href="#" onclick="orderHoodies(event)">Quick Buy</a>
+                Quantity: <input type="number" min="1" value="1"><br>
+                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Hoodies">Quick Buy</a>
             </div>
-
         </div>
         <div class="carousel-arrow left" onclick="moveCarousel(-1)">&#10094;</div>
         <div class="carousel-arrow right" onclick="moveCarousel(1)">&#10095;</div>
@@ -184,6 +196,8 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
                 <a href="https://www.pinterest.com/AbeerAmir00/">Pinterest</a>
             </div>
         </div>
+        <br>
+        <iframe src="https://www.google.com/maps?q=Pakistan&output=embed" width="100%" height="250" style="border:0;border-radius:12px;"></iframe>
     </div>
 </section>
 
@@ -200,8 +214,8 @@ function showSlide(index){
     slides.forEach(s => s.classList.remove('active'));
     slides[index].classList.add('active');
 }
-function nextSlide(){ currentSlide=(currentSlide+1)%slides.length; showSlide(currentSlide);}
-function prevSlide(){ currentSlide=(currentSlide-1+slides.length)%slides.length; showSlide(currentSlide);}
+function nextSlide(){ currentSlide=(currentSlide+1)%slides.length; showSlide(currentSlide); }
+function prevSlide(){ currentSlide=(currentSlide-1+slides.length)%slides.length; showSlide(currentSlide); }
 setInterval(nextSlide,5000);
 
 // CAROUSEL
@@ -215,29 +229,10 @@ function moveCarousel(dir){
     carousel.style.transform=`translateX(-${carouselIndex*cardWidth}px)`;
 }
 
-// QUICK BUY FUNCTIONS
-function orderPremiumHoodie(e){
-    e.preventDefault();
-    const qty = document.getElementById('premium-hoodie-qty').value;
-    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Premium Hoodie`);
-}
-function orderPremiumTShirt(e){
-    e.preventDefault();
-    const qty = document.getElementById('premium-tshirt-qty').value;
-    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Premium T-Shirt`);
-}
-function orderClassicTShirt(e){
-    e.preventDefault();
-    const qty = document.getElementById('classic-tshirt-qty').value;
-    const color = document.getElementById('classic-tshirt-color').value;
-    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Classic T-Shirt, Color: ${color}`);
-}
-function orderHoodies(e){
-    e.preventDefault();
-    const qty = document.getElementById('hoodies-qty').value;
-    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Hoodies`);
-}
+// SCROLL NAVBAR EFFECT
+window.addEventListener('scroll', function(){
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
 </script>
-
 </body>
 </html>
