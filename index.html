@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abeer Amir – Premium Apparel</title>
-
 <style>
 /* RESET + GLOBAL */
 * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 body { background:#fafafa; scroll-behavior: smooth; }
+a { text-decoration:none; }
 
 /* NAVBAR */
 nav {
@@ -17,65 +17,67 @@ nav {
     padding:15px 30px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 nav img { height:55px; }
-nav a { margin-left:25px; text-decoration:none; color:#111; font-weight:600; transition:0.3s; }
+nav a { margin-left:25px; color:#111; font-weight:600; transition:0.3s; }
 nav a:hover { color:#25D366; }
 
 /* HERO SLIDER */
-.hero-slider { position:relative; overflow:hidden; height:400px; }
-.slide { position:absolute; width:100%; height:100%; opacity:0; transition:opacity 1s ease-in-out; display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center; color:white; }
-.slide img { width:100%; height:100%; object-fit:cover; }
-.slide.active { opacity:1; z-index:1; }
-
-.slide h1 { font-size:42px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); margin-bottom:10px; }
-.slide p { font-size:18px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); margin-bottom:15px; }
-.slide a { background:#25D366; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:bold; transition:0.3s; }
-.slide a:hover { background:#128C7E; }
-
-.arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:30px; color:white; cursor:pointer; user-select:none; padding:10px; background:rgba(0,0,0,0.3); border-radius:50%; }
-.arrow.left { left:20px; }
-.arrow.right { right:20px; }
+.hero-slider { position:relative; overflow:hidden; height:450px; display:flex; justify-content:center; align-items:center; text-align:center; color:white; background:#111; }
+.hero-slider h1 { font-size:42px; margin-bottom:10px; }
+.hero-slider p { font-size:18px; margin-bottom:20px; }
+.hero-slider .cta { display:flex; gap:15px; justify-content:center; }
+.hero-slider .cta a { background:#25D366; color:white; padding:12px 28px; border-radius:8px; font-weight:bold; }
+.hero-slider .cta a:hover { background:#128C7E; }
 
 /* SECTION TITLES */
 .section { padding:60px 20px; text-align:center; }
 .section h2 { font-size:32px; margin-bottom:40px; }
 
-/* PRODUCT CARDS */
+/* FEATURES */
+.features { display:flex; justify-content:center; flex-wrap:wrap; gap:30px; }
+.features div { width:220px; text-align:center; }
+.features img { width:60px; margin-bottom:10px; }
+
+/* TESTIMONIALS */
+.testimonials { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
+.testimonials div { width:300px; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
+
+/* PRODUCTS CAROUSEL */
 .carousel-container { position:relative; max-width:1200px; margin:0 auto; overflow:hidden; }
 .carousel { display:flex; transition:transform 0.4s ease; gap:20px; }
-.card { min-width:280px; background:white; border-radius:12px; padding:15px; box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center; position:relative; }
+.card { min-width:280px; background:white; border-radius:12px; padding:15px; box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center; }
 .card img { width:100%; height:280px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
 .card .title { font-weight:bold; font-size:18px; margin-bottom:5px; }
 .card .price { font-weight:600; margin:5px 0; }
 .card .free { color:green; font-weight:bold; margin-bottom:8px; }
 .card label { display:block; margin-top:8px; text-align:left; font-size:14px; }
 .card input, .card select { width:100%; padding:6px 10px; margin-top:4px; border-radius:6px; border:1px solid #ccc; }
-
-/* QUICK BUY BUTTON */
-.card .quick-buy { display:block; background:#25D366; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:10px; }
+.card .quick-buy { display:block; background:#25D366; color:white; padding:8px 15px; border-radius:6px; font-weight:bold; margin-top:10px; }
 
 /* CAROUSEL ARROWS */
 .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:28px; background:rgba(0,0,0,0.25); color:white; border-radius:50%; padding:10px; cursor:pointer; }
 .carousel-arrow.left { left:10px; }
 .carousel-arrow.right { right:10px; }
 
+/* SUBSCRIBE / NEWSLETTER */
+.subscribe-container { max-width:600px; margin:50px auto; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); text-align:center; }
+.subscribe-container input[type=email] { padding:10px; width:70%; margin-right:5px; border-radius:6px; border:1px solid #ccc; }
+.subscribe-container input[type=submit] { padding:10px 20px; border:none; background:#25D366; color:white; border-radius:6px; cursor:pointer; font-weight:bold; }
+.subscribe-container input[type=submit]:hover { background:#128C7E; }
+
+/* FAQ */
+#faq { max-width:800px; margin:0 auto; text-align:left; }
+
 /* CONTACT */
 .contact-container { max-width:700px; margin:50px auto; background:white; padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
-.contact-container h2 { text-align:center; margin-bottom:25px; font-size:28px; }
-.contact-container .info { font-size:16px; line-height:28px; }
-.contact-container .social a { display:block; margin-top:8px; text-decoration:none; color:#111; transition:0.3s; }
+.contact-container .social a { display:block; margin-top:8px; color:#111; }
 .contact-container .social a:hover { color:#25D366; }
 
-/* EMAIL SUBSCRIBE FORM */
-.subscribe-container { max-width:500px; margin:40px auto; text-align:center; background:white; padding:25px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
-.subscribe-container input[type="email"] { width:70%; padding:10px; border-radius:6px; border:1px solid #ccc; margin-right:10px; }
-.subscribe-container input[type="submit"] { padding:10px 20px; border:none; border-radius:6px; background:#25D366; color:white; font-weight:bold; cursor:pointer; transition:0.3s; }
-.subscribe-container input[type="submit"]:hover { background:#128C7E; }
-
 /* FOOTER */
-footer { text-align:center; padding:25px; color:#888; font-size:14px; }
+footer { text-align:center; padding:25px; color:#888; font-size:14px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+footer img { height:35px; cursor:pointer; }
 
 /* RESPONSIVE */
-@media(max-width:768px){ .slide h1{font-size:28px;} .slide p{font-size:14px;} .card{min-width:220px;} .subscribe-container input[type="email"]{width:100%; margin-bottom:10px;} }
+@media(max-width:768px){ .hero-slider h1{font-size:28px;} .hero-slider p{font-size:14px;} .card{min-width:220px;} .features div{width:45%;} }
 </style>
 </head>
 <body>
@@ -86,44 +88,81 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
     <div>
         <a href="#home">Home</a>
         <a href="#products">Products</a>
+        <a href="#features">Why Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<!-- HERO SLIDER -->
+<!-- HERO -->
 <section id="home" class="hero-slider">
-    <div class="slide active">
-        <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg">
-        <h1>Premium Cotton Hoodie</h1> 
-        <p>Soft, breathable & perfect for daily wear.</p>
-        <a href="#products">Shop Now</a>
+    <div>
+        <h1>Premium Cotton Apparel</h1>
+        <p>Free Delivery Across Pakistan • Satisfaction Guaranteed</p>
+        <div class="cta">
+            <a href="#products">View Collection</a>
+            <a href="#subscribe">Subscribe Now</a>
+        </div>
     </div>
-    <div class="slide">
-        <img src="mk4_2.jpg">
-        <h1>Comfortable Cotton T-Shirts</h1> 
-        <p>Stay cozy with our premium collection.</p>
-        <a href="#products">Shop Now</a>
-    </div>
-    <div class="slide">
-        <img src="b_convert_to_2800_by_1.png">
-        <h1>Exclusive Cotton Hoodies</h1>
-        <p>Premium quality & free delivery all over Pakistan.</p>
-        <a href="#products">Shop Now</a>
-    </div>
-    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 </section>
 
-<!-- PRODUCTS SECTION (Carousel) -->
+<!-- FEATURES -->
+<section class="section" id="features">
+  <h2>Why Choose Us?</h2>
+  <div class="features">
+    <div>
+      <img src="delivery_icon.png">
+      <h3>Free Delivery</h3>
+      <p>Across Pakistan on all orders.</p>
+    </div>
+    <div>
+      <img src="quality_icon.png">
+      <h3>Premium Quality</h3>
+      <p>100% soft & breathable cotton.</p>
+    </div>
+    <div>
+      <img src="secure_icon.png">
+      <h3>Secure Payment</h3>
+      <p>Pay safely via WhatsApp (JazzCash / EasyPaisa).</p>
+    </div>
+    <div>
+      <img src="return_icon.png">
+      <h3>Easy Returns</h3>
+      <p>Hassle-free exchange & returns within 7 days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonials">
+    <div>
+      <p>"Amazing quality! The hoodie fits perfectly and is very comfortable."</p>
+      <b>- Sarah K.</b>
+    </div>
+    <div>
+      <p>"Quick delivery and excellent customer service. Highly recommended."</p>
+      <b>- Ali R.</b>
+    </div>
+    <div>
+      <p>"The T-Shirt quality exceeded my expectations. Will buy again."</p>
+      <b>- Ayesha M.</b>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
 <section id="products" class="section">
     <h2>Our Products</h2>
     <div class="carousel-container">
         <div class="carousel" id="carousel">
-            <!-- Cotton Premium T-Shirt Card --> 
+            <!-- Example Product Card -->
             <div class="card">
-                <img src="mk4_2.jpg" alt="Cotton Premium T-Shirt"> 
-                <div class="title">Cotton Premium T-Shirt</div> 
-                <div class="price">PKR 1,699.99</div> 
+                <img src="mk4_2.jpg" alt="Cotton Premium T-Shirt">
+                <div class="title">Cotton Premium T-Shirt</div>
+                <div class="price">PKR 1,699.99</div>
                 <div class="free">Free Delivery</div>
                 <label>Quantity:</label>
                 <input type="number" value="1" min="1">
@@ -135,53 +174,14 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
                 </select>
                 <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium T-Shirt">Quick Buy</a>
             </div>
-            <!-- Cotton Premium Hoodie Card --> 
             <div class="card">
-                <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" alt="Cotton Premium Hoodie"> 
-                <div class="title">Cotton Premium Hoodie</div> 
-                <div class="price">PKR 2,699.99</div> 
-                <div class="free">Free Delivery</div>
-                <label>Quantity:</label>
-                <input type="number" value="1" min="1">
-                <label>Color:</label>
-                <select>
-                    <option>Black</option>
-                    <option>Grey</option>
-                    <option>White</option>
-                </select>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium Hoodie">Quick Buy</a>
-            </div>
-            <!-- Cotton Classic T-Shirt Card -->
-            <div class="card">
-                <img src="tshirt.jpg" alt="Cotton Classic T-Shirt">
-                <div class="title">Cotton Classic T-Shirt</div>
-                <div class="price">PKR 1,699.99</div>
-                <div class="free">Free Delivery</div>
-                <label>Quantity:</label>
-                <input type="number" value="1" min="1">
-                <label>Color:</label>
-                <select>
-                    <option>Black</option>
-                    <option>Grey</option>
-                    <option>White</option>
-                </select>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Classic T-Shirt">Quick Buy</a>
-            </div>
-            <!-- Cotton Hoodies Card -->
-            <div class="card">
-                <img src="b_convert_to_2800_by_1.png" alt="Cotton Hoodies">
-                <div class="title">Cotton Hoodies</div>
+                <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" alt="Cotton Premium Hoodie">
+                <div class="title">Cotton Premium Hoodie</div>
                 <div class="price">PKR 2,699.99</div>
                 <div class="free">Free Delivery</div>
                 <label>Quantity:</label>
                 <input type="number" value="1" min="1">
-                <label>Color:</label>
-                <select>
-                    <option>Black</option>
-                    <option>Grey</option>
-                    <option>White</option>
-                </select>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Hoodies">Quick Buy</a>
+                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium Hoodie">Quick Buy</a>
             </div>
         </div>
         <div class="carousel-arrow left" onclick="moveCarousel(-1)">&#10094;</div>
@@ -189,50 +189,57 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
     </div>
 </section>
 
-<!-- SUBSCRIBE FORM -->
-<section class="subscribe-container">
-    <h2>Subscribe for Updates</h2>
-    <form action="https://example.com/subscribe" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Subscribe">
-    </form>
+<!-- NEWSLETTER -->
+<section class="subscribe-container" id="subscribe">
+  <h2>Get 10% Off Your First Order!</h2>
+  <p>Subscribe to our newsletter for latest arrivals and exclusive offers.</p>
+  <form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <input type="submit" value="Subscribe">
+  </form>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <b>Q: How long is delivery?</b>
+  <p>A: Standard delivery is 3–5 days across Pakistan.</p>
+  <b>Q: Can I return my purchase?</b>
+  <p>A: Yes, we offer hassle-free returns within 7 days.</p>
+  <b>Q: Do you offer different sizes and colors?</b>
+  <p>A: Yes, all products come in multiple sizes and colors.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
     <div class="contact-container">
         <h2>Contact Us</h2>
-        <div class="info">
-            <b>Email:</b> abeeramirenterprises@gmail.com<br>
-            <b>Phone:</b> +923097178525<br>
-            <b>WhatsApp:</b> <a href="https://wa.me/923006190087">Message on WhatsApp</a><br><br>
-            <div class="social">
-                <b>Socials:</b><br>
-                <a href="https://www.instagram.com/abeeraamir00/">Instagram</a>
-                <a href="https://www.facebook.com/profile.php?id=61578291089372">Facebook</a>
-                <a href="https://www.pinterest.com/AbeerAmir00/">Pinterest</a>
-            </div>
+        <p><b>Email:</b> abeeramirenterprises@gmail.com, aatiraamir56@gmail.com</p>
+        <p><b>Phone:</b> +923097178525</p>
+        <p><b>WhatsApp:</b> <a href="https://wa.me/923006190087">Message on WhatsApp</a></p>
+        <div class="social">
+            <b>Follow Us:</b>
+            <a href="https://www.instagram.com/abeeraamir00/">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61578291089372">Facebook</a>
+        </div>
+        <div style="margin-top:20px;">
+            <h3>Pay via WhatsApp</h3>
+            <a href="https://wa.me/923006190087?text=Payment%20via%20JazzCash" style="background:#1c75bc; color:white; padding:10px 20px; border-radius:6px; margin-right:10px;">JazzCash</a>
+            <a href="https://wa.me/923006190087?text=Payment%20via%20EasyPaisa" style="background:#f7941d; color:white; padding:10px 20px; border-radius:6px;">EasyPaisa</a>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-© 2025 Abeer Amir Enterprises | All Rights Reserved
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <span>© 2025 Abeer Amir Enterprises</span>
 </footer>
 
 <script>
-// HERO SLIDER
-let slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-function showSlide(index){
-    slides.forEach(s => s.classList.remove('active'));
-    slides[index].classList.add('active');
-}
-function nextSlide(){ currentSlide=(currentSlide+1)%slides.length; showSlide(currentSlide);}
-function prevSlide(){ currentSlide=(currentSlide-1+slides.length)%slides.length; showSlide(currentSlide);}
-setInterval(nextSlide,5000);
-
 // CAROUSEL
 const carousel = document.getElementById('carousel');
 let carouselIndex=0;
