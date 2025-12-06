@@ -6,7 +6,6 @@
 <title>Abeer Amir – Premium Apparel</title>
 
 <style>
-/* RESET + GLOBAL */
 * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 body { background:#fafafa; scroll-behavior: smooth; }
 
@@ -25,7 +24,6 @@ nav a:hover { color:#25D366; }
 .slide { position:absolute; width:100%; height:100%; opacity:0; transition:opacity 1s ease-in-out; display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center; color:white; }
 .slide img { width:100%; height:100%; object-fit:cover; border-radius:0; }
 .slide.active { opacity:1; z-index:1; }
-
 .slide h1 { font-size:42px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); margin-bottom:10px; }
 .slide p { font-size:18px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6); margin-bottom:15px; }
 .slide a { background:#25D366; color:white; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:bold; transition:0.3s; }
@@ -48,7 +46,11 @@ nav a:hover { color:#25D366; }
 .card .title { font-weight:bold; font-size:18px; }
 .card .price { font-weight:600; margin:5px 0; }
 .card .free { color:green; font-weight:bold; margin-bottom:8px; }
-.card .quick-buy { display:block; background:#25D366; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:8px; }
+.card label { display:block; margin:5px 0; font-weight:bold; }
+.card input, .card select { width:80%; padding:5px; margin-bottom:8px; border-radius:4px; border:1px solid #ccc; text-align:center; }
+
+/* QUICK BUY */
+.card .quick-buy { display:block; background:#25D366; color:white; padding:8px 15px; border-radius:6px; text-decoration:none; font-weight:bold; }
 
 /* CAROUSEL ARROWS */
 .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:28px; background:rgba(0,0,0,0.25); color:white; border-radius:50%; padding:10px; cursor:pointer; }
@@ -110,34 +112,57 @@ footer { text-align:center; padding:25px; color:#888; font-size:14px; }
     <h2>Our Products</h2>
     <div class="carousel-container">
         <div class="carousel" id="carousel">
-            <div class="card">
-                <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" alt="Cotton Premium T-Shirt">
-                <div class="title">Cotton Premium T-Shirt</div>
-                <div class="price">PKR 1,699.99</div>
-                <div class="free">Free Delivery</div>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium T-Shirt">Quick Buy</a>
-            </div>
-            <div class="card">
-                <img src="tshirt.jpg" alt="Cotton Classic T-Shirt">
-                <div class="title">Cotton Classic T-Shirt</div>
-                <div class="price">PKR 1,699.99</div>
-                <div class="free">Free Delivery</div>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Classic T-Shirt">Quick Buy</a>
-            </div>
+
+            <!-- Cotton Premium Hoodie (FIRST) -->
             <div class="card">
                 <img src="mk4_2.jpg" alt="Cotton Premium Hoodie">
                 <div class="title">Cotton Premium Hoodie</div>
                 <div class="price">PKR 2,699.99</div>
                 <div class="free">Free Delivery</div>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Premium Hoodie">Quick Buy</a>
+                <label for="premium-hoodie-qty">Quantity:</label>
+                <input type="number" id="premium-hoodie-qty" value="1" min="1" max="10">
+                <a class="quick-buy" href="#" onclick="orderPremiumHoodie(event)">Quick Buy</a>
             </div>
+
+            <!-- Cotton Premium T-Shirt -->
+            <div class="card">
+                <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" alt="Cotton Premium T-Shirt">
+                <div class="title">Cotton Premium T-Shirt</div>
+                <div class="price">PKR 1,699.99</div>
+                <div class="free">Free Delivery</div>
+                <label for="premium-tshirt-qty">Quantity:</label>
+                <input type="number" id="premium-tshirt-qty" value="1" min="1" max="10">
+                <a class="quick-buy" href="#" onclick="orderPremiumTShirt(event)">Quick Buy</a>
+            </div>
+
+            <!-- Cotton Classic T-Shirt (with color) -->
+            <div class="card">
+                <img src="tshirt.jpg" alt="Cotton Classic T-Shirt">
+                <div class="title">Cotton Classic T-Shirt</div>
+                <div class="price">PKR 1,699.99</div>
+                <div class="free">Free Delivery</div>
+                <label for="classic-tshirt-color">Color:</label>
+                <select id="classic-tshirt-color">
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Blue">Blue</option>
+                </select>
+                <label for="classic-tshirt-qty">Quantity:</label>
+                <input type="number" id="classic-tshirt-qty" value="1" min="1" max="10">
+                <a class="quick-buy" href="#" onclick="orderClassicTShirt(event)">Quick Buy</a>
+            </div>
+
+            <!-- Cotton Hoodies -->
             <div class="card">
                 <img src="b_convert_to_2800_by_1.png" alt="Cotton Hoodies">
                 <div class="title">Cotton Hoodies</div>
                 <div class="price">PKR 2,699.99</div>
                 <div class="free">Free Delivery</div>
-                <a class="quick-buy" href="https://wa.me/923006190087?text=I want Cotton Hoodies">Quick Buy</a>
+                <label for="hoodies-qty">Quantity:</label>
+                <input type="number" id="hoodies-qty" value="1" min="1" max="10">
+                <a class="quick-buy" href="#" onclick="orderHoodies(event)">Quick Buy</a>
             </div>
+
         </div>
         <div class="carousel-arrow left" onclick="moveCarousel(-1)">&#10094;</div>
         <div class="carousel-arrow right" onclick="moveCarousel(1)">&#10095;</div>
@@ -188,6 +213,29 @@ function moveCarousel(dir){
     if(carouselIndex<0) carouselIndex=0;
     if(carouselIndex>carousel.children.length-3) carouselIndex=carousel.children.length-3;
     carousel.style.transform=`translateX(-${carouselIndex*cardWidth}px)`;
+}
+
+// QUICK BUY FUNCTIONS
+function orderPremiumHoodie(e){
+    e.preventDefault();
+    const qty = document.getElementById('premium-hoodie-qty').value;
+    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Premium Hoodie`);
+}
+function orderPremiumTShirt(e){
+    e.preventDefault();
+    const qty = document.getElementById('premium-tshirt-qty').value;
+    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Premium T-Shirt`);
+}
+function orderClassicTShirt(e){
+    e.preventDefault();
+    const qty = document.getElementById('classic-tshirt-qty').value;
+    const color = document.getElementById('classic-tshirt-color').value;
+    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Classic T-Shirt, Color: ${color}`);
+}
+function orderHoodies(e){
+    e.preventDefault();
+    const qty = document.getElementById('hoodies-qty').value;
+    window.open(`https://wa.me/923006190087?text=I want ${qty} Cotton Hoodies`);
 }
 </script>
 
