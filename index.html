@@ -1,332 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abeer Amir – Premium Apparel</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abeer Amir – Premium Apparel</title>
+<style>
+    body {
+        margin:0;
+        font-family: Arial, sans-serif;
+        background:#fafafa;
+        color:#222;
+    }
+    a { text-decoration:none; color:inherit; }
 
-        body {
-            margin:0;
-            font-family: Arial, sans-serif;
-            background:#fafafa;
-            color:#222;
-        }
-        a { text-decoration:none; color:inherit; }
+    h2 { font-size:32px; text-align:center; margin-bottom:20px; }
 
-        h2 {
-            font-size:32px;
-            text-align:center;
-            margin-bottom:20px;
-        }
+    /* NAV */
+    nav {
+        background:#000;
+        padding:15px 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    nav a { color:#fff; margin-left:20px; font-weight:600; }
 
-        /* NAV */
-        nav {
-            background:#000;
-            padding:15px 20px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-        nav a {
-            color:#fff;
-            margin-left:20px;
-            font-weight:600;
-        }
+    /* HERO */
+    .hero { text-align:center; padding:80px 20px; background:#f0f0f0; }
 
-        /* HERO */
-        .hero {
-            text-align:center;
-            padding:80px 20px;
-            background:#f0f0f0;
-        }
+    /* WHY US */
+    .why-us { padding:50px 20px; background:#fff; }
+    .why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+    .why-box {
+        background:#fafafa; padding:20px; width:250px;
+        border-radius:12px; box-shadow:0 3px 8px rgba(0,0,0,0.1);
+        text-align:center;
+    }
 
-        /* WHY US */
-        .why-us { padding:50px 20px; background:#fff; }
-        .why-grid {
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            flex-wrap:wrap;
-        }
-        .why-box {
-            background:#fafafa;
-            padding:20px;
-            width:250px;
-            border-radius:12px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.1);
-            text-align:center;
-        }
+    /* TESTIMONIALS */
+    .testimonials { padding:50px 20px; }
+    .t-box {
+        background:white; padding:20px; width:300px;
+        margin:0 auto 20px; border-radius:12px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
 
-        /* TESTIMONIALS */
-        .testimonials { padding:50px 20px; }
-        .t-box {
-            background:white;
-            padding:20px;
-            width:300px;
-            margin:0 auto 20px;
-            border-radius:12px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.1);
-        }
+    /* PRODUCTS */
+    .carousel-container { overflow:hidden; width:100%; padding-bottom:40px; }
+    .carousel-track { display:flex; gap:20px; padding:20px; }
 
-        /* PRODUCTS */
-        .carousel-container { overflow:hidden; width:100%; padding-bottom:40px; }
-        .carousel-track {
-            display:flex;
-            gap:20px;
-            animation:scroll 30s linear infinite;
-            padding:20px;
-        }
+    .product-card {
+        background:#fff; width:260px; padding:15px; border-radius:12px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;
+        position:relative; flex-shrink:0;
+    }
 
-        .product-card {
-            background:#fff;
-            width:260px;
-            padding:15px;
-            border-radius:12px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            text-align:center;
-            position:relative;
-            flex-shrink:0;
-        }
+    .badge {
+        position:absolute; top:10px; left:10px; background:#ff4747;
+        padding:5px 10px; color:#fff; font-size:14px; border-radius:6px;
+        font-weight:700;
+    }
+    .badge.green { background:#00b914; }
+    .badge.blue { background:#006CFF; }
 
-        /* Badges */
-        .badge {
-            position:absolute;
-            top:10px;
-            left:10px;
-            background:#ff4747;
-            padding:5px 10px;
-            color:#fff;
-            font-size:14px;
-            border-radius:6px;
-            font-weight:700;
-        }
+    .product-card img { width:100%; border-radius:10px; }
+    .price { font-weight:600; margin:8px 0 12px; }
+    .size-select { width:100%; padding:8px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; }
 
-        .badge.green { background:#00b914; }
-        .badge.blue { background:#006CFF; }
+    .buy-btn, .wa-btn {
+        width:100%; padding:10px; border:none; background:#000;
+        color:#fff; font-size:16px; font-weight:600; border-radius:6px; cursor:pointer; margin-top:5px;
+    }
+    .wa-btn { background:#25D366; }
 
-        .product-card img {
-            width:100%;
-            border-radius:10px;
-        }
+    /* FAQ */
+    .faq { padding:50px 20px; }
+    .faq-item {
+        background:white; padding:15px; margin-bottom:10px;
+        border-radius:10px; width:80%; margin-left:auto; margin-right:auto;
+        box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .price { font-weight:600; margin:8px 0 12px; }
-        .size-select {
-            width:100%;
-            padding:8px;
-            margin-bottom:10px;
-            border-radius:6px;
-            border:1px solid #ccc;
-        }
+    /* CONTACT FORM */
+    .contact-container {
+        max-width:700px; margin:50px auto; background:white;
+        padding:30px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    }
+    .contact-container form input[type=text],
+    .contact-container form input[type=email],
+    .contact-container form textarea {
+        width:100%; padding:10px; margin-top:8px; margin-bottom:15px;
+        border-radius:6px; border:1px solid #ccc; font-size:16px;
+    }
+    .contact-container form input[type=submit] {
+        padding:12px 25px; border:none; background:#25D366;
+        color:white; border-radius:6px; cursor:pointer; font-weight:bold;
+        font-size:16px; display:block; margin:0 auto;
+    }
+    .contact-container form input[type=submit]:hover { background:#128C7E; }
 
-        .buy-btn, .wa-btn {
-            width:100%;
-            padding:10px;
-            border:none;
-            background:#000;
-            color:#fff;
-            font-size:16px;
-            font-weight:600;
-            border-radius:6px;
-            cursor:pointer;
-            margin-top:5px;
-        }
+    .contact-links { margin-top:30px; text-align:center; font-size:16px; }
+    .contact-links a { color:#25D366; text-decoration:none; font-weight:bold; }
+    .contact-links a:hover { text-decoration:underline; }
+    .contact-links p { margin:10px 0; }
 
-        .wa-btn { background:#25D366; }
+    /* FOOTER */
+    footer { background:#000; color:#fff; padding:25px; text-align:center; margin-top:30px; }
 
-        @keyframes scroll {
-            0% {transform:translateX(0);}
-            100% {transform:translateX(-50%);}
-        }
-
-        /* FAQ */
-        .faq { padding:50px 20px; }
-        .faq-item {
-            background:white;
-            padding:15px;
-            margin-bottom:10px;
-            border-radius:10px;
-            width:80%;
-            margin-left:auto;
-            margin-right:auto;
-            box-shadow:0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* FOOTER */
-        footer {
-            background:#000;
-            color:#fff;
-            padding:25px;
-            text-align:center;
-            margin-top:30px;
-        }
-
-        /* MOBILE BOTTOM BAR */
-        .bottom-bar {
-            position:fixed;
-            bottom:0;
-            left:0;
-            width:100%;
-            background:#000;
-            color:white;
-            padding:12px 20px;
-            font-size:18px;
-            text-align:center;
-            font-weight:700;
-            display:none;
-        }
-
-        @media(max-width:768px){
-            .bottom-bar { display:block; }
-        }
-
-    </style>
+    /* MOBILE BOTTOM BAR */
+    .bottom-bar {
+        position:fixed; bottom:0; left:0; width:100%; background:#000;
+        color:white; padding:12px 20px; font-size:18px; text-align:center;
+        font-weight:700; display:none; cursor:pointer;
+    }
+    @media(max-width:768px){ .bottom-bar { display:block; } }
+</style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <div style="color:white; font-size:22px; font-weight:700;">Abeer Amir</div>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#why">Why Us</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <h1>Premium Cotton Apparel</h1>
-        <p>Free Delivery Across Pakistan • Satisfaction Guaranteed</p>
-        <button onclick="location.href='#products'">View Collection</button>
-    </section>
-
-    <!-- WHY US -->
-    <section id="why" class="why-us">
-        <h2>Why Choose Us?</h2>
-        <div class="why-grid">
-            <div class="why-box"><h3>Free Delivery</h3><p>Across Pakistan.</p></div>
-            <div class="why-box"><h3>Premium Quality</h3><p>100% soft cotton.</p></div>
-            <div class="why-box"><h3>Secure Payment</h3><p>JazzCash / EasyPaisa.</p></div>
-            <div class="why-box"><h3>Easy Returns</h3><p>7-day exchange.</p></div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="t-box">"Amazing quality! The hoodie fits perfectly." — Sarah</div>
-        <div class="t-box">"Quick delivery and great service." — Ali</div>
-        <div class="t-box">"Excellent T-Shirt quality." — Ayesha</div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products">
-        <h2>Our Products</h2>
-
-        <div class="carousel-container">
-            <div class="carousel-track">
-
-                <!-- T-SHIRT -->
-                <div class="product-card">
-                    <div class="badge blue">New Arrival</div>
-                    <img src="tshirt.jpg">
-                    <h3>Cotton Premium T-Shirt</h3>
-                    <p class="price">PKR 1,699.99</p>
-                    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-                    <button class="buy-btn">Quick Buy</button>
-                    <button class="wa-btn" onclick="waCheckout('Cotton Premium T-Shirt')">Order via WhatsApp</button>
-                </div>
-
-                <!-- FLEECE SHIRT -->
-                <div class="product-card">
-                    <div class="badge green">Best Price</div>
-                    <img src="shirt1.jpg">
-                    <h3>Fleece Shirt</h3>
-                    <p class="price">PKR 1,499.99</p>
-                    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-                    <button class="buy-btn">Quick Buy</button>
-                    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="badge green">Best Price</div>
-                    <img src="shirt2.jpg">
-                    <h3>Fleece Shirt</h3>
-                    <p class="price">PKR 1,499.99</p>
-                    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-                    <button class="buy-btn">Quick Buy</button>
-                    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="badge green">Hot Seller</div>
-                    <img src="shirt3.jpg">
-                    <h3>Fleece Shirt</h3>
-                    <p class="price">PKR 1,499.99</p>
-                    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-                    <button class="buy-btn">Quick Buy</button>
-                    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-                </div>
-
-                <!-- HOODIE -->
-                <div class="product-card">
-                    <div class="badge blue">New Arrival</div>
-                    <img src="hoodie.jpg">
-                    <h3>Cotton Premium Hoodie</h3>
-                    <p class="price">PKR 2,699.99</p>
-                    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-                    <button class="buy-btn">Quick Buy</button>
-                    <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie')">Order via WhatsApp</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq-item"><b>Q:</b> Free delivery?  
-        <br><b>A:</b> Yes, all orders include free delivery.</div>
-
-        <div class="faq-item"><b>Q:</b> Payment methods?  
-        <br><b>A:</b> JazzCash / EasyPaisa.</div>
-
-        <div class="faq-item"><b>Q:</b> Return policy?  
-        <br><b>A:</b> 7-day easy exchange.</div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact" style="text-align:center;padding:40px;">
-        <h2>Contact Us</h2>
-        <p>For orders & inquiries:<br>
-        <a href="https://wa.me/923006190087">WhatsApp: +92 300 6190087</a></p>
-    </section>
-
-    <!-- MOBILE BOTTOM BAR -->
-    <div class="bottom-bar" onclick="location.href='#products'">
-        Shop Now — Premium Cotton Apparel
+<!-- NAV -->
+<nav>
+    <div style="color:white; font-size:22px; font-weight:700;">Abeer Amir</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#why">Why Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
     </div>
+</nav>
 
-    <!-- WhatsApp Checkout Script -->
-    <script>
-        function waCheckout(productName){
-            const waNumber = "923006190087";
-            const message = encodeURIComponent(
-                "Hello Abeer, I want to order: " + productName + ".\nPlease confirm availability."
-            );
-            window.open("https://wa.me/" + waNumber + "?text=" + message, "_blank");
-        }
-    </script>
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>Premium Cotton Apparel</h1>
+    <p>Free Delivery Across Pakistan • Satisfaction Guaranteed</p>
+    <button onclick="location.href='#products'">View Collection</button>
+</section>
 
-    <footer>
-        © 2025 Abeer Amir. All Rights Reserved.
-    </footer>
+<!-- WHY US -->
+<section id="why" class="why-us">
+    <h2>Why Choose Us?</h2>
+    <div class="why-grid">
+        <div class="why-box"><h3>Free Delivery</h3><p>Across Pakistan.</p></div>
+        <div class="why-box"><h3>Premium Quality</h3><p>100% soft cotton.</p></div>
+        <div class="why-box"><h3>Secure Payment</h3><p>JazzCash / EasyPaisa / Bank Transfer</p></div>
+        <div class="why-box"><h3>Easy Returns</h3><p>7-day exchange.</p></div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="t-box">"Amazing quality! The hoodie fits perfectly." — Sarah</div>
+    <div class="t-box">"Quick delivery and great service." — Ali</div>
+    <div class="t-box">"Excellent T-Shirt quality." — Ayesha</div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2>Our Products</h2>
+<div class="carousel-container">
+    <div class="carousel-track">
+        <!-- Cotton T-Shirt -->
+        <div class="product-card">
+            <div class="badge blue">New Arrival</div>
+            <img src="tshirt.jpg">
+            <h3>Cotton Premium T-Shirt</h3>
+            <p class="price">PKR 1,699.99</p>
+            <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
+            <button class="buy-btn">Quick Buy</button>
+            <button class="wa-btn" onclick="waCheckout('Cotton Premium T-Shirt','Full Payment')">Order WhatsApp - Full Payment</button>
+            <button class="wa-btn" onclick="waCheckout('Cotton Premium T-Shirt','Half Payment')">Order WhatsApp - 50% Advance</button>
+        </div>
+
+        <!-- Fleece Shirt 1 -->
+        <div class="product-card">
+            <div class="badge green">Best Price</div>
+            <img src="shirt1.jpg">
+            <h3>Fleece Shirt</h3>
+            <p class="price">PKR 1,499.99</p>
+            <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
+            <button class="buy-btn">Quick Buy</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Full Payment')">Order WhatsApp - Full Payment</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Half Payment')">Order WhatsApp - 50% Advance</button>
+        </div>
+
+        <!-- Fleece Shirt 2 -->
+        <div class="product-card">
+            <div class="badge green">Best Price</div>
+            <img src="shirt2.jpg">
+            <h3>Fleece Shirt</h3>
+            <p class="price">PKR 1,499.99</p>
+            <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
+            <button class="buy-btn">Quick Buy</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Full Payment')">Order WhatsApp - Full Payment</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Half Payment')">Order WhatsApp - 50% Advance</button>
+        </div>
+
+        <!-- Fleece Shirt 3 -->
+        <div class="product-card">
+            <div class="badge green">Hot Seller</div>
+            <img src="shirt3.jpg">
+            <h3>Fleece Shirt</h3>
+            <p class="price">PKR 1,499.99</p>
+            <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
+            <button class="buy-btn">Quick Buy</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Full Payment')">Order WhatsApp - Full Payment</button>
+            <button class="wa-btn" onclick="waCheckout('Fleece Shirt','Half Payment')">Order WhatsApp - 50% Advance</button>
+        </div>
+
+        <!-- Hoodie -->
+        <div class="product-card">
+            <div class="badge blue">New Arrival</div>
+            <img src="hoodie.jpg">
+            <h3>Cotton Premium Hoodie</h3>
+            <p class="price">PKR 2,699.99</p>
+            <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
+            <button class="buy-btn">Quick Buy</button>
+            <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie','Full Payment')">Order WhatsApp - Full Payment</button>
+            <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie','Half Payment')">Order WhatsApp - 50% Advance</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><b>Q:</b> Free delivery? <br><b>A:</b> Yes, all orders include free delivery.</div>
+<div class="faq-item"><b>Q:</b> Payment methods? <br><b>A:</b> JazzCash / EasyPaisa / Bank Transfer / Half Payment option.</div>
+<div class="faq-item"><b>Q:</b> Return policy? <br><b>A:</b> 7-day easy exchange.</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div class="contact-container">
+<h2>Contact Us</h2>
+<form action="#" method="POST">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+
+<input type="submit" value="Send Message">
+</form>
+
+<div class="contact-links">
+<p><b>Email:</b> 
+<a href="mailto:abeeramirenterprises@gmail.com">abeeramirenterprises@gmail.com</a>, 
+<a href="mailto:aatiraamir56@gmail.com">aatiraamir56@gmail.com</a></p>
+<p><b>Phone:</b> <a href="tel:+923097178525">+92 309 7178525</a></p>
+<p><b>WhatsApp:</b> <a href="https://wa.me/923006190087">Message on WhatsApp</a></p>
+<p><b>Follow Us:</b> 
+<a href="https://www.instagram.com/abeeraamir00/">Instagram</a> | 
+<a href="https://www.facebook.com/profile.php?id=61578291089372">Facebook</a></p>
+
+<h3>Payment Options:</h3>
+<p>Banks: HBL, UBL, MCB, Meezan Bank, Standard Chartered, and more.</p>
+<p>Mobile wallets: JazzCash, EasyPaisa</p>
+<p>Methods:</p>
+<ul>
+<li>Full Payment</li>
+<li>50% Advance Payment, 50% on Delivery</li>
+</ul>
+<p>Use WhatsApp buttons on products to select payment method.</p>
+</div>
+</div>
+</section>
+
+<!-- MOBILE BOTTOM BAR -->
+<div class="bottom-bar" onclick="location.href='#products'">
+Shop Now — Premium Cotton Apparel
+</div>
+
+<!-- WhatsApp Checkout Script -->
+<script>
+function waCheckout(productName, paymentType){
+    const waNumber = "923006190087";
+    let paymentText = "";
+    if(paymentType === "Full Payment"){
+        paymentText = "I will pay full amount via available options (JazzCash, EasyPaisa, Bank Transfer).";
+    } else if(paymentType === "Half Payment"){
+        paymentText = "I want to pay 50% upfront and 50% on delivery.";
+    }
+    const message = encodeURIComponent(
+        "Hello Abeer, I want to order: " + productName + ".\n" + paymentText + "\nPlease confirm availability."
+    );
+    window.open("https://wa.me/" + waNumber + "?text=" + message, "_blank");
+}
+</script>
+
+<footer>
+© 2025 Abeer Amir. All Rights Reserved.
+</footer>
 
 </body>
 </html>
