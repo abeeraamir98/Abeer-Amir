@@ -12,7 +12,10 @@
   <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
   <meta property="og:image" content="tshirt.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     @keyframes marquee {
       0% { transform: translateX(0); }
@@ -28,13 +31,98 @@
       animation-play-state: paused;
     }
   </style>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Abeer Amir",
+    "image": [
+      "https://abeeraamir98.github.io/Abeer-Amir/tshirt.jpg"
+    ],
+    "url": "https://abeeraamir98.github.io/Abeer-Amir/",
+    "telephone": "+923006190087",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pakistan"
+    },
+    "sameAs": [
+      "https://www.instagram.com/abeeraamir00/",
+      "https://www.facebook.com/profile.php?id=61578291089372"
+    ],
+    "openingHours": "Mo-Su 09:00-21:00",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Products",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Cotton Premium T-Shirt",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/tshirt.jpg",
+          "description": "240 GSM ultra-soft cotton",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "1699", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Fleece Shirt - Arctic White",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/shirt1.jpg",
+          "description": "Warm fleece interior",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "1499", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Fleece Shirt - Sage Grey",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/shirt2.jpg",
+          "description": "Brushed finish comfort",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "1499", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Fleece Shirt - Midnight",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/shirt3.jpg",
+          "description": "Limited colorway",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "1499", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Cotton Premium Hoodie - Eclipse",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg",
+          "description": "Cozy inner lining",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2699", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Cotton Premium Hoodie - Ember",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/b_convert_to_2800_by_1.png",
+          "description": "Hand-finished cuffs",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2699", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Cotton Premium Hoodie - Noir",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/hoodie.jpg",
+          "description": "Water-repellent coating",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2699", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        },
+        {
+          "@type": "Product",
+          "name": "Cotton Premium Hoodie - Desert",
+          "image": "https://abeeraamir98.github.io/Abeer-Amir/hoodie2.jpg",
+          "description": "Oversized fit",
+          "offers": { "@type": "Offer", "priceCurrency": "PKR", "price": "2699", "url": "https://abeeraamir98.github.io/Abeer-Amir/#products", "availability": "https://schema.org/InStock" }
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body class="bg-gray-50 text-slate-900">
+
+  <!-- Header -->
   <header id="home" class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-white/10">
-    <div class="max-w-6xl mx-auto flex flex-col gap-4 sm:flex-row items-center justify-between px-6 py-4">
-      <a href="#home">
-        <img src="A logo.png" alt="Abeer Amir Logo" class="h-10 w-auto">
-      </a>
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-4">
+      <a href="#home"><img src="A logo.png" alt="Abeer Amir Logo" class="h-10 w-auto"></a>
       <nav class="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold text-slate-200">
         <a class="hover:text-white" href="#home">Home</a>
         <a class="hover:text-white" href="#products">Products</a>
@@ -47,15 +135,16 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col gap-12 lg:flex-row items-center">
+    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12">
       <div class="flex-1 space-y-6">
         <p class="uppercase tracking-[0.4em] text-emerald-400 text-xs">Premium Cotton Apparel</p>
         <h1 class="text-4xl sm:text-5xl font-black leading-tight">Soft. Stylish. Delivered Free Across Pakistan.</h1>
         <p class="text-lg text-white/80">T-Shirts, fleece shirts, and hoodies crafted from ultra-soft cotton blends. Enjoy WhatsApp checkout, half-payment flexibility, and 7-day exchanges.</p>
         <div class="flex flex-wrap gap-4">
-          <button class="bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-lg shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Browse Collection</button>
-          <button class="border border-white/40 px-6 py-3 rounded-full font-semibold" onclick="waCheckout('General Inquiry')">Chat on WhatsApp</button>
+          <button class="bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-lg shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" aria-label="Browse Collection">Browse Collection</button>
+          <button class="border border-white/40 px-6 py-3 rounded-full font-semibold" onclick="waCheckout('General Inquiry')" aria-label="Chat on WhatsApp">Chat on WhatsApp</button>
         </div>
         <div class="flex flex-wrap gap-6 text-sm text-white/70">
           <div class="flex items-center gap-2"><span class="text-emerald-400 text-xl">✔</span>Free Nationwide Delivery</div>
@@ -86,6 +175,7 @@
     </div>
   </section>
 
+  <!-- Why Us Section -->
   <section id="why" class="max-w-6xl mx-auto px-6 py-20">
     <p class="text-center uppercase tracking-[0.4em] text-xs text-slate-500">Why Choose Us</p>
     <h2 class="text-3xl sm:text-4xl font-black text-center mt-4">We obsess over every stitch.</h2>
@@ -113,6 +203,7 @@
     </div>
   </section>
 
+  <!-- Products Section -->
   <section id="products" class="bg-white py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-10">
@@ -131,7 +222,7 @@
               <img class="h-48 w-full object-cover rounded-2xl mb-4" alt="Product image" loading="lazy">
               <h3 class="text-xl font-semibold mb-1"></h3>
               <p class="text-sm text-slate-500 mb-3"></p>
-              <select class="w-full mb-3 px-3 py-2 rounded-2xl border border-slate-200 text-sm font-semibold text-slate-600">
+              <select class="w-full mb-3 px-3 py-2 rounded-2xl border border-slate-200 text-sm font-semibold text-slate-600" aria-label="Select size">
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
@@ -139,7 +230,7 @@
               </select>
               <div class="space-y-2">
                 <button class="w-full bg-slate-900 text-white py-2 rounded-2xl font-semibold">Quick Buy</button>
-                <button class="w-full bg-emerald-400 text-slate-900 py-2 rounded-2xl font-semibold" data-wa>Order via WhatsApp</button>
+                <button class="w-full bg-emerald-400 text-slate-900 py-2 rounded-2xl font-semibold" data-wa aria-label="Order via WhatsApp">Order via WhatsApp</button>
               </div>
             </div>
           </template>
@@ -148,6 +239,7 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
   <section id="testimonials" class="bg-slate-900 text-white py-20">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-12">
@@ -171,6 +263,7 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
   <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
     <div class="text-center mb-12">
       <p class="uppercase tracking-[0.4em] text-xs text-slate-500">FAQ</p>
@@ -192,6 +285,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="bg-gradient-to-br from-emerald-50 to-white py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <p class="uppercase tracking-[0.4em] text-xs text-emerald-500">Contact</p>
@@ -216,18 +310,21 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-slate-900 text-white text-center py-10 text-sm">
     © 2025 Abeer Amir. All Rights Reserved.
   </footer>
 
-  <button class="fixed bottom-4 right-4 bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-xl shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+  <!-- Floating Shop Buttons -->
+  <button class="fixed bottom-4 right-4 bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-xl shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" aria-label="Shop Now">
     Shop Now
   </button>
 
-  <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-slate-900 text-white text-center py-4 text-lg font-bold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-slate-900 text-white text-center py-4 text-lg font-bold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" aria-label="Shop Premium Apparel">
     Shop Premium Apparel
   </div>
 
+  <!-- Product Script -->
   <script>
     const products = [
       { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'tshirt.jpg', fabric: '240 GSM ultra-soft cotton' },
@@ -260,7 +357,7 @@
         title.textContent = product.name;
         price.textContent = `${product.price} · ${product.fabric}`;
         waBtn.addEventListener('click', () => waCheckout(product.name));
-        card.querySelector('.bg-slate-900').addEventListener('click', () => alert('Quick buy coming soon!'));
+        card.querySelector('.bg-slate-900')?.addEventListener('click', () => alert('Quick buy coming soon!'));
         marquee.appendChild(clone);
       });
     }
