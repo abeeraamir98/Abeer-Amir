@@ -1,239 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abeer Amir – Premium Apparel</title>
-<meta name="description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online with WhatsApp checkout.">
-<meta name="keywords" content="Cotton T-Shirt, Hoodie, Pakistan, Premium Apparel, WhatsApp Order, Half Payment">
-<meta property="og:title" content="Abeer Amir – Premium Apparel">
-<meta property="og:description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
-<meta property="og:image" content="tshirt.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<style>
-body { margin:0; font-family: Arial, sans-serif; background:#fafafa; color:#222; }
-a { text-decoration:none; color:inherit; }
-h2 { font-size:32px; text-align:center; margin-bottom:20px; }
-
-/* NAV */
-nav { background:#000; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
-nav a { color:#fff; margin-left:20px; font-weight:600; }
-
-/* HERO */
-.hero { text-align:center; padding:80px 20px; background:#f0f0f0; }
-.hero button { padding:12px 25px; font-weight:bold; background:#25D366; color:#fff; border:none; border-radius:6px; cursor:pointer; }
-
-/* WHY US */
-.why-us { padding:50px 20px; background:#fff; }
-.why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-.why-box { background:#fafafa; padding:20px; width:250px; border-radius:12px; box-shadow:0 3px 8px rgba(0,0,0,0.1); text-align:center; }
-
-/* TESTIMONIALS */
-.testimonials { padding:50px 20px; }
-.t-box { background:white; padding:20px; width:300px; margin:0 auto 20px; border-radius:12px; box-shadow:0 3px 8px rgba(0,0,0,0.1); }
-
-/* PRODUCTS */
-.carousel-container { overflow:hidden; width:100%; padding-bottom:40px; }
-.carousel-track { display:flex; gap:20px; animation:scroll 30s linear infinite; padding:20px; }
-.product-card { background:#fff; width:260px; padding:15px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; position:relative; flex-shrink:0; transition:transform 0.3s; }
-.product-card:hover { transform:translateY(-5px); }
-.badge { position:absolute; top:10px; left:10px; background:#ff4747; padding:5px 10px; color:#fff; font-size:14px; border-radius:6px; font-weight:700; }
-.badge.green { background:#00b914; }
-.badge.blue { background:#006CFF; }
-.product-card img { width:100%; border-radius:10px; }
-.price { font-weight:600; margin:8px 0 12px; }
-.size-select { width:100%; padding:8px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; }
-.buy-btn, .wa-btn { width:100%; padding:10px; border:none; background:#000; color:#fff; font-size:16px; font-weight:600; border-radius:6px; cursor:pointer; margin-top:5px; }
-.wa-btn { background:#25D366; }
-@keyframes scroll { 0% {transform:translateX(0);} 100% {transform:translateX(-50%);} }
-
-/* FAQ */
-.faq { padding:50px 20px; }
-.faq-item { background:white; padding:15px; margin-bottom:10px; border-radius:10px; width:80%; margin-left:auto; margin-right:auto; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
-
-/* CONTACT */
-.contact { text-align:center; padding:40px; }
-
-/* FOOTER */
-footer { background:#000; color:#fff; padding:25px; text-align:center; margin-top:30px; }
-
-/* MOBILE BOTTOM BAR */
-.bottom-bar { position:fixed; bottom:0; left:0; width:100%; background:#000; color:white; padding:12px 20px; font-size:18px; text-align:center; font-weight:700; cursor:pointer; display:none; }
-@media(max-width:768px){ .bottom-bar { display:block; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abeer Amir – Premium Apparel</title>
+  <meta name="description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online with WhatsApp checkout.">
+  <meta name="keywords" content="Cotton T-Shirt, Hoodie, Pakistan, Premium Apparel, WhatsApp Order, Half Payment">
+  <meta property="og:title" content="Abeer Amir – Premium Apparel">
+  <meta property="og:description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
+  <meta property="og:image" content="tshirt.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
 </head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-    <div style="color:white; font-size:22px; font-weight:700;">Abeer Amir</div>
-    <div>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#why">Why Us</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+<body class="bg-gray-50 text-slate-900">
+  <header id="home" class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-white/10">
+    <div class="max-w-6xl mx-auto flex flex-col gap-4 sm:flex-row items-center justify-between px-6 py-4">
+      <a class="text-white text-2xl font-black tracking-wide" href="#home">Abeer Amir</a>
+      <nav class="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold text-slate-200">
+        <a class="hover:text-white" href="#home">Home</a>
+        <a class="hover:text-white" href="#products">Products</a>
+        <a class="hover:text-white" href="#why">Why Us</a>
+        <a class="hover:text-white" href="#testimonials">Testimonials</a>
+        <a class="hover:text-white" href="#faq">FAQ</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </nav>
+      <button class="hidden sm:inline-flex bg-emerald-400 text-slate-900 font-semibold px-4 py-2 rounded-full shadow-lg shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
     </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-    <h1>Premium Cotton Apparel</h1>
-    <p>Free Delivery Across Pakistan • Satisfaction Guaranteed</p>
-    <button onclick="location.href='#products'">View Collection</button>
-</section>
-
-<!-- WHY US -->
-<section id="why" class="why-us">
-    <h2>Why Choose Us?</h2>
-    <div class="why-grid">
-        <div class="why-box"><h3>Free Delivery</h3><p>Across Pakistan.</p></div>
-        <div class="why-box"><h3>Premium Quality</h3><p>100% soft cotton.</p></div>
-        <div class="why-box"><h3>Secure Payment</h3><p>JazzCash / EasyPaisa / All Banks / Half Payment Option</p></div>
-        <div class="why-box"><h3>Easy Returns</h3><p>7-day exchange.</p></div>
+  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col gap-12 lg:flex-row items-center">
+      <div class="flex-1 space-y-6">
+        <p class="uppercase tracking-[0.4em] text-emerald-400 text-xs">Premium Cotton Apparel</p>
+        <h1 class="text-4xl sm:text-5xl font-black leading-tight">Soft. Stylish. Delivered Free Across Pakistan.</h1>
+        <p class="text-lg text-white/80">T-Shirts, fleece shirts, and hoodies crafted from ultra-soft cotton blends. Enjoy WhatsApp checkout, half-payment flexibility, and 7-day exchanges.</p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-lg shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Browse Collection</button>
+          <button class="border border-white/40 px-6 py-3 rounded-full font-semibold" onclick="waCheckout('General Inquiry')">Chat on WhatsApp</button>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-white/70">
+          <div class="flex items-center gap-2"><span class="text-emerald-400 text-xl">✔</span>Free Nationwide Delivery</div>
+          <div class="flex items-center gap-2"><span class="text-emerald-400 text-xl">✔</span>Half Payment Option</div>
+          <div class="flex items-center gap-2"><span class="text-emerald-400 text-xl">✔</span>WhatsApp Support 24/7</div>
+        </div>
+      </div>
+      <div class="flex-1 w-full">
+        <div class="relative bg-white text-slate-900 p-6 rounded-3xl shadow-2xl">
+          <span class="absolute -top-3 left-6 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full">Trusted by 3,000+ customers</span>
+          <img class="rounded-2xl object-cover w-full h-80" src="tshirt.jpg" alt="Premium Cotton Apparel">
+          <div class="grid grid-cols-3 text-center mt-6">
+            <div>
+              <p class="text-3xl font-black">4.9★</p>
+              <p class="text-sm text-slate-500">Avg. Rating</p>
+            </div>
+            <div>
+              <p class="text-3xl font-black">48h</p>
+              <p class="text-sm text-slate-500">Fast Dispatch</p>
+            </div>
+            <div>
+              <p class="text-3xl font-black">0 PKR</p>
+              <p class="text-sm text-slate-500">Delivery Fee</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="t-box">"Amazing quality! The hoodie fits perfectly." — Sarah</div>
-    <div class="t-box">"Quick delivery and great service." — Ali</div>
-    <div class="t-box">"Excellent T-Shirt quality." — Ayesha</div>
-</section>
+  <section id="why" class="max-w-6xl mx-auto px-6 py-20">
+    <p class="text-center uppercase tracking-[0.4em] text-xs text-slate-500">Why Choose Us</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-center mt-4">We obsess over every stitch.</h2>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-emerald-500 text-sm font-bold">Benefit 01</p>
+        <h3 class="text-xl font-semibold mt-2">Free Delivery</h3>
+        <p class="text-slate-500 mt-2">Nationwide coverage with zero delivery fee and doorstep COD confirmation.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-emerald-500 text-sm font-bold">Benefit 02</p>
+        <h3 class="text-xl font-semibold mt-2">Premium Cotton</h3>
+        <p class="text-slate-500 mt-2">Breathable 240 GSM cotton blend with durable dyes that withstand dozens of washes.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-emerald-500 text-sm font-bold">Benefit 03</p>
+        <h3 class="text-xl font-semibold mt-2">Secure Payment</h3>
+        <p class="text-slate-500 mt-2">JazzCash, EasyPaisa, IBFT, or half-payment plan—you choose what works best.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p class="text-emerald-500 text-sm font-bold">Benefit 04</p>
+        <h3 class="text-xl font-semibold mt-2">7-Day Exchange</h3>
+        <p class="text-slate-500 mt-2">If the size isn’t perfect, request an exchange within 7 days with no extra fee.</p>
+      </article>
+    </div>
+  </section>
 
-<!-- PRODUCTS -->
-<section id="products">
-<h2>Our Products</h2>
-<p style="text-align:center; margin-bottom:20px; font-size:16px; color:#333;">
-You can get all designs in both materials, and prices with respect to materials are provided. You can also ask for your custom designs.
-</p>
-<div class="carousel-container">
-<div class="carousel-track">
+  <section id="products" class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <p class="uppercase tracking-[0.4em] text-xs text-slate-500">Our Products</p>
+        <h2 class="text-3xl sm:text-4xl font-black mt-3">Choose your favorite fit.</h2>
+        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Every design can be crafted as a T-shirt or hoodie. Select your preferred fabric weight, share your custom artwork, and we’ll handle the rest.</p>
+      </div>
+      <div class="overflow-hidden relative">
+        <div class="marquee-track" id="productMarquee">
+          <template id="product-card-template">
+            <div class="w-64 flex-shrink-0 bg-slate-50 border border-slate-200 rounded-3xl p-5 shadow-sm">
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-text text-xs font-bold px-3 py-1 rounded-full"></span>
+                <span class="text-xs font-semibold text-slate-500">New drop</span>
+              </div>
+              <img class="h-48 w-full object-cover rounded-2xl mb-4" alt="Product image" loading="lazy">
+              <h3 class="text-xl font-semibold mb-1"></h3>
+              <p class="text-sm text-slate-500 mb-3"></p>
+              <select class="w-full mb-3 px-3 py-2 rounded-2xl border border-slate-200 text-sm font-semibold text-slate-600">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>XL</option>
+              </select>
+              <div class="space-y-2">
+                <button class="w-full bg-slate-900 text-white py-2 rounded-2xl font-semibold">Quick Buy</button>
+                <button class="w-full bg-emerald-400 text-slate-900 py-2 rounded-2xl font-semibold" data-wa>Order via WhatsApp</button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- T-SHIRT -->
-<div class="product-card">
-    <div class="badge blue">New Arrival</div>
-    <img src="tshirt.jpg" loading="lazy">
-    <h3>Cotton Premium T-Shirt</h3>
-    <p class="price">PKR 1,699.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Cotton Premium T-Shirt')">Order via WhatsApp</button>
-</div>
+  <section id="testimonials" class="bg-slate-900 text-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-[0.4em] text-xs text-emerald-300">Testimonials</p>
+        <h2 class="text-3xl sm:text-4xl font-black mt-3">Loved by customers across Pakistan.</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="bg-white/10 p-6 rounded-2xl border border-white/10">
+          <p class="text-lg">“Amazing quality! The hoodie fits perfectly.”</p>
+          <p class="mt-4 text-emerald-300 font-semibold">— Sarah, Karachi</p>
+        </article>
+        <article class="bg-white/10 p-6 rounded-2xl border border-white/10">
+          <p class="text-lg">“Quick delivery and great service. Definitely ordering again.”</p>
+          <p class="mt-4 text-emerald-300 font-semibold">— Ali, Lahore</p>
+        </article>
+        <article class="bg-white/10 p-6 rounded-2xl border border-white/10">
+          <p class="text-lg">“Softest tee I own. Colors haven’t faded after multiple washes.”</p>
+          <p class="mt-4 text-emerald-300 font-semibold">— Ayesha, Islamabad</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- FLEECE SHIRTS -->
-<div class="product-card">
-    <div class="badge green">Best Price</div>
-    <img src="shirt1.jpg" loading="lazy">
-    <h3>Fleece Shirt</h3>
-    <p class="price">PKR 1,499.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-</div>
-<div class="product-card">
-    <div class="badge green">Best Price</div>
-    <img src="shirt2.jpg" loading="lazy">
-    <h3>Fleece Shirt</h3>
-    <p class="price">PKR 1,499.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-</div>
-<div class="product-card">
-    <div class="badge green">Hot Seller</div>
-    <img src="shirt3.jpg" loading="lazy">
-    <h3>Fleece Shirt</h3>
-    <p class="price">PKR 1,499.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Fleece Shirt')">Order via WhatsApp</button>
-</div>
+  <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <p class="uppercase tracking-[0.4em] text-xs text-slate-500">FAQ</p>
+      <h2 class="text-3xl sm:text-4xl font-black">Everything you need to know.</h2>
+    </div>
+    <div class="space-y-6">
+      <details class="bg-white border border-slate-200 rounded-2xl p-6" open>
+        <summary class="font-semibold text-lg cursor-pointer">Is delivery really free?</summary>
+        <p class="text-slate-500 mt-3">Yes! We cover the delivery charges for every city in Pakistan, no hidden fees.</p>
+      </details>
+      <details class="bg-white border border-slate-200 rounded-2xl p-6">
+        <summary class="font-semibold text-lg cursor-pointer">Which payment methods do you accept?</summary>
+        <p class="text-slate-500 mt-3">JazzCash, EasyPaisa, IBFT, and all local bank transfers. You can also reserve your order with 50% advance.</p>
+      </details>
+      <details class="bg-white border border-slate-200 rounded-2xl p-6">
+        <summary class="font-semibold text-lg cursor-pointer">What is your return or exchange policy?</summary>
+        <p class="text-slate-500 mt-3">If the size or color isn’t right, request an exchange within 7 days. We’ll arrange a quick replacement.</p>
+      </details>
+    </div>
+  </section>
 
-<!-- HOODIES -->
-<div class="product-card">
-    <div class="badge blue">New Arrival</div>
-    <img src="1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg" loading="lazy">
-    <h3>Cotton Premium Hoodie</h3>
-    <p class="price">PKR 2,699.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie')">Order via WhatsApp</button>
-</div>
-<div class="product-card">
-    <div class="badge blue">New Arrival</div>
-    <img src="b_convert_to_2800_by_1.png" loading="lazy">
-    <h3>Cotton Premium Hoodie</h3>
-    <p class="price">PKR 2,699.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie')">Order via WhatsApp</button>
-</div>
-<div class="product-card">
-    <div class="badge blue">New Arrival</div>
-    <img src="hoodie.jpg" loading="lazy">
-    <h3>Cotton Premium Hoodie</h3>
-    <p class="price">PKR 2,699.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie')">Order via WhatsApp</button>
-</div>
-<div class="product-card">
-    <div class="badge blue">New Arrival</div>
-    <img src="hoodie2.jpg" loading="lazy">
-    <h3>Cotton Premium Hoodie</h3>
-    <p class="price">PKR 2,699.99</p>
-    <select class="size-select"><option>Small</option><option>Medium</option><option>Large</option><option>XL</option></select>
-    <button class="buy-btn">Quick Buy</button>
-    <button class="wa-btn" onclick="waCheckout('Cotton Premium Hoodie')">Order via WhatsApp</button>
-</div>
+  <section id="contact" class="bg-gradient-to-br from-emerald-50 to-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="uppercase tracking-[0.4em] text-xs text-emerald-500">Contact</p>
+      <h2 class="text-3xl sm:text-4xl font-black mt-4">Talk to the Abeer Amir team.</h2>
+      <p class="text-slate-500 mt-4">We respond within minutes on WhatsApp and within a few hours over email.</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        <div class="border border-emerald-100 bg-white rounded-3xl p-6">
+          <h3 class="text-xl font-semibold">Email</h3>
+          <p class="text-slate-500 mt-2"><a class="text-emerald-500" href="mailto:abeeramirenterprises@gmail.com">abeeramirenterprises@gmail.com</a></p>
+          <p class="text-slate-500"><a class="text-emerald-500" href="mailto:aatiraamir56@gmail.com">aatiraamir56@gmail.com</a></p>
+        </div>
+        <div class="border border-emerald-100 bg-white rounded-3xl p-6">
+          <h3 class="text-xl font-semibold">Phone & WhatsApp</h3>
+          <p class="text-slate-500 mt-2"><a class="text-emerald-500" href="tel:+923097178525">+92 309 7178525</a></p>
+          <p class="text-slate-500"><a class="text-emerald-500" href="https://wa.me/923006190087" target="_blank">WhatsApp: +92 300 6190087</a></p>
+        </div>
+      </div>
+      <div class="mt-6 flex justify-center gap-6 text-slate-500 font-semibold">
+        <a class="hover:text-emerald-500" href="https://www.instagram.com/abeeraamir00/" target="_blank">Instagram</a>
+        <a class="hover:text-emerald-500" href="https://www.facebook.com/profile.php?id=61578291089372" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </section>
 
-</div>
-</div>
-</section>
+  <footer class="bg-slate-900 text-white text-center py-10 text-sm">
+    © 2025 Abeer Amir. All Rights Reserved.
+  </footer>
 
-<!-- FAQ -->
-<section id="faq" class="faq">
-<h2>Frequently Asked Questions</h2>
-<div class="faq-item"><b>Q:</b> Free delivery? <br><b>A:</b> Yes, all orders include free delivery.</div>
-<div class="faq-item"><b>Q:</b> Payment methods? <br><b>A:</b> JazzCash / EasyPaisa / All Banks / Half Payment.</div>
-<div class="faq-item"><b>Q:</b> Return policy? <br><b>A:</b> 7-day easy exchange.</div>
-</section>
+  <button class="fixed bottom-4 right-4 bg-emerald-400 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-xl shadow-emerald-400/40" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+    Shop Now
+  </button>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Email: <a href="mailto:abeeramirenterprises@gmail.com">abeeramirenterprises@gmail.com</a>, <a href="mailto:aatiraamir56@gmail.com">aatiraamir56@gmail.com</a></p>
-<p>Phone: <a href="tel:+923097178525">+92 309 7178525</a></p>
-<p>WhatsApp: <a href="https://wa.me/923006190087">+92 300 6190087</a></p>
-<p>Follow Us: <a href="https://www.instagram.com/abeeraamir00/">Instagram</a> | <a href="https://www.facebook.com/profile.php?id=61578291089372">Facebook</a></p>
-</section>
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-slate-900 text-white text-center py-4 text-lg font-bold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+    Shop Premium Apparel
+  </div>
 
-<!-- MOBILE BOTTOM BAR -->
-<div class="bottom-bar" onclick="location.href='#products'">
-Shop Now — Premium Cotton Apparel
-</div>
+  <script>
+    const products = [
+      { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'tshirt.jpg', fabric: '240 GSM ultra-soft cotton' },
+      { name: 'Fleece Shirt - Arctic White', price: 'PKR 1,499', badge: 'Best Price', badgeColor: 'bg-emerald-100 text-emerald-600', image: 'shirt1.jpg', fabric: 'Warm fleece interior' },
+      { name: 'Fleece Shirt - Sage Grey', price: 'PKR 1,499', badge: 'Hot Seller', badgeColor: 'bg-orange-100 text-orange-600', image: 'shirt2.jpg', fabric: 'Brushed finish comfort' },
+      { name: 'Fleece Shirt - Midnight', price: 'PKR 1,499', badge: 'Staff Pick', badgeColor: 'bg-purple-100 text-purple-600', image: 'shirt3.jpg', fabric: 'Limited colorway' },
+      { name: 'Cotton Premium Hoodie - Eclipse', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: '1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg', fabric: 'Cozy inner lining' },
+      { name: 'Cotton Premium Hoodie - Ember', price: 'PKR 2,699', badge: 'Limited', badgeColor: 'bg-rose-100 text-rose-600', image: 'b_convert_to_2800_by_1.png', fabric: 'Hand-finished cuffs' },
+      { name: 'Cotton Premium Hoodie - Noir', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'hoodie.jpg', fabric: 'Water-repellent coating' },
+      { name: 'Cotton Premium Hoodie - Desert', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'hoodie2.jpg', fabric: 'Oversized fit' }
+    ];
 
-<!-- WhatsApp Checkout Script -->
-<script>
-function waCheckout(productName){
-    const waNumber = "923006190087";
-    const message = encodeURIComponent(
-        "Hello Abeer, I want to order: " + productName + ".\nPlease confirm availability."
-    );
-    window.open("https://wa.me/" + waNumber + "?text=" + message, "_blank");
-}
-</script>
+    const marquee = document.getElementById('productMarquee');
+    const template = document.getElementById('product-card-template');
 
-<footer>
-© 2025 Abeer Amir. All Rights Reserved.
-</footer>
+    function renderProducts() {
+      products.concat(products).forEach((product) => {
+        const clone = template.content.cloneNode(true);
+        const card = clone.querySelector('div');
+        const badge = card.querySelector('.badge-text');
+        const img = card.querySelector('img');
+        const title = card.querySelector('h3');
+        const price = card.querySelector('p');
+        const waBtn = card.querySelector('[data-wa]');
 
+        badge.textContent = product.badge;
+        badge.className = `badge-text text-xs font-bold px-3 py-1 rounded-full ${product.badgeColor}`;
+        img.src = product.image;
+        img.alt = product.name;
+        title.textContent = product.name;
+        price.textContent = `${product.price} · ${product.fabric}`;
+        waBtn.addEventListener('click', () => waCheckout(product.name));
+        card.querySelector('.bg-slate-900').addEventListener('click', () => alert('Quick buy coming soon!'));
+        marquee.appendChild(clone);
+      });
+    }
+
+    function waCheckout(productName) {
+      const waNumber = '923006190087';
+      const message = encodeURIComponent(`Hello Abeer, I want to order: ${productName}. Please confirm availability.`);
+      window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+    }
+
+    renderProducts();
+  </script>
 </body>
 </html>
