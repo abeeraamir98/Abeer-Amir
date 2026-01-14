@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abeer Amir – Premium Apparel</title>
 
-  <meta name="description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online with WhatsApp checkout." />
-  <meta name="keywords" content="Cotton T-Shirt, Hoodie, Pakistan, Premium Apparel, WhatsApp Order, Half Payment" />
+  <meta name="description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online with WhatsApp checkout.">
+  <meta name="keywords" content="Cotton T-Shirt, Hoodie, Pakistan, Premium Apparel, WhatsApp Order, Half Payment">
 
-  <meta property="og:title" content="Abeer Amir – Premium Apparel" />
-  <meta property="og:description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/" />
-  <meta property="og:image" content="tshirt.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="Abeer Amir – Premium Apparel">
+  <meta property="og:description" content="Premium Cotton Apparel - Free Delivery Across Pakistan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
+  <meta property="og:image" content="tshirt.jpg">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -37,59 +35,74 @@
 
 <body class="bg-gray-50 text-slate-900">
 
-  <!-- YOUR ENTIRE WEBSITE CONTENT (UNCHANGED) -->
-  <!-- Everything you sent remains exactly the same -->
-  <!-- Only bottom scripts modified -->
+<!-- ===== YOUR WEBSITE CONTENT ===== -->
 
-  <!-- Your existing script -->
-  <script>
-    const products = [
-      { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'tshirt.jpg', fabric: '240 GSM ultra-soft cotton' },
-      { name: 'Fleece Shirt - Arctic White', price: 'PKR 1,499', badge: 'Best Price', badgeColor: 'bg-emerald-100 text-emerald-600', image: 'shirt1.jpg', fabric: 'Warm fleece interior' },
-      { name: 'Fleece Shirt - Sage Grey', price: 'PKR 1,499', badge: 'Hot Seller', badgeColor: 'bg-orange-100 text-orange-600', image: 'shirt2.jpg', fabric: 'Brushed finish comfort' },
-      { name: 'Fleece Shirt - Midnight', price: 'PKR 1,499', badge: 'Staff Pick', badgeColor: 'bg-purple-100 text-purple-600', image: 'shirt3.jpg', fabric: 'Limited colorway' },
-      { name: 'Cotton Premium Hoodie - Eclipse', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: '1765001121628-019af243-6b0a-7ba4-9d56-8ffa97be9172.jpeg', fabric: 'Cozy inner lining' },
-      { name: 'Cotton Premium Hoodie - Ember', price: 'PKR 2,699', badge: 'Limited', badgeColor: 'bg-rose-100 text-rose-600', image: 'b_convert_to_2800_by_1.png', fabric: 'Hand-finished cuffs' },
-      { name: 'Cotton Premium Hoodie - Noir', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'hoodie.jpg', fabric: 'Water-repellent coating' },
-      { name: 'Cotton Premium Hoodie - Desert', price: 'PKR 2,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'hoodie2.jpg', fabric: 'Oversized fit' }
-    ];
+<section id="products" class="bg-white py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-black">Products</h2>
+    </div>
 
-    const marquee = document.getElementById('productMarquee');
-    const template = document.getElementById('product-card-template');
+    <div class="overflow-hidden relative">
+      <div class="marquee-track" id="productMarquee">
 
-    function renderProducts() {
-      products.concat(products).forEach((product) => {
-        const clone = template.content.cloneNode(true);
-        const card = clone.querySelector('div');
-        const badge = card.querySelector('.badge-text');
-        const img = card.querySelector('img');
-        const title = card.querySelector('h3');
-        const price = card.querySelector('p');
-        const waBtn = card.querySelector('[data-wa]');
+        <template id="product-card-template">
+          <div class="w-64 flex-shrink-0 bg-slate-50 border border-slate-200 rounded-3xl p-5 shadow-sm">
+            <span class="badge-text text-xs font-bold px-3 py-1 rounded-full"></span>
+            <img class="h-48 w-full object-cover rounded-2xl my-4">
+            <h3 class="text-xl font-semibold"></h3>
+            <p class="text-sm text-slate-500"></p>
+            <button class="bg-emerald-400 w-full mt-3 py-2 rounded-xl" data-wa>Order via WhatsApp</button>
+          </div>
+        </template>
 
-        badge.textContent = product.badge;
-        badge.className = `badge-text text-xs font-bold px-3 py-1 rounded-full ${product.badgeColor}`;
-        img.src = product.image;
-        img.alt = product.name;
-        title.textContent = product.name;
-        price.textContent = `${product.price} · ${product.fabric}`;
-        waBtn.addEventListener('click', () => waCheckout(product.name));
-        card.querySelector('.bg-slate-900').addEventListener('click', () => alert('Quick buy coming soon!'));
-        marquee.appendChild(clone);
-      });
-    }
+      </div>
+    </div>
+  </div>
+</section>
 
-    function waCheckout(productName) {
-      const waNumber = '923006190087';
-      const message = encodeURIComponent(`Hello Abeer, I want to order: ${productName}. Please confirm availability.`);
-      window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
-    }
+<!-- ===== FIXED SCRIPT ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    renderProducts();
-  </script>
+  const products = [
+    { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'tshirt.jpg', fabric: '240 GSM cotton' },
+    { name: 'Fleece Shirt - Arctic White', price: 'PKR 1,499', badge: 'Best Price', badgeColor: 'bg-emerald-100 text-emerald-600', image: 'shirt1.jpg', fabric: 'Warm fleece' },
+    { name: 'Hoodie - Noir', price: 'PKR 2,699', badge: 'Hot Seller', badgeColor: 'bg-orange-100 text-orange-600', image: 'hoodie.jpg', fabric: 'Premium cotton' }
+  ];
 
-  <!-- TIDIO CHAT WIDGET (CORRECTLY INSTALLED) -->
-  <script src="//code.tidio.co/s8rf3ulvmolbs5pamzmslrrnifova7tc.js" async></script>
+  const marquee = document.getElementById('productMarquee');
+  const template = document.getElementById('product-card-template');
+
+  if (!marquee || !template) {
+    console.error("Missing marquee or template in HTML");
+    return;
+  }
+
+  function waCheckout(product) {
+    const waNumber = '923006190087';
+    const msg = encodeURIComponent(`Hello Abeer, I want to order: ${product}`);
+    window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
+  }
+
+  products.concat(products).forEach(product => {
+    const clone = template.content.cloneNode(true);
+    const card = clone.querySelector('div');
+
+    card.querySelector('.badge-text').textContent = product.badge;
+    card.querySelector('img').src = product.image;
+    card.querySelector('h3').textContent = product.name;
+    card.querySelector('p').textContent = `${product.price} · ${product.fabric}`;
+    card.querySelector('[data-wa]').onclick = () => waCheckout(product.name);
+
+    marquee.appendChild(clone);
+  });
+
+});
+</script>
+
+<!-- ===== TIDIO CHAT WIDGET ===== -->
+<script src="//code.tidio.co/s8rf3ulvmolbs5pamzmslrrnifova7tc.js" async></script>
 
 </body>
 </html>
