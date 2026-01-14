@@ -5,103 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abeer Amir – Premium Apparel</title>
 
-  <meta name="description" content="Premium Cotton Apparel - Free Delivery Across Pakistan. Order your T-Shirts and Hoodies online with WhatsApp checkout.">
-  <meta name="keywords" content="Cotton T-Shirt, Hoodie, Pakistan, Premium Apparel, WhatsApp Order, Half Payment">
-
+  <meta name="description" content="Premium Cotton Apparel. Free delivery across Pakistan. Order via WhatsApp.">
   <meta property="og:title" content="Abeer Amir – Premium Apparel">
-  <meta property="og:description" content="Premium Cotton Apparel - Free Delivery Across Pakistan.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://abeeraamir98.github.io/Abeer-Amir/">
+  <meta property="og:description" content="Order premium T-Shirts and Hoodies with free delivery across Pakistan.">
   <meta property="og:image" content="tshirt.jpg">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <style>
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-track {
-      display: flex;
-      gap: 1.5rem;
-      width: max-content;
-      animation: marquee 35s linear infinite;
-    }
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-  </style>
 </head>
 
-<body class="bg-gray-50 text-slate-900">
+<body class="bg-gray-50 text-gray-900">
 
-<!-- ===== YOUR WEBSITE CONTENT ===== -->
+<!-- HERO -->
+<section class="bg-slate-900 text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-black leading-tight">
+        Premium Apparel<br>Built for Real Comfort
+      </h1>
+      <p class="mt-4 text-white/80">
+        Free delivery across Pakistan. Order directly via WhatsApp.
+      </p>
 
-<section id="products" class="bg-white py-20">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-10">
-      <h2 class="text-4xl font-black">Products</h2>
+      <div class="mt-6 flex gap-4">
+        <a href="#products" class="bg-emerald-400 text-black px-6 py-3 rounded-xl font-semibold">Shop Now</a>
+        <a href="https://wa.me/923006190087" target="_blank" class="border px-6 py-3 rounded-xl">WhatsApp</a>
+      </div>
     </div>
 
-    <div class="overflow-hidden relative">
-      <div class="marquee-track" id="productMarquee">
+    <img src="tshirt.jpg" class="rounded-3xl shadow-xl" alt="Product">
+  </div>
+</section>
 
-        <template id="product-card-template">
-          <div class="w-64 flex-shrink-0 bg-slate-50 border border-slate-200 rounded-3xl p-5 shadow-sm">
-            <span class="badge-text text-xs font-bold px-3 py-1 rounded-full"></span>
-            <img class="h-48 w-full object-cover rounded-2xl my-4">
-            <h3 class="text-xl font-semibold"></h3>
-            <p class="text-sm text-slate-500"></p>
-            <button class="bg-emerald-400 w-full mt-3 py-2 rounded-xl" data-wa>Order via WhatsApp</button>
-          </div>
-        </template>
+<!-- PRODUCTS -->
+<section id="products" class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-black text-center mb-10">Our Products</h2>
 
-      </div>
+    <div id="productGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Products injected here -->
     </div>
   </div>
 </section>
 
-<!-- ===== FIXED SCRIPT ===== -->
+<!-- WHY US -->
+<section class="bg-gray-100 py-16">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-black mb-6">Why Choose Abeer Amir?</h2>
+    <div class="grid md:grid-cols-4 gap-6 mt-10">
+      <div class="bg-white p-6 rounded-2xl shadow">Free Delivery</div>
+      <div class="bg-white p-6 rounded-2xl shadow">Premium Fabric</div>
+      <div class="bg-white p-6 rounded-2xl shadow">Secure Payment</div>
+      <div class="bg-white p-6 rounded-2xl shadow">7 Day Exchange</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-black">Contact</h2>
+    <p class="mt-4">WhatsApp: +92 300 6190087</p>
+    <p>Email: abeeramirenterprises@gmail.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-white text-center py-6 text-sm">
+  © 2025 Abeer Amir. All rights reserved.
+</footer>
+
+<!-- PRODUCTS SCRIPT -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
   const products = [
-    { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', badge: 'New Arrival', badgeColor: 'bg-blue-100 text-blue-700', image: 'tshirt.jpg', fabric: '240 GSM cotton' },
-    { name: 'Fleece Shirt - Arctic White', price: 'PKR 1,499', badge: 'Best Price', badgeColor: 'bg-emerald-100 text-emerald-600', image: 'shirt1.jpg', fabric: 'Warm fleece' },
-    { name: 'Hoodie - Noir', price: 'PKR 2,699', badge: 'Hot Seller', badgeColor: 'bg-orange-100 text-orange-600', image: 'hoodie.jpg', fabric: 'Premium cotton' }
+    { name: 'Cotton Premium T-Shirt', price: 'PKR 1,699', img: 'tshirt.jpg' },
+    { name: 'Fleece Shirt - Arctic White', price: 'PKR 1,499', img: 'shirt1.jpg' },
+    { name: 'Fleece Shirt - Sage Grey', price: 'PKR 1,499', img: 'shirt2.jpg' },
+    { name: 'Fleece Shirt - Midnight', price: 'PKR 1,499', img: 'shirt3.jpg' },
+    { name: 'Premium Hoodie - Eclipse', price: 'PKR 2,699', img: 'hoodie.jpg' },
+    { name: 'Premium Hoodie - Ember', price: 'PKR 2,699', img: 'hoodie2.jpg' }
   ];
 
-  const marquee = document.getElementById('productMarquee');
-  const template = document.getElementById('product-card-template');
+  const grid = document.getElementById("productGrid");
 
-  if (!marquee || !template) {
-    console.error("Missing marquee or template in HTML");
-    return;
-  }
+  products.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "bg-white p-4 rounded-2xl shadow hover:shadow-lg transition";
 
-  function waCheckout(product) {
-    const waNumber = '923006190087';
-    const msg = encodeURIComponent(`Hello Abeer, I want to order: ${product}`);
-    window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
-  }
+    card.innerHTML = `
+      <img src="${p.img}" class="h-48 w-full object-cover rounded-xl">
+      <h3 class="mt-3 font-bold">${p.name}</h3>
+      <p class="text-gray-600">${p.price}</p>
+      <button class="mt-3 bg-emerald-400 w-full py-2 rounded-xl font-semibold">Order via WhatsApp</button>
+    `;
 
-  products.concat(products).forEach(product => {
-    const clone = template.content.cloneNode(true);
-    const card = clone.querySelector('div');
+    card.querySelector("button").onclick = () => {
+      window.open("https://wa.me/923006190087?text=" + 
+        encodeURIComponent("I want to order: " + p.name), "_blank");
+    };
 
-    card.querySelector('.badge-text').textContent = product.badge;
-    card.querySelector('img').src = product.image;
-    card.querySelector('h3').textContent = product.name;
-    card.querySelector('p').textContent = `${product.price} · ${product.fabric}`;
-    card.querySelector('[data-wa]').onclick = () => waCheckout(product.name);
-
-    marquee.appendChild(clone);
+    grid.appendChild(card);
   });
 
 });
 </script>
 
-<!-- ===== TIDIO CHAT WIDGET ===== -->
+<!-- TIDIO -->
 <script src="//code.tidio.co/s8rf3ulvmolbs5pamzmslrrnifova7tc.js" async></script>
 
 </body>
